@@ -5,7 +5,6 @@ default[:nat][:packages] = %w(
   build-essential
   zsh
   exuberant-ctags
-  tcplay
   ruby
   ruby-dev
   tig
@@ -22,6 +21,7 @@ default[:nat][:metal][:packages] = %w(
   zim
   rxvt-unicode-256color
   chromium-browser
+  tcplay
 )
 
 default[:nat][:wmii][:force_install] = false
