@@ -31,16 +31,10 @@ gem_packages.each do |gem|
   end
 end
 
-directory "#{user_dir}/.bin" do
-  recursive true
-  owner username
-
-  action :create
-end
-
 include_recipe 'nat::ssh'
 include_recipe 'nat::tmux'
 include_recipe 'nat::vim'
 include_recipe 'nat::git'
 include_recipe 'nat::shell'
+include_recipe 'nat::scripts'
 
