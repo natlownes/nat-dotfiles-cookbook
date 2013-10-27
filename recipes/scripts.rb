@@ -12,7 +12,7 @@ end
 cookbook_file "#{home_dir}/.bin/mount.tc" do
   source "scripts/mount.tc"
   owner username
-  mod "0744"
+  mode "0744"
 end
 
 
