@@ -1,0 +1,7 @@
+.rake_test_cache
+.chef/checksums/*
+tmp
+cookbooks
+tags
+.DS_Store
+.vagrant

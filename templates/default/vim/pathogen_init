@@ -1,0 +1,22 @@
+" from https://github.com/teranex/dotvim/
+
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+
+" disable some plugins which I don't use anymore/not often
+" After the clean-up, no more unused plugins left :)
+" for future reference:
+" call add(g:pathogen_disabled, '<bundle-name>')
+if $SUDO_USER != ''
+    " neocomplcache doesn't like sudo and gives annoying warnings
+    " call add(g:pathogen_disabled, 'neocomplcache')
+endif
+
+
+call add(g:pathogen_disabled, 'vim-async-command')
+
+
+
+runtime pathogen/autoload/pathogen.vim
+call pathogen#helptags()
+call pathogen#infect()

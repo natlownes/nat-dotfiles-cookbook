@@ -1,0 +1,46 @@
+#
+# Cookbook Name:: nat
+# Recipe:: default
+#
+# Copyright 2013, Nat Lownes
+
+extend Nat::UserHelpers
+username = user_name()
+user_dir = home_dir()
+
+include_recipe 'nat::zsh'
+
+user username do
+  shell "/bin/zsh"
+  action :create
+end
+
+packages = node[:nat][:packages] || []
+gem_packages = node[:nat][:gem_packages] || []
+
+packages.each do |pkg_name|
+  package pkg_name do
+    action :install
+  end
+end
+
+gem_packages.each do |gem|
+  gem_package gem[:name] do
+    action :install
+    version gem[:version]
+  end
+end
+
+directory "#{user_dir}/.bin" do
+  recursive true
+  owner username
+
+  action :create
+end
+
+include_recipe 'nat::ssh'
+include_recipe 'nat::tmux'
+include_recipe 'nat::vim'
+include_recipe 'nat::git'
+include_recipe 'nat::shell'
+

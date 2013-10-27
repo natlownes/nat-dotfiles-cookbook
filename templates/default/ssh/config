@@ -1,0 +1,16 @@
+Compression yes
+ForwardAgent yes
+
+# eucalyptus cluster at home
+Host 10.30.6.*
+  UserKnownHostsFile=/dev/null
+  StrictHostKeyChecking no
+Host *.amazonaws.com
+    StrictHostKeyChecking no
+# heroku personal
+Host heroku.personal
+  HostName heroku.com
+  IdentityFile ~/.ssh/id_dsa.pub
+  IdentitiesOnly yes
+Host gerrit.vistarmedia.com
+  Port 29418

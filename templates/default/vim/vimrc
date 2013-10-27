@@ -1,0 +1,390 @@
+" ReplaceWithRegister plugin
+"
+"nmap <silent> <Leader>r <Plug>ReplaceWithRegisterOperator
+"nmap <silent> <Leader>rr <Plug>ReplaceWithRegisterLine
+"vmap <silent> <Leader>r <Plug>ReplaceWithRegisterOperator
+"filetype off
+runtime pathogen_init
+filetype plugin on
+
+
+set tabstop=2
+set expandtab
+"set noexpandtab
+set shiftwidth=2
+" gqG to reformat
+set textwidth=80
+syn on
+set hls
+set nu
+set showtabline=2
+set t_Co=256
+" let ruby_fold = 0
+set foldmethod=syntax
+set foldmethod=manual
+set pastetoggle=<F3>
+" load up big ass grepprg params
+source ~/.vim/grepprg
+set splitbelow
+set splitright
+"automatically save the file when we change buffers
+"set autowrite
+
+set statusline=%{fugitive#statusline()}
+let mapleader=","
+
+nmap ,, :tabnew<CR>
+nmap ,. :tabnext<CR>
+nmap ., :tabpre<CR>
+map <leader>d :NERDTree<CR>
+map <leader>f :CtrlPTag<CR>
+" open quickfix window
+map <leader>q :copen<CR>
+" close pane w/leader w
+map <leader>w :close<CR>
+map <leader>r :set noconfirm<CR>:bufdo e!<CR>:set confirm<CR>
+map <leader>h h
+map <leader>l l
+map <leader>j j
+map <leader>k k
+
+
+" jj to exit insert mode
+inoremap jj <esc>
+
+if v:version > '702'
+  set colorcolumn=80
+endif
+
+" resize splits equally
+" when window is resized
+autocmd VimResized * wincmd =
+
+
+"set textwidth=80
+"execute "set colorcolumn=" . join(range(81,335), ',')
+""set colorcolumn=+1
+"hi ColorColumn guibg=#333333 ctermbg=246
+"
+set updatetime=500                      " wait this many milliseconds before firing the CursorHold autocmd (and write swap files)
+
+set autoread                            " automatically reload the file when modified outside and not modified inside vim
+set autowrite                           " write the modified file when switching to another file
+set hidden                              " allow Vim to switch to another buffer while the current is not saved
+
+"if exists('+autochdir')
+  "set autochdir                       " automatically change to the current directory when loading a file
+"endif
+
+" Shortcuts for moving between tabs.
+" Alt-j to move to the tab to the left
+nmap <A-j> :gT<CR>
+" Alt-k to move to the tab to the right
+nmap <A-k> :gt<CR>
+
+map <leader>t :CtrlP<CR>
+map <leader>ruby :!ruby %<CR>
+map <leader>3 :s/^/#/<CR>
+map <leader>4 :s/^#//<CR>
+map <leader>rr ^v$p<CR>
+
+"if exists(":Tabularize")
+  ",a= align =
+  nmap <leader>a= :Tabularize /=<CR>
+  vmap <leader>a= :Tabularize /=<CR>
+  ",a: align :
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+  ",a> align =>
+  nmap <leader>a> :Tabularize /=><cr>
+  vmap <leader>a> :Tabularize /=><cr>
+  ",a- align ->
+  nmap <leader>a- :Tabularize /-><cr>
+  vmap <leader>a- :Tabularize /-><cr>
+  " example of only one space
+  "<leader>a: :Tabularize /:\zs/l0l1<cr>
+"endif
+
+"inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+"align = as typing in
+" TODO:  this needs some work
+" - don't want to align on = in argument defs
+" - need to be able to set this by filetype
+inoremap <silent> = =<Esc>:call <SID>ealign()<CR>a
+function! s:ealign()
+  let alignfiletypes = 'ruby|coffee|python'
+  let p              = '^.* = \s.*$'
+
+
+  if exists(':Tabularize') && matchstr(&ft, alignfiletypes) && getline('.') =~# '^.*=' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^=]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*=\s*\zs.*'))
+    Tabularize/=/l1
+    normal! 0
+    call search(repeat('[^=]*=',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+" esc to unhilight searches
+nnoremap <silent> <esc> :noh<return><esc>
+nnoremap dateymd "=strftime("%Y-%m-%d")<CR>P
+nnoremap date822 "=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>P
+
+filetype indent on
+
+set wildmode=list:longest
+set shortmess=atI
+set incsearch
+
+let g:Powerline_symbols_override = { 'LINE': '' }
+let g:Powerline_colorscheme = 'trex'
+call Pl#Theme#InsertSegment('trex:root_indicator', 'before', 'mode_indicator')
+call Pl#Theme#RemoveSegment('paste_indicator')
+call Pl#Theme#RemoveSegment('hgrev:branch')
+call Pl#Theme#RemoveSegment('syntastic:errors')
+call Pl#Theme#RemoveSegment('tagbar:currenttag')
+call Pl#Theme#RemoveSegment('rvm:string')
+call Pl#Theme#RemoveSegment('virtualenv:statusline')
+call Pl#Theme#ReplaceSegment('fugitive:branch', 'filesize')
+call Pl#Theme#ReplaceSegment('lineinfo', 'trex:lineinfo')
+call Pl#Theme#InsertSegment('trex:bufnumber', 'after', 'trex:lineinfo')
+
+
+" super tab
+let g:SuperTabDefaultCompletionType = "context"
+
+
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-x><c-o>") |
+  \   call SuperTabSetDefaultCompletionType("<c-p>") |
+  \ endif
+
+au FileType css set omnifunc=csscomplete#CompleteCSS
+
+"let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+"let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+"let g:SuperTabContextDiscoverDiscovery =
+    "\ ["&omnifunc:<c-x><c-o>", "&completefunc:<c-x><c-u>"]
+
+" supertab
+
+set swapfile
+set dir=/tmp
+set backupdir=/tmp
+set directory=/tmp
+set backupskip=/tmp/*,/private/tmp/*
+
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+
+syntax on
+
+" syntactic
+let g:syntastic_coffee_checkers=['coffee', 'coffeelint']
+let g:syntastic_ruby_checkers=['mri']
+" syntactic
+
+"source ~/.vim/bundle/vim-comments/comments.vim
+"nerdcommenter
+map <C-c> <plug>NERDCommenterToggle<CR>
+
+" Local config
+"
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
+
+" Ctrl-P
+" 'c' - the directory of the current file.
+" 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
+"  0 or '' (empty string) - don't manage working directory.
+"let g:ctrlp_working_path_mode = ''
+" this will stop ctrlp from recalculating the files the first time it is opened
+" in a vim session
+let g:ctrlp_clear_cache_on_exit = 0
+
+" find ruby things with long keys and
+" put them on one line per key
+let @e='^f:i^M^[ll'
+
+" convert ruby symbols to strings
+let @p="^f:r'ea'^[^["
+"# remember the milk
+let rtm_api_key='1d4dcd3ee3e0b1bd3ce263a34fd10f4d'
+let rtm_shared_secret='cd4ed92b786ce333'
+let rtm_use_smartadd=0
+let rtm_token='3b4bd1e2d9e63c219b1d9d9172530e08aa03eb01'
+
+" colorscheme zenburn
+syntax enable
+set background=dark
+let g:molokai_original=0
+colorscheme molokai
+"colorscheme luna
+"colorscheme solarized
+"colorscheme sunburst
+
+" sessions
+set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+
+
+autocmd FileType ruby,coffee,javascript let b:stripWhitespace=1
+
+" less to be css
+au BufNewFile,BufRead *.less set filetype=css
+au BufNewFile,BufRead *.json set filetype=javascript
+" eco to be html
+au BufNewFile,BufRead *.eco set filetype=html
+" ruby-tings
+au BufNewFile,BufRead *.rabl set filetype=ruby
+au BufNewFile,BufRead Vagrantfile set filetype=ruby
+au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead Procfile set filetype=ruby
+
+" no trailing whitespace, plz
+autocmd BufWritePre * call StripTrailingWhitespace()
+
+augroup RebuildCaches
+  autocmd!
+  autocmd BufWritePost * call RebuildTags()
+  autocmd FocusGained * CtrlPClearCache
+  autocmd BufWritePost * CtrlPClearCache
+augroup END
+
+function! RebuildTags()
+  let cmd = 'ctags -R'
+  let output=system(cmd)
+  return output
+endfunction
+
+
+" for filetypes
+" autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+function! StripTrailingWhitespace()
+  " Only strip if the b:noStripeWhitespace variable isn't set
+  if exists('b:stripWhitespace')
+    %s/\s\+$//e
+  endif
+endfunction
+
+function! CompileLatex(filepath)
+  let cmd = 'pdflatex --interaction=nonstopmode '.bufname(a:filepath)
+  let output=system(cmd)
+  return output
+endfunction
+
+function! PreviewLatex()
+  if &ft=='tex'
+    let filepath = expand('%:p')
+    let outputPath = substitute(filepath,"latex$","pdf", "")
+    "let outputPath = substitute(filepath,"tex$","pdf", "")
+    call CompileLatex(filepath)
+    let cmd='open -a Preview '.outputPath
+    let output=system(cmd)
+    return output
+  endif
+endfunction
+
+
+autocmd BufWritePost * call PreviewLatex()
+
+" tags
+set tags=tags;/                         " where to find the tags file: current directory and up
+
+let g:tagbar_usearrows = 1
+nnoremap <leader>T :TagbarOpen jf<CR>
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" bring up tag list by default
+noremap <C-]> g<C-]>
+noremap g<C-]> <C-]>
+
+source ~/.vim/vimrcs/coffee_tagbar
+
+set cscopetag
+set cscopetagorder=1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimgrep searching and cope displaying
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" When you press gv you vimgrep after the selected text
+vnoremap <silent> gv :call VisualSelection('gv')<CR>
+
+" Open vimgrep and put the cursor in the right position
+" like to find a better way to manage this cursor movement....
+map <leader>g :vimgrep // **/**<C-R>=expand("%:e")<CR><Home><right><right><right><right><right><right><right><right><right>
+
+" Vimgreps in the current file
+"map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+map <leader><space> :vimgrep // <C-R>%<Home><right><right><right><right><right><right><right><right><right>
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+
+" Do :help cope if you are unsure what cope is. It's super useful!
+"
+" When you search with vimgrep, display your results in cope by doing:
+"   <leader>cc
+"
+" To go to the next search result do:
+"   <leader>n
+"
+" To go to the previous search results do:
+"   <leader>p
+"
+map <leader>cc :botright cope<cr>
+map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+map <leader>n :cn<cr>
+map <leader>p :cp<cr>
+
+
+" vimrc to allow for blasting off reggaeton horns while coding
+" nmap HH :silent execute "!afplay /Users/nat/.vim/audio/succ_horns01.mp3 &>/dev/null"<CR><C-l><CR>
+"nmap HH :silent ! afplay /Users/nat/.vim/audio/succ_horns01.mp3 &>/dev/null &<CR><C-l>
+nmap HH :silent ! afplay /Users/nat/.vim/audio/sadtrombone.mp3 &>/dev/null &<CR><C-l>
+
+" crtl-p settings
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,./tmp/*,*/tmp/*,./node_modules/*,*/node_modules/*
+
+let g:ctrlp_custom_ignore = {
+ \ 'dir': '\.jhw-cache$|\.git',
+ \ 'file': '\.js.coffee.js$'
+ \ }
+
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>B :CtrlP<CR>
+nnoremap <leader>R :CtrlPClearCache<CR>
+
+"When opening a file, if it's already open in a window somewhere, CtrlP will try
+"to jump to it instead of opening a new instance: >
+  "let g:ctrlp_switch_buffer = 'Et'
+"<
+  "e - jump when <cr> is pressed, but only to windows in the current tab.
+  "t - jump when <c-t> is pressed, but only to windows in another tab.
+  "v - like "e", but jump when <c-v> is pressed.
+  "h - like "e", but jump when <c-x> is pressed.
+  "E, T, V, H - like "e", "t", "v", and "h", but jump to windows anywhere.
+  "0 or <empty> - disable this feature.
+let g:ctrlp_switch_buffer = 'eEtT'
+
+" ctrl-p ingnores for compiled coffee script and jhw jawns
+"
+set wildignore+=*/.jhw-cache/*
+set wildignore+=*/*.js.coffee.js
+set wildignore+=*/*.js.js
+set wildignore+=*/public/javascripts/compiled/*
+
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+
+" automatically open quickfix window with CoffeeLint results
+"au BufWritePost *.coffee CoffeeLint | cwindow | redraw!
+
+" open all these files
+" and then do this thing
+":args spec/javascripts/**/*.*
+":argdo %s/foo/bar/g

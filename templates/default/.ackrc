@@ -1,0 +1,10 @@
+--type-add
+js=.coffee
+--type-set
+coffee=.coffee
+--type-add
+eco=.html
+--type-set
+eco=.eco
+
+

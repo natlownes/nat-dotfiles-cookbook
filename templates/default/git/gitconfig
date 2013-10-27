@@ -1,0 +1,43 @@
+[user]
+  email = nat.lownes@gmail.com
+	name = nat
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]
+	ci                  = commit
+	status              = st
+	checkout            = co
+	st                  = status
+	co                  = checkout
+	br                  = branch
+  ;up                 = !sh -c 'git remote update origin && git pull origin'
+  showat              = !sh -c 'git show "$0^:$1"'
+  ;restoreat          = !sh -c 'rm "$1" && git showat "$0" "$1" > "$1"'
+  ;brname             = !sh -c ' git branch --no-color 2>| /dev/null | sed -e '/^[^*]/d' -e '/* /d' '
+  ;stashunstaged      = !sh -c 'git stash save --keep-index'
+  ;commonancestor     = !sh -c 'git merge-base "$0" "$1"'
+  ;showcommonancestor = !sh -c 'git log -p `git merge-base "$0" "$1"`'
+  watchstaged         = !sh -c 'watch -n2 --color git diff --color --cached'
+  track = !sh -c 'git branch -t $0 origin/$0'
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[core]
+	excludesfile = ~/.gitignore_global
+  filemode = true
+	mergeoptions = --no-ff --no-commit
+[merge]
+  tool = vimdiff

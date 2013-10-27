@@ -1,0 +1,32 @@
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias ls='ls -la'
+
+# Helpful git aliases
+alias gs='git status --short --branch'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias glog='git log --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white)
+%an, %ar%Creset"'
+alias gl='glog --graph'
+alias gla='gl --all'
+alias gup='rbenv_global_exec git smart-pull'
+alias gc='git commit'
+alias ga='git add'
+alias gap='git add --patch'
+alias gp='git push'
+alias gru='git remote update --prune'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gb='git branch'
+alias gba='git branch -a'
+alias be='bundle exec'
+alias xr='xvfb-run -a'
+alias xrbe='xvfb-run -a bundle exec'
+
+# Helpful tmux aliases for interacting with the system clipboard.
+<% if node.os == 'darwin' %>
+alias tmux-buffer-to-clipboard='tmux save-buffer -|pbcopy'
+alias tmux-buffer-from-clipboard='tmux set-buffer "$(pbpaste)"'
+<% end %>

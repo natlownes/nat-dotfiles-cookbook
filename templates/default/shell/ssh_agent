@@ -1,0 +1,2 @@
+#ssh-add ~/.ssh/identities/* >/dev/null 2>&1
+#ssh-agent >/dev/null 2>&1

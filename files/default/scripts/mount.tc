@@ -1,0 +1,61 @@
+#!/bin/bash
+# manage truecrypt containers using tcplay
+
+# USAGE:
+# mount.tc [open/close] /path/to/truecrypt/file /path/to/mount/point
+
+action=$1
+cryptpath=$2
+mountpt=$3
+
+if [ -z $action ] || [ -z $cryptpath ] || [ -z $mountpt ] 
+then
+  echo ""
+  echo "USAGE:  "
+  echo "sudo bash mount.tc [open/close] /path/to/truecrypt/file /path/to/mount/point"
+  echo ""
+  exit 1
+fi
+
+cryptdev=`basename $cryptpath`
+user=`who -m | awk '{print $1;}'`
+loopdev=$(losetup -f)
+
+# must be run as root
+if [[ $EUID != 0 ]]; then
+  printf "%s\n" "You must use sudo to run this."
+  exit 1
+fi
+
+# unecrypt and mount container
+if [[ "$1" == "open" ]]; then
+  losetup "$loopdev" "$cryptpath"
+  tcplay --map="$cryptdev" --device="$loopdev"
+
+  # read passphrase
+  read -r -s passphrase <<EOF
+  "$passphrase"
+EOF
+
+  # mount container
+  [[ -d "$mountpt" ]] || mkdir -p "$mountpt"
+
+  # mount options
+  userid=$(awk -F"[=(]" '{print $2,$4}' <(id "$user"))
+  mount -o nosuid,uid="${userid% *}",gid="${userid#* }" /dev/mapper/"$cryptdev" "$mountpt"
+
+# close and clean up…
+elif [[ "$action" == "close" ]]; then
+  # something here needs fixed - 
+  # can't unmount and then remount a disk
+  device=$(awk -v dev=$cryptdev -F":" '/dev/ {print $1}' <(losetup -a))
+  echo $device
+  umount "$mountpt"
+  cryptsetup remove "$cryptdev" || printf "%s\n" "demapping failed"
+  #dmsetup remove "$cryptdev" || printf "%s\n" "demapping failed"
+  losetup -d "$device" || printf "%s\n" "deleting $loopdev failed"
+else
+  printf "%s\n" "Options are open or close."
+fi
+
+

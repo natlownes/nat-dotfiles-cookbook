@@ -1,0 +1,148 @@
+function screen_for() {
+  export SCREEN_CONFIG_TYPE="$*"
+	screen -S $* -c $HOME/.screen/screenrc-$*
+}
+
+function tmux_for() {
+  /usr/bin/env sh $HOME/.tmux/$1.sh $2
+}
+
+function rename_files() {
+  find . -iname "$1" | sed -e "p;s/$1/$2/g" |xargs -n2 mv
+}
+
+function tmux_start() {
+  session_name=$(basename `pwd`)
+  /usr/bin/env tmux new-session -d -s $session_name
+
+  for i in 2 3 4 5
+  do
+    tmux new-window -t $session_name:$i -n "console $i"
+  done
+
+  tmux select-window -t $session_name:1
+  tmux -2 attach-session -t $session_name
+}
+
+function tmux_pairing() {
+  session_name=$(basename `pwd`)
+  /usr/bin/env tmux -S /tmp/pairing.tmux new-session -d -s $session_name
+  chmod 777 /tmp/pairing.tmux
+
+  for i in 2 3 4 5
+  do
+    tmux new-window -S /tmp/pairing.tmux -t $session_name:$i -n "console $i"
+  done
+
+  tmux select-window -S /tmp/pairing.tmux -t $session_name:1
+  tmux -S /tmp/pairing.tmux -2 attach-session -t $session_name
+}
+
+function ssh_copy_id(){
+  user_and_host="$1"
+  cat ~/.ssh/id_dsa.pub | ssh $user_and_host "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && cat - >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && chmod 700 ~/.ssh"
+}
+
+function tmux_url_open(){
+  tmux capture-pane && tmux show-buffer | urlview
+}
+
+function find_and_replace(){
+  target=$1
+  replacement=$2
+  echo "find $PWD -type f | xargs grep -l '${target}'| xargs sed -i '' -e 's/${target}/${replacement}/g'"
+  find $PWD -type f | xargs grep -l '${target}' | xargs sed -i '' -e 's/${target}/${replacement}/g'
+}
+
+function restart_mdns(){
+  sudo launchctl stop com.apple.mDNSResponder
+  sudo launchctl stop com.apple.mDNSResponderHelper
+  sudo launchctl start com.apple.mDNSResponderHelper
+  sudo launchctl start com.apple.mDNSResponder
+}
+
+function timestamp(){
+  date +%Y%m%d%H%M%S
+}
+
+function chuck_stream () {
+        chuck --loop --bufsize512
+}
+
+function date_ymd () {
+	date "+%Y-%m-%d"
+}
+
+function empty_trash () {
+	osascript /Users/nat/Library/Application\ Support/Quicksilver/PlugIns/Extra\ Scripts.qsplugin/Contents/Resources/ExtraScripts/System/Empty\ Trash.scpt
+}
+
+function find_large_directories () {
+	du -h . | grep ^[0-9.][0-9.]G
+   du -h . | grep ^[5-9][0-9][0-9.]M
+}
+
+function important () {
+	history 2 | head -1 | cut -c8- >> ~/.important_commands
+}
+
+function largest_files () {
+	du -sk $* | sort +0nr
+}
+
+function mount_s3 () {
+  local bucket_name="$1"
+  local config_name="$2"
+  source $HOME/.aws/s3fs_credentials/$config_name.rb
+  s3fs $bucket_name -o accessKeyId=$AWSACCESSKEYID -o secretAccessKey=$AWSSECRETACCESSKEY $HOME/opt/local/mnt/s3/$bucket_name
+}
+
+function postgres_start () {
+  local pg_version='84'
+	sudo su postgres -c "cd /opt/local/lib/postgresql$pg_version && /opt/local/lib/postgresql$pg_version/bin/postgres -D /opt/local/var/db/postgresql$pg_version/defaultdb"
+}
+
+function rmrf () {
+	trash $*
+}
+
+function trash () {
+	mv $* /Users/nat/.Trash/
+}
+
+function wget_mirror_proper () {
+	wget -nH -r -k -l inf -p -np $*
+}
+
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
+function irc_notify {
+  from="$1"
+  channel="$2"
+  username=$from
+  ircname=$from
+  nick=$ircname
+  rm -f irc_tmp.pipe
+  mkfifo irc_tmp.pipe
+  server="chat.freenode.net 6667"
+
+  cat > irc_tmp.pipe
+  {
+    echo -e "USER $username x x :$ircname\nNICK $nick\nJOIN $channel";
+    while read line; do
+      echo -e "PRIVMSG $channel :$line";
+    done < irc_tmp.pipe;
+  } | nc $server > nc_irc.log ; rm -f irc_tmp.pipe;
+}
+
+function irc_cat {
+  mkfifo irc_cat
+
+  pipe="irc_cat"
+}

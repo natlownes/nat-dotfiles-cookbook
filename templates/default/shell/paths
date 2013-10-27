@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh 
+export TEXMFHOME="$HOME/.texmf/text"
+export GOPATH="$HOME/src/go"
+export AWS_IAM_HOME="$HOME/opt/local/IAMCli"
+export PYTHONSTARTUP="$HOME/.pystartup"
+export PYTHONPATH="/Library/Python/2.6/site-packages:/opt/local/lib/python2.6"
+export EBPATH="$HOME/opt/local/AWS-ElasticBeanstalk-CLI-2.5.0/eb/macosx/python2.7"
+export PATH="/usr/local/bin:$AWS_IAM_HOME/bin:$HOME/node_modules/.bin:$HOME/.bin:/Library/Java/Home/bin:/opt/local/sbin:/opt/local/bin:/usr/local/sbin/:/Users/nat/opt/bin:/Users/nat/opt/local/gaeo/bin:/Users/nat/bin:/Users/nat/src/nanoc-fork/nanoc/bin:/Users/nat/src/ebay_template/bin:/Users/nat/src/nanoc/bin:/opt/local/bin:/usr/local/bin:/bin:/usr/bin:/opt/local/lib/postgresql84/bin:/opt/local/lib/postgresql83/bin:/usr/X11R6/bin:/usr/local/lib/jruby/bin:/Applications/Shoes.app/Contents/MacOS:/sbin:/usr/sbin:$HOME/src/sdks/android-sdk-mac_86/tools:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+PATH="/usr/local/heroku/bin:$PATH"
+PATH="$HOME/opt/local/bin:$PATH"
+PATH="$EBPATH:$PATH"
+PATH="$GOPATH/bin:$PATH"

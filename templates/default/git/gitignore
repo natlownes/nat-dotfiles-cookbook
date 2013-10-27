@@ -1,0 +1,5 @@
+.irssi/fnotify
+Session*.vim
+*.swp
+*.swo
+.vagrant

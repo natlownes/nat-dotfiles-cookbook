@@ -1,0 +1,4 @@
+if [[ "$TERM" = "screen" && "$SCREEN_CONFIG_TYPE" = "ftt" ]]; then
+  echo “cd $HOME/src/ftt”
+  cd $HOME/src/ftt
+fi

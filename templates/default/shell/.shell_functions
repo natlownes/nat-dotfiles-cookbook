@@ -1,0 +1,60 @@
+function wget_mirror_proper(){
+	 wget -nH -r -k -l inf -p -np $*
+}
+
+function important() {
+  history 2 | head -1 | cut -c8- >> ~/.important_commands
+}
+
+function trash() {
+	mv $* /Users/nat/.Trash/
+}
+
+function rmrf() {
+	trash $*
+}
+
+function empty_trash() {
+	 osascript /Users/nat/Library/Application\ Support/Quicksilver/PlugIns/Extra\ Scripts.qsplugin/Contents/Resources/ExtraScripts/System/Empty\ Trash.scpt
+}
+
+function Finder() {
+	open -a Finder $*
+}
+
+function screen_for() {
+  screen -S $* -c $HOME/.screenrc-$* 
+}
+
+function date.ymd() {
+	 date "+%Y-%m-%d"
+}
+
+function largest_files() {
+	du -sk $* | sort +0nr
+}
+
+function grep_project_for() {
+	grep -n -R --include='*.rb' $* .
+}
+
+function find_large_directories() {
+	du -h . | grep ^[0-9.][0-9.]G
+	du -h . | grep ^[5-9][0-9][0-9.]M
+}
+
+function chuck_stream() {
+	chuck --loop --bufsize512
+}
+
+function postgres_start() {
+  sudo su postgres -c '/opt/local/lib/postgresql83/bin/postgres -D /opt/local/var/db/postgresql83/defaultdb'
+}
+
+function mount_storage() {
+	mount_sshfs nat@phl.looting.biz:/home/nat/storage ~/opt/local/mnt/storage
+}
+
+function mount_poke() {
+	mount_sshfs nat@poke:/ ~/opt/local/mnt/poke
+}
