@@ -22,6 +22,8 @@ default[:nat][:metal][:packages] = %w(
   rxvt-unicode-256color
   chromium-browser
   tcplay
+  hfsplus
+  hfsprogs
 )
 
 default[:nat][:wmii][:force_install] = false
