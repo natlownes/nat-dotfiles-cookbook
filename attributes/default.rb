@@ -26,6 +26,7 @@ default[:nat][:metal][:packages] = %w(
   hfsprogs
   virtualbox
   vagrant
+  xscreensaver
 )
 
 default[:nat][:wmii][:force_install] = false
