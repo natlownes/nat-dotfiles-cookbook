@@ -40,7 +40,10 @@ default[:nat][:wmii][:build_dependencies] = [
 default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.tbz"
 
 default[:nat][:gem_packages] = [
-  {"name" => "jist"},
+  {"name" => "jist"}
+]
+
+default[:nat][:metal][:gem_packages] = [
   {"name" => "rumai", "version" => "~> 3"},
   {"name" => "rumai", "version" => ">= 4.1.3"},
   {"name" => "inochi", "version" => "~> 5.0.2"},

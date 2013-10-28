@@ -10,10 +10,18 @@ execute 'apt-get update' do
 end.run_action(:run)
 
 packages = node[:nat][:metal][:packages] || []
+gem_packages = node[:nat][:metal][:gem_packages] || []
 
 packages.each do |pkg_name|
   package pkg_name do
     action :install
+  end
+end
+
+gem_packages.each do |gem|
+  gem_package gem[:name] do
+    action :install
+    version gem[:version]
   end
 end
 
