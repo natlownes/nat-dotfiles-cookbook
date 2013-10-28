@@ -24,6 +24,8 @@ default[:nat][:metal][:packages] = %w(
   tcplay
   hfsplus
   hfsprogs
+  virtualbox
+  vagrant
 )
 
 default[:nat][:wmii][:force_install] = false
