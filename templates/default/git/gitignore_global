@@ -3,3 +3,4 @@
 Session*.vim
 .vagrant
 tags
+npm-debug.log
