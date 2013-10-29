@@ -26,6 +26,7 @@ gem_packages.each do |gem|
 end
 
 include_recipe 'nat::xterm'
+include_recipe 'nat::xscreensaver'
 include_recipe 'nat::dropbox'
 include_recipe 'nat::pwsafe'
 include_recipe 'nat::weechat'
