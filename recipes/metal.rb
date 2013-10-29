@@ -29,5 +29,5 @@ include_recipe 'nat::xterm'
 include_recipe 'nat::dropbox'
 include_recipe 'nat::pwsafe'
 include_recipe 'nat::weechat'
-include_recipe 'nat::wmii_from_source'
+include_recipe 'nat::i3wm'
 
