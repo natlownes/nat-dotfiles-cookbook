@@ -7,6 +7,8 @@
 action=$1
 cryptpath=$2
 mountpt=$3
+# remount,force,rw -t hfsplus for hfs volumes
+fs_mount_options="force,rw -t hfsplus"
 
 if [ -z $action ] || [ -z $cryptpath ] || [ -z $mountpt ] 
 then
