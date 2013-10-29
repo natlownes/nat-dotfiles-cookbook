@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# source from .xinitrc
+
+( ( sleep 10 && /usr/bin/xscreensaver -no-splash -display :0.0 ) & )
