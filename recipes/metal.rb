@@ -30,4 +30,5 @@ include_recipe 'nat::dropbox'
 include_recipe 'nat::pwsafe'
 include_recipe 'nat::weechat'
 include_recipe 'nat::i3wm'
+include_recipe 'nat::spotify'
 
