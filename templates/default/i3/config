@@ -104,7 +104,6 @@ bindcode Mod1+Shift+18 move container to workspace 9
 bindcode Mod1+Shift+19 move container to workspace 10
 
 # Mod1+Enter starts a new terminal
-#bindcode Mod1+36 exec /usr/bin/uxterm
 bindcode Mod1+36 exec gnome-terminal
 
 # Mod1+Shift+q kills the current client
@@ -132,7 +131,7 @@ ipc-socket ~/.i3/ipc.sock
 
 exec gtk-theme-switch2 /usr/share/themes/Ambiance/
 exec i3status | dzen2 -ta r -xs 2 -h 16 -w 800 -x 1200 -y 1062
-exec xrdb -merge /home/mchadwick/.Xresources
+exec xrdb -merge ~/.Xresources
 exec gnome-settings-daemon
 
 bindcode Mod1+31 exec /usr/bin/i3-input -l 1
@@ -144,3 +143,11 @@ bindcode Mod1+31 exec /usr/bin/i3-input -l 1
 bar {
     status_command i3status
 }
+
+workspace_auto_back_and_forth yes
+bindsym Mod1+z workspace back_and_forth
+bindsym Mod1+Shift+z move container to workspace back_and_forth; workspace back_and_forth
+
+bindsym Mod1+Shift+t [class="Terminal" title="weechat"] focus
+bindsym Mod1+Shift+b [class="Chromium"] focus
+
