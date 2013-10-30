@@ -38,4 +38,5 @@ include_recipe 'nat::ctags'
 include_recipe 'nat::git'
 include_recipe 'nat::shell'
 include_recipe 'nat::scripts'
+include_recipe 'nat::python'
 
