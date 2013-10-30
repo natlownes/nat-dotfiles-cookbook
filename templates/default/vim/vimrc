@@ -188,10 +188,11 @@ filetype plugin indent on
 
 syntax on
 
-" syntactic
+" syntastic
 let g:syntastic_coffee_checkers=['coffee', 'coffeelint']
 let g:syntastic_ruby_checkers=['mri']
-" syntactic
+let g:syntastic_python_checkers=['pyflakes']
+" syntastic
 
 "source ~/.vim/bundle/vim-comments/comments.vim
 "nerdcommenter
