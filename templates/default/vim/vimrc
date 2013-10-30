@@ -33,9 +33,6 @@ set splitright
 set statusline=%{fugitive#statusline()}
 let mapleader=","
 
-nmap ,, :tabnew<CR>
-nmap ,. :tabnext<CR>
-nmap ., :tabpre<CR>
 map <leader>d :NERDTree<CR>
 map <leader>f :CtrlPTag<CR>
 " open quickfix window
@@ -81,6 +78,14 @@ set hidden                              " allow Vim to switch to another buffer 
 nmap <A-j> :gT<CR>
 " Alt-k to move to the tab to the right
 nmap <A-k> :gt<CR>
+" more tab shortcuts
+nmap ,, :tabnew<CR>
+nmap ,. :tabnext<CR>
+nmap ., :tabpre<CR>
+" switch back and forth between two tabs with <Leader>tp
+let g:lasttab = 1
+nmap <Leader>tp :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 map <leader>t :CtrlP<CR>
 map <leader>ruby :!ruby %<CR>
