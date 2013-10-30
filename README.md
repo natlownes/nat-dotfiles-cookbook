@@ -43,3 +43,4 @@ Todo
 ----
 
 * Make work with OSX and Linux and abandon homesick repo.
+* Fix tmux relinking of SSH_AUTH_SOCK
