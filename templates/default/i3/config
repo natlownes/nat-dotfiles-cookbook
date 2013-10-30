@@ -130,6 +130,7 @@ bindcode 121 exec amixer sset Master toggle
 ipc-socket ~/.i3/ipc.sock
 
 exec gtk-theme-switch2 /usr/share/themes/Ambiance/
+exec /usr/bin/xscreensaver -no-splash
 exec i3status | dzen2 -ta r -xs 2 -h 16 -w 800 -x 1200 -y 1062
 exec xrdb -merge ~/.Xresources
 exec gnome-settings-daemon
@@ -151,3 +152,6 @@ bindsym Mod1+Shift+z move container to workspace back_and_forth; workspace back_
 bindsym Mod1+Shift+t [class="Terminal" title="weechat"] focus
 bindsym Mod1+Shift+b [class="Chromium"] focus
 
+
+# lock it up - Mod-Shift-s
+bindcode Mod1+Shift+39 exec /usr/bin/xscreensaver-command -lock
