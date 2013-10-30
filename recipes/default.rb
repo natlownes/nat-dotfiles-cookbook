@@ -34,6 +34,7 @@ end
 include_recipe 'nat::ssh'
 include_recipe 'nat::tmux'
 include_recipe 'nat::vim'
+include_recipe 'nat::ctags'
 include_recipe 'nat::git'
 include_recipe 'nat::shell'
 include_recipe 'nat::scripts'
