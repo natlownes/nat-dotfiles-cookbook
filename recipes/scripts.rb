@@ -9,10 +9,21 @@ directory "#{user_dir}/.bin" do
   action :create
 end
 
-cookbook_file "#{home_dir}/.bin/mount.tc" do
-  source "scripts/mount.tc"
-  owner username
-  mode "0744"
+script_files = %w(
+mount.tc
+)
+
+vistar_script_files = %w(
+vistar_provision_vm.bash
+vistar_ssh_vagrant.bash
+)
+
+use_scripts = script_files + vistar_script_files
+
+use_scripts.each do |filename|
+  cookbook_file "#{home_dir}/.bin/#{filename}" do
+    source "scripts/#{filename}"
+    owner username
+    mode "0744"
+  end
 end
-
-
