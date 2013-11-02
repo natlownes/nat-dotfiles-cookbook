@@ -71,7 +71,8 @@ execute "build-tc" do
   cwd "#{home_dir}/src/truecrypt-7.1a-source"
   environment({
     'NOGUI' => '1',
-    'PKCS11_INC' => "#{home_dir}/src/pkcs11"
+    'PKCS11_INC' => "#{home_dir}/src/pkcs11",
+    'LIBS' => '-ldl'
   })
   user username
   command "make clean && make"
@@ -84,9 +85,10 @@ execute "install-tc" do
   cwd "#{home_dir}/src/truecrypt-7.1a-source"
 
   user username
-  command "make install"
+  command "cp #{home_dir}/src/truecrypt-7.1a-source/Main/truecrypt #{home_dir}/.bin/"
 
   action :nothing
+
 end
 
 remote_file "#{home_dir}/src/truecrypt-source.tar.gz" do
