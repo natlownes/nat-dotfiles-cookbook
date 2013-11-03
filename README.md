@@ -42,5 +42,6 @@ Install things I want on an actual machine.
 Todo
 ----
 
-* Make work with OSX and Linux and abandon homesick repo.
-* Fix tmux relinking of SSH_AUTH_SOCK
+* Fix tmux relinking of SSH_AUTH_SOCK 
+* More complete setup on OSX?  Right now depends on current state of machiens as
+  they are in Time Machine.
