@@ -1,13 +1,21 @@
 default[:nat][:packages] = %w(
   tmux
-  build-essential
   zsh
-  exuberant-ctags
-  tcplay
-  ruby
-  ruby-dev
   tig
   bash-completion
+)
+
+default[:nat][:packages]['linux'] = %w(
+  ruby
+  ruby-dev
+  exuberant-ctags
+  tcplay
+  build-essential
+)
+
+default[:nat][:packages]['darwin'] = %w(
+  ctags
+  ruby19
 )
 
 default[:nat][:metal][:packages] = %w(
