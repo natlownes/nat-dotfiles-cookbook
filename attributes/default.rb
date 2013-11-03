@@ -5,7 +5,7 @@ default[:nat][:packages] = %w(
   bash-completion
 )
 
-default[:nat][:packages]['linux'] = %w(
+default[:nat]['linux'][:packages] = %w(
   ruby
   ruby-dev
   exuberant-ctags
@@ -13,7 +13,7 @@ default[:nat][:packages]['linux'] = %w(
   build-essential
 )
 
-default[:nat][:packages]['darwin'] = %w(
+default[:nat]['darwin'][:packages] = %w(
   ctags
   ruby19
 )

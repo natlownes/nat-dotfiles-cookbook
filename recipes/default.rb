@@ -30,7 +30,7 @@ user username do
 end
 
 packages = node[:nat][:packages] || []
-os_packages = node[:nat][:packages][node.os] || []
+os_packages = node[:nat][node.os][:packages] || []
 
 gem_packages = node[:nat][:gem_packages] || []
 
