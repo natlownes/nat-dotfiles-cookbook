@@ -4,7 +4,7 @@ execute "apt-get-update" do
   action :nothing
 end
 
-if node.platform_family == 'debian'
+if node.platform == 'ubuntu'
   file "/etc/apt/sources.list.d/spotify.list" do
     content "deb http://repository.spotify.com stable non-free"
 
