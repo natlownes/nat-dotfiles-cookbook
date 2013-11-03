@@ -42,10 +42,12 @@ packages.each do |pkg_name|
   end
 end
 
-gem_packages.each do |gem|
-  gem_package gem[:name] do
-    action :install
-    version gem[:version]
+if node.os == 'linux'
+  gem_packages.each do |gem|
+    gem_package gem[:name] do
+      action :install
+      version gem[:version]
+    end
   end
 end
 
