@@ -21,6 +21,11 @@ tcplay_package_name = value_for_platform({
 
 package tcplay_package_name if tcplay_package_name
 
+if node.os == 'linux'
+  package 'hfsplus'
+  package 'hfsutils'
+  package 'hfsprogs'
+end
 
 source_url = "https://dl.dropboxusercontent.com/u/31982598/TrueCrypt%207.1a%20Source.tar.gz"
 
