@@ -101,7 +101,6 @@ execute "install-tc" do
   cwd "#{home_dir}/src/truecrypt-7.1a-source"
 
   command "cp #{home_dir}/src/truecrypt-7.1a-source/Main/truecrypt /usr/local/bin/"
-  umask "011"
 
   action :nothing
 
