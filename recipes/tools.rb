@@ -14,7 +14,16 @@ directory bin_dir do
   owner username
 end
 
-package 'inotify-tools'
+package_name = value_for_platform({
+  ['debian', 'ubuntu'] => {
+    'default' => 'inotify-tools'
+  },
+  'mac_os_x' => {
+    'default' => nil
+  }
+})
+
+package package_name if package_name
 
 git "#{src_dir}/continually" do
   repository 'https://github.com/markchadwick/continually.git'
