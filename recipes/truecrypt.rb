@@ -100,8 +100,8 @@ end
 execute "install-tc" do
   cwd "#{home_dir}/src/truecrypt-7.1a-source"
 
-  user username
   command "cp #{home_dir}/src/truecrypt-7.1a-source/Main/truecrypt /usr/local/bin/"
+  mode "755"
 
   action :nothing
 
