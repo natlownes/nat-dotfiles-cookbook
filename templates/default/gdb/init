@@ -1,0 +1,11 @@
+
+define show-ruby-stacktrace
+  #  (Note: the above GDB script assumes a 32-bit architecture. For 64-bit architectures, simply substitute +16 for +8 and +24 for +12.)
+  set $ary = (int)backtrace(-1)
+  set $count = *($ary+16)
+  set $index = 0
+  while $index < $count
+    x/1s *((int)rb_ary_entry($ary, $index)+24)
+    set $index = $index + 1
+  end
+end
