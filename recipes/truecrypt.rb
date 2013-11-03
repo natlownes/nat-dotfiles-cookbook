@@ -5,6 +5,22 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
+# install tcplay if that's something
+tcplay_package_name = value_for_platform({
+  'debian' => {
+    'default' => nil
+  },
+  'ubuntu' => {
+    '13.10' => 'tcplay'
+    'default' => nil
+  },
+  'mac_os_x' => {
+    'default' => nil
+  }
+})
+
+package tcplay_package_name if tcplay_package_name
+
 
 source_url = "https://dl.dropboxusercontent.com/u/31982598/TrueCrypt%207.1a%20Source.tar.gz"
 

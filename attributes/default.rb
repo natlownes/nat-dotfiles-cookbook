@@ -9,7 +9,6 @@ default[:nat]['linux'][:packages] = %w(
   ruby
   ruby-dev
   exuberant-ctags
-  tcplay
   build-essential
 )
 
