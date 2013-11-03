@@ -1,1 +1,6 @@
-eval $(/usr/bin/env keychain --eval --agents ssh -Q --quiet ~/.ssh/id_dsa)
+#!/usr/bin/env bash
+
+if [[ -z "$SSH_AUTH_SOCK" ]] then;
+  eval $(/usr/bin/env keychain --eval --agents ssh -Q --quiet ~/.ssh/id_dsa)
+fi
+
