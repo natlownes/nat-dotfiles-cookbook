@@ -11,6 +11,7 @@ end
 
 script_files = %w(
 mount.tc
+key_mount.bash
 )
 
 vistar_script_files = %w(
