@@ -12,6 +12,7 @@ package_name = value_for_platform({
 })
 
 package package_name
+package 'keychain'
 
 directory ssh_dir do
   recursive true
