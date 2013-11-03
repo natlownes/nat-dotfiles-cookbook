@@ -11,7 +11,7 @@ tcplay_package_name = value_for_platform({
     'default' => nil
   },
   'ubuntu' => {
-    '13.10' => 'tcplay'
+    '13.10' => 'tcplay',
     'default' => nil
   },
   'mac_os_x' => {
