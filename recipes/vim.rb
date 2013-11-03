@@ -9,6 +9,18 @@ vim_autoload_dir = "#{home_dir()}/.vim/autoload"
 vim_powerline_segments     = "#{vim_autoload_dir}/Powerline/Segments"
 vim_powerline_colorschemes = "#{vim_autoload_dir}/Powerline/Colorschemes"
 
+
+package_name = value_for_platform({
+  ['debian', 'ubuntu'] => {
+    'default' => 'vim-nox'
+  },
+  'mac_os_x' => {
+    'default' => 'vim'
+  }
+})
+
+package package_name
+
 vim_directories = [
   vim_bundle_dir,
   vim_colors_dir,

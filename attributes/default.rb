@@ -1,5 +1,4 @@
 default[:nat][:packages] = %w(
-  vim-nox
   tmux
   build-essential
   zsh
