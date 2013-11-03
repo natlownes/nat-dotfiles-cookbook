@@ -2,6 +2,8 @@ extend Nat::UserHelpers
 username = user_name()
 ssh_dir  = "#{home_dir()}/.ssh"
 
+package 'keychain'
+
 directory ssh_dir do
   recursive true
   owner username
