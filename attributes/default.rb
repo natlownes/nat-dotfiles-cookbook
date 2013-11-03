@@ -1,10 +1,10 @@
 default[:nat][:packages] = %w(
-  ssh
   vim-nox
   tmux
   build-essential
   zsh
   exuberant-ctags
+  tcplay
   ruby
   ruby-dev
   tig
@@ -21,12 +21,6 @@ default[:nat][:metal][:packages] = %w(
   zim
   rxvt-unicode-256color
   chromium-browser
-  tcplay
-  hfsplus
-  hfsprogs
-  virtualbox
-  vagrant
-  xscreensaver
 )
 
 default[:nat][:wmii][:force_install] = false
@@ -45,10 +39,7 @@ default[:nat][:wmii][:build_dependencies] = [
 default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.tbz"
 
 default[:nat][:gem_packages] = [
-  {"name" => "jist"}
-]
-
-default[:nat][:metal][:gem_packages] = [
+  {"name" => "jist"},
   {"name" => "rumai", "version" => "~> 3"},
   {"name" => "rumai", "version" => ">= 4.1.3"},
   {"name" => "inochi", "version" => "~> 5.0.2"},
