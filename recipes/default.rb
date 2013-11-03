@@ -60,5 +60,4 @@ include_recipe 'nat::shell'
 include_recipe 'nat::scripts'
 include_recipe 'nat::python'
 include_recipe 'nat::tools'
-include_recipe 'nat::truecrypt'
 
