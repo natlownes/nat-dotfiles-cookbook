@@ -1,5 +1,6 @@
 extend Nat::UserHelpers
 username = user_name()
+home_dir = home_dir()
 ssh_dir  = "#{home_dir()}/.ssh"
 
 identities_dir = "#{home_dir()}/opt/local/mnt/keys.tc/.ssh/identities"
@@ -42,7 +43,10 @@ link "#{home_dir}/.ssh/identities" do
   owner username
 end
 
-link "#{home_dir}/.ssh/identities/id_dsa" do
-  to "#{home_dir}/.ssh/id_dsa"
+link "#{home_dir}/.ssh/id_dsa" do
+  to "#{home_dir}/.ssh/identities/id_dsa"
   owner username
+  only_if {
+    !File.exists?("#{home_dir}/.ssh/id_dsa")
+  }
 end
