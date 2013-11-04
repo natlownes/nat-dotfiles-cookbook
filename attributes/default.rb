@@ -3,6 +3,7 @@ default[:nat][:packages] = %w(
   zsh
   tig
   bash-completion
+  sshfs
 )
 
 default[:nat]['linux'][:packages] = %w(
@@ -10,6 +11,9 @@ default[:nat]['linux'][:packages] = %w(
   ruby-dev
   exuberant-ctags
   build-essential
+  hfsprogs
+  hfsplus
+  hfsutils
 )
 
 default[:nat]['darwin'][:packages] = %w(
