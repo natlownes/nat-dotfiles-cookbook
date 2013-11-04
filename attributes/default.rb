@@ -4,6 +4,7 @@ default[:nat][:packages] = %w(
   tig
   bash-completion
   sshfs
+  autossh
 )
 
 default[:nat]['linux'][:packages] = %w(
