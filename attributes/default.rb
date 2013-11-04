@@ -49,14 +49,7 @@ default[:nat][:wmii][:build_dependencies] = [
 default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.tbz"
 
 default[:nat][:gem_packages] = [
-  {"name" => "jist"},
-  {"name" => "rumai", "version" => "~> 3"},
-  {"name" => "rumai", "version" => ">= 4.1.3"},
-  {"name" => "inochi", "version" => "~> 5.0.2"},
-  {"name" => "kwalify", "version" => ">= 0.7.2"},
-  {"name" => "barometer", "version" => "~> 0.7.3"},
-  {"name" => "librmpd", "version" => "~> 0.1"}
-]
+  {"name" => "jist"}]
 
 default[:nat][:vim][:plugins] = [
   {"path"=>".vim/autoload/vim-pathogen", "url"=>"git://github.com/tpope/vim-pathogen.git"},
