@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+identity_file="$HOME/.ssh/id_dsa"
 
-if [[ -z "$SSH_AUTH_SOCK" ]] then;
-  eval $(/usr/bin/env keychain --eval --agents ssh -Q --quiet ~/.ssh/id_dsa)
+if [[ -a "$identity_file" ]] then;
+  if [[ -z "$SSH_AUTH_SOCK" ]] then;
+    eval $(/usr/bin/env keychain --eval --agents ssh -Q --quiet $identity_file)
+  fi
 fi
 

@@ -2,6 +2,8 @@ extend Nat::UserHelpers
 username = user_name()
 ssh_dir  = "#{home_dir()}/.ssh"
 
+identities_dir = "#{home_dir()}/opt/local/mnt/keys.tc/.ssh/identities"
+
 package_name = value_for_platform({
   ['debian', 'ubuntu'] => {
     'default' => 'ssh'
@@ -35,3 +37,12 @@ template "#{ssh_dir}/rc" do
   source "ssh/rc"
 end
 
+link "#{home_dir}/.ssh/identities" do
+  to identities_dir
+  owner username
+end
+
+link "#{home_dir}/.ssh/identities/id_dsa" do
+  to "#{home_dir}/.ssh/id_dsa"
+  owner username
+end
