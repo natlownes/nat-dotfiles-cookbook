@@ -28,7 +28,7 @@ xterm*jumpScroll:        true
 xterm*multiScroll:       true
 xterm*saveLines:         512
 
-urxvt.font:              xft:inconsolata:pixelsize=14
+urxvt.font:              xft:inconsolata:pixelsize=12
 urxvt.termName:          rxvt
 urxvt.scrollBar:         false
 urxvt.imLocale:          en_US.UTF-8
@@ -50,8 +50,14 @@ urxvt.colorBD:           #333333
 urxvt.colorIT:           #bbbbbb
 urxvt.colorUL:           #999999
 urxvt.underlineColor:    #999999
-URxvt*perl-ext:          default,matcher
-URxvt*urlLauncher:       chromium-browser
+
+URxvt.perl-ext:             default,matcher
+URxvt.url-launcher:         chromium-browser
+URxvt.keysym.C-Delete:      perl:matcher:last
+URxvt.keysym.M-Delete:      perl:matcher:list
+!URxvt.perl-ext:            default,url-select
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.underline: true
 
 !black
 *color0:  #222222
