@@ -28,8 +28,8 @@ xterm*jumpScroll:        true
 xterm*multiScroll:       true
 xterm*saveLines:         512
 
-urxvt.font:              xft:inconsolata:pixelsize=14
-urxvt.termName:          rxvt
+urxvt.font:              xft:inconsolata:pixelsize=10
+urxvt.termName:          rxvt-unicode
 urxvt.scrollBar:         false
 urxvt.imLocale:          en_US.UTF-8
 urxvt.loginShell:        true
@@ -44,7 +44,7 @@ urxvt.internalBorder:    0
 urxvt.cursorBlink:       false
 urxvt.cursorColor:       #dd9900
 urxvt.cursorColor2:      #000000
-xterm.background:        #222222
+urxvt.background:        #222222
 urxvt.foreground:        #ddccbb
 urxvt.colorBD:           #333333
 urxvt.colorIT:           #bbbbbb
