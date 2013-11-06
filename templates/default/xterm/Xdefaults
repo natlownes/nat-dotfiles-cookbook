@@ -29,7 +29,7 @@ xterm*multiScroll:       true
 xterm*saveLines:         512
 
 urxvt.font:              xft:inconsolata:pixelsize=10
-urxvt.termName:          rxvt-unicode
+urxvt.termName:          rxvt
 urxvt.scrollBar:         false
 urxvt.imLocale:          en_US.UTF-8
 urxvt.loginShell:        true
