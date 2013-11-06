@@ -253,6 +253,7 @@ au BufNewFile,BufRead Procfile set filetype=ruby
 
 " no trailing whitespace if 'b:stripwWhitespace' is set, plz
 autocmd BufWritePre * call StripTrailingWhitespace()
+autocmd BufWritePost *.py call Flake8()
 
 augroup RebuildCaches
   autocmd!
