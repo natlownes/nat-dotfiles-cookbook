@@ -238,7 +238,7 @@ colorscheme molokai
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 
-autocmd FileType ruby,coffee,javascript let b:stripWhitespace=1
+autocmd FileType ruby,coffee,javascript,python let b:stripWhitespace=1
 
 " less to be css
 au BufNewFile,BufRead *.less set filetype=css
@@ -251,7 +251,7 @@ au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Procfile set filetype=ruby
 
-" no trailing whitespace, plz
+" no trailing whitespace if 'b:stripwWhitespace' is set, plz
 autocmd BufWritePre * call StripTrailingWhitespace()
 
 augroup RebuildCaches
