@@ -34,6 +34,11 @@ default[:nat][:metal][:packages] = %w(
   chromium-browser
 )
 
+default[:nat][:xterm][:font_packages] = %w(
+  fonts-inconsolata
+  xfonts-terminus
+)
+
 default[:nat][:wmii][:force_install] = false
 
 default[:nat][:wmii][:build_dependencies] = [
