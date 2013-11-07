@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ ! -h "$SSH_AUTH_SOCK" ]] && [[ -S "$SSH_AUTH_SOCK" ]] ; then
+if [ ! -h "$SSH_AUTH_SOCK" -a -S "$SSH_AUTH_SOCK" ] ; then
   ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 fi
-
