@@ -61,4 +61,5 @@ include_recipe 'nat::scripts'
 include_recipe 'nat::python'
 include_recipe 'nat::tools'
 include_recipe 'nat::nodejs'
+include_recipe 'nat::aws_tools'
 

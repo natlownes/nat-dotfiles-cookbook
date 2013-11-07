@@ -42,6 +42,7 @@ Install things I want on an actual machine.
 Todo
 ----
 
-* Fix tmux relinking of SSH_AUTH_SOCK 
+* Fix tmux/ssh-agent stuff - only update env variable if an auth agent is not
+  running.
 * More complete setup on OSX?  Right now depends on current state of machiens as
   they are in Time Machine.
