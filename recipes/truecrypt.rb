@@ -27,6 +27,12 @@ if node.os == 'linux'
   package 'hfsprogs'
 end
 
+if node.os == 'darwin'
+  link "/Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt" do
+    to "/usr/local/bin/truecrypt"
+  end
+end
+
 source_url = "https://dl.dropboxusercontent.com/u/31982598/TrueCrypt%207.1a%20Source.tar.gz"
 
 build_deps = %w(

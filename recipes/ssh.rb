@@ -3,7 +3,14 @@ username = user_name()
 home_dir = home_dir()
 ssh_dir  = "#{home_dir()}/.ssh"
 
-identities_dir = "#{home_dir()}/opt/local/mnt/keys.tc/.ssh/identities"
+identities_dir = value_for_platform({
+  ['debian', 'ubuntu'] => {
+    'default' => "#{home_dir()}/opt/local/mnt/keys.tc/.ssh/identities"
+  },
+  'mac_os_x' => {
+    'default' => "/Volumes/keys/.ssh/identities"
+  }
+})
 
 package_name = value_for_platform({
   ['debian', 'ubuntu'] => {
