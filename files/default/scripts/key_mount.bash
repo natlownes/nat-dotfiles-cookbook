@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 action=$1
-user=`who -m | awk '{print $1;}'`
+user=`whoami`
 userid=$(awk -F"[=(]" '{print $2,$4}' <(id "$user"))
 home_dir="/home/$user"
 mount_dir_root="$HOME/opt/local/mnt"
