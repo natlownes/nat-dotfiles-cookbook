@@ -20,9 +20,9 @@ end
 
 if node.os == 'linux'
   # install from source
-  execute 'install-pwsafe-build-deps' do
+  #execute 'install-pwsafe-build-deps' do
     #command
-  end
+  #end
 end
 
 
