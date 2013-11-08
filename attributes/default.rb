@@ -55,7 +55,8 @@ default[:nat][:wmii][:build_dependencies] = [
 default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.tbz"
 
 default[:nat][:gem_packages] = [
-  {"name" => "jist"}]
+  {"name" => "jist"}
+]
 
 default[:nat][:vim][:plugins] = [
   {"path"=>".vim/autoload/vim-pathogen", "url"=>"git://github.com/tpope/vim-pathogen.git"},
@@ -92,6 +93,8 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-vividchalk", "url"=>"git://github.com/tpope/vim-vividchalk.git"},
   {"path"=>".vim/bundle/vim-stylus", "url"=>"https://github.com/wavded/vim-stylus.git"},
   {"path"=>".vim/bundle/vim-flake8", "url"=>"https://github.com/nvie/vim-flake8.git"},
+  {"path"=> ".vim/bundle/vim-scala", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
+  {"path"=> ".vim/bundle/neocomplcache", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
   {"path"=>".vim/colors/vim-luna", "url"=>"git://github.com/Pychimp/vim-luna.git"}
 ]
 
