@@ -13,16 +13,41 @@ link "#{user_dir}/.pwsafe.dat" do
 end
 
 if node.os == 'darwin'
-  execute 'install-pwsafe' do
-    command 'port install pwsafe'
-  end
+  package 'pwsafe'
 end
 
 if node.os == 'linux'
   # install from source
-  #execute 'install-pwsafe-build-deps' do
+  build_dependencies = %w(
+    build-essential
+    libuuid1
+    libwxgtk2.8-dev
+    libwxgtk2.8-dbg
+    libxerces-c-dev
+    libxt-dev
+    libxtst-dev
+    libykpers-1-dev
+    libyubikey-dev
+    git
+    uuid-dev
+    zip
+  )
+
+  build_dependencies.each do |pkg|
+    package pkg
+  end
+
+  execute 'build-pwsafe' do
     #command
-  #end
+  end
+
+  execute 'install-pwsafe' do
+  end
+
+  remote_file "#{user_dir}/src/pwsafe-src.tgz" do
+    source "http://downloads.sourceforge.net/project/passwordsafe/Linux-BETA/0.92/pwsafe-0.92BETA-src.tgz"
+    owner username
+  end
 end
 
 
