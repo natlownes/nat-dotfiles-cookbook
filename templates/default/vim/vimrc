@@ -57,6 +57,23 @@ endif
 " when window is resized
 autocmd VimResized * wincmd =
 
+" resize all tabs equally
+" adapted from:  http://www.vimbits.com/bits/372
+function! EqualSizeWindows()
+
+  function! ResizeWindow()
+    exec ":normal! \<c-w>="
+  endfunction
+
+  let tn = tabpagenr()
+  let wn = winnr()
+  tabdo :call ResizeWindow()
+  exec ":normal! " . tn . "gt\n"
+  exec ":normal! " . wn . "\<c-w>w"
+endfunction
+
+
+
 
 "set textwidth=80
 "execute "set colorcolumn=" . join(range(81,335), ',')
