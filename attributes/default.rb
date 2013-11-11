@@ -95,6 +95,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-flake8", "url"=>"https://github.com/nvie/vim-flake8.git"},
   {"path"=> ".vim/bundle/vim-scala", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
   {"path"=> ".vim/bundle/neocomplcache", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
+  {"path"=> ".vim/bundle/vim-gitsessions", "url"=>"https://github.com/wting/gitsessions.vim.git"},
   {"path"=>".vim/colors/vim-luna", "url"=>"git://github.com/Pychimp/vim-luna.git"}
 ]
 
