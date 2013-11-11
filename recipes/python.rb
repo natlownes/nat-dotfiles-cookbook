@@ -19,6 +19,11 @@ execute "install-pip" do
   not_if "type pip > /dev/null"
 end
 
+execute "install-virtualenv" do
+  command "pip install --upgrade virtualenv"
+  not_if "type python > /dev/null && type pip > /dev/null"
+end
+
 execute "install-pyflakes-globally" do
   command "pip install --upgrade pyflakes"
   only_if "type python > /dev/null && type pip > /dev/null"
