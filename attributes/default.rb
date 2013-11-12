@@ -77,7 +77,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-easygrep", "url"=>"git://github.com/vim-scripts/EasyGrep.git"},
   {"path"=>".vim/bundle/vim-fakeclip", "url"=>"git://github.com/kana/vim-fakeclip.git"},
   {"path"=>".vim/bundle/vim-flake8", "url"=>"https://github.com/nvie/vim-flake8.git"},
-  {"path"=>".vim/bundle/vim-git", "url"=>"https://github.com/tpope/vim-git.git",
+  {"path"=>".vim/bundle/vim-git", "url"=>"https://github.com/tpope/vim-git.git"},
   {"path"=>".vim/bundle/vim-gocode", "url"=>"https://github.com/Blackrush/vim-gocode.git"},
   {"path"=>".vim/bundle/vim-golang", "url"=>"https://github.com/jnwhiteh/vim-golang.git"},
   {"path"=>".vim/bundle/vim-haml", "url"=>"git://github.com/tpope/vim-haml.git"},
