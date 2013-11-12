@@ -1,20 +1,20 @@
 default[:nat][:packages] = %w(
-  tmux
-  zsh
-  tig
+  autossh
   bash-completion
   sshfs
-  autossh
+  tig
+  tmux
+  zsh
 )
 
 default[:nat]['linux'][:packages] = %w(
+  build-essential
+  exuberant-ctags
+  hfsplus
+  hfsprogs
+  hfsutils
   ruby
   ruby-dev
-  exuberant-ctags
-  build-essential
-  hfsprogs
-  hfsplus
-  hfsutils
 )
 
 default[:nat]['darwin'][:packages] = %w(
@@ -23,15 +23,15 @@ default[:nat]['darwin'][:packages] = %w(
 )
 
 default[:nat][:metal][:packages] = %w(
-  weechat-curses
-  vlc
-  pidgin
   ario
+  chromium-browser
   claws-mail
   liferea
-  zim
+  pidgin
   rxvt-unicode-256color
-  chromium-browser
+  vlc
+  weechat-curses
+  zim
 )
 
 default[:nat][:xterm][:font_packages] = %w(
@@ -60,6 +60,10 @@ default[:nat][:gem_packages] = [
 
 default[:nat][:vim][:plugins] = [
   {"path"=>".vim/autoload/vim-pathogen", "url"=>"git://github.com/tpope/vim-pathogen.git"},
+
+  {"path"=> ".vim/bundle/neocomplcache", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
+  {"path"=> ".vim/bundle/vim-gitsessions", "url"=>"https://github.com/wting/gitsessions.vim.git"},
+  {"path"=> ".vim/bundle/vim-scala", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
   {"path"=>".vim/bundle/ctrl-p.vim", "url"=>"git://github.com/kien/ctrlp.vim.git"},
   {"path"=>".vim/bundle/fugitive", "url"=>"git://github.com/tpope/vim-fugitive.git"},
   {"path"=>".vim/bundle/nerdtree", "url"=>"git://github.com/scrooloose/nerdtree.git"},
@@ -72,6 +76,8 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-cucumber", "url"=>"git://github.com/tpope/vim-cucumber.git"},
   {"path"=>".vim/bundle/vim-easygrep", "url"=>"git://github.com/vim-scripts/EasyGrep.git"},
   {"path"=>".vim/bundle/vim-fakeclip", "url"=>"git://github.com/kana/vim-fakeclip.git"},
+  {"path"=>".vim/bundle/vim-flake8", "url"=>"https://github.com/nvie/vim-flake8.git"},
+  {"path"=>".vim/bundle/vim-git", "url"=>"https://github.com/tpope/vim-git.git",
   {"path"=>".vim/bundle/vim-gocode", "url"=>"https://github.com/Blackrush/vim-gocode.git"},
   {"path"=>".vim/bundle/vim-golang", "url"=>"https://github.com/jnwhiteh/vim-golang.git"},
   {"path"=>".vim/bundle/vim-haml", "url"=>"git://github.com/tpope/vim-haml.git"},
@@ -87,15 +93,11 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-ragtag", "url"=>"git://github.com/tpope/vim-ragtag.git"},
   {"path"=>".vim/bundle/vim-rails", "url"=>"git://github.com/tpope/vim-rails.git"},
   {"path"=>".vim/bundle/vim-rspec", "url"=>"https://github.com/thoughtbot/vim-rspec.git"},
+  {"path"=>".vim/bundle/vim-stylus", "url"=>"https://github.com/wavded/vim-stylus.git"},
   {"path"=>".vim/bundle/vim-surround", "url"=>"git://github.com/tpope/vim-surround.git"},
   {"path"=>".vim/bundle/vim-tabular", "url"=>"git://github.com/godlygeek/tabular.git"},
   {"path"=>".vim/bundle/vim-tagbar", "url"=>"git://github.com/majutsushi/tagbar.git"},
   {"path"=>".vim/bundle/vim-vividchalk", "url"=>"git://github.com/tpope/vim-vividchalk.git"},
-  {"path"=>".vim/bundle/vim-stylus", "url"=>"https://github.com/wavded/vim-stylus.git"},
-  {"path"=>".vim/bundle/vim-flake8", "url"=>"https://github.com/nvie/vim-flake8.git"},
-  {"path"=> ".vim/bundle/vim-scala", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
-  {"path"=> ".vim/bundle/neocomplcache", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
-  {"path"=> ".vim/bundle/vim-gitsessions", "url"=>"https://github.com/wting/gitsessions.vim.git"},
   {"path"=>".vim/colors/vim-luna", "url"=>"git://github.com/Pychimp/vim-luna.git"}
 ]
 
