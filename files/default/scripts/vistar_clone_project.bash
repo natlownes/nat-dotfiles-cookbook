@@ -16,5 +16,4 @@ project_url="${url_base}${project_name}.git"
 
 mkdir -p $src_dir
 
-pushd $src_dir && git clone $project_url && git config user.name $user_real_name
-&& git config user.email $user_vistar_email && popd
+pushd $src_dir && git clone $project_url && git config user.name $user_real_name && git config user.email $user_vistar_email && popd
