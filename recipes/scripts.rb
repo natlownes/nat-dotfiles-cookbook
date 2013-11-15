@@ -17,6 +17,7 @@ key_mount.bash
 vistar_script_files = %w(
 vistar_provision_vm.bash
 vistar_ssh_vagrant.bash
+vistar_clone_project.bash
 )
 
 use_scripts = script_files + vistar_script_files
