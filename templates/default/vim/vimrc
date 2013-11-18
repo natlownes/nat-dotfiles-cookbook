@@ -258,7 +258,7 @@ colorscheme molokai
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 
-autocmd FileType ruby,coffee,javascript,python,make let b:stripWhitespace=1
+autocmd FileType ruby,coffee,javascript,python,make,erb let b:stripWhitespace=1
 
 " less to be css
 au BufNewFile,BufRead *.less set filetype=css
