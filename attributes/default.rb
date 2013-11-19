@@ -61,11 +61,9 @@ default[:nat][:gem_packages] = [
 default[:nat][:vim][:plugins] = [
   {"path"=>".vim/autoload/vim-pathogen", "url"=>"git://github.com/tpope/vim-pathogen.git"},
 
-  {"path"=> ".vim/bundle/neocomplcache", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
-  {"path"=> ".vim/bundle/vim-gitsessions", "url"=>"https://github.com/wting/gitsessions.vim.git"},
-  {"path"=> ".vim/bundle/vim-scala", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
   {"path"=>".vim/bundle/ctrl-p.vim", "url"=>"git://github.com/kien/ctrlp.vim.git"},
   {"path"=>".vim/bundle/fugitive", "url"=>"git://github.com/tpope/vim-fugitive.git"},
+  {"path"=>".vim/bundle/neocomplcache", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
   {"path"=>".vim/bundle/nerdtree", "url"=>"git://github.com/scrooloose/nerdtree.git"},
   {"path"=>".vim/bundle/supertab", "url"=>"git://github.com/ervandew/supertab.git"},
   {"path"=>".vim/bundle/syntastic", "url"=>"https://github.com/scrooloose/syntastic.git"},
@@ -78,6 +76,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-fakeclip", "url"=>"git://github.com/kana/vim-fakeclip.git"},
   {"path"=>".vim/bundle/vim-flake8", "url"=>"https://github.com/nvie/vim-flake8.git"},
   {"path"=>".vim/bundle/vim-git", "url"=>"https://github.com/tpope/vim-git.git"},
+  {"path"=>".vim/bundle/vim-gitsessions", "url"=>"https://github.com/wting/gitsessions.vim.git"},
   {"path"=>".vim/bundle/vim-gocode", "url"=>"https://github.com/Blackrush/vim-gocode.git"},
   {"path"=>".vim/bundle/vim-golang", "url"=>"https://github.com/jnwhiteh/vim-golang.git"},
   {"path"=>".vim/bundle/vim-haml", "url"=>"git://github.com/tpope/vim-haml.git"},
@@ -93,6 +92,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-ragtag", "url"=>"git://github.com/tpope/vim-ragtag.git"},
   {"path"=>".vim/bundle/vim-rails", "url"=>"git://github.com/tpope/vim-rails.git"},
   {"path"=>".vim/bundle/vim-rspec", "url"=>"https://github.com/thoughtbot/vim-rspec.git"},
+  {"path"=>".vim/bundle/vim-scala", "url"=>"https://github.com/derekwyatt/vim-scala.git"},
   {"path"=>".vim/bundle/vim-stylus", "url"=>"https://github.com/wavded/vim-stylus.git"},
   {"path"=>".vim/bundle/vim-surround", "url"=>"git://github.com/tpope/vim-surround.git"},
   {"path"=>".vim/bundle/vim-tabular", "url"=>"git://github.com/godlygeek/tabular.git"},
