@@ -79,6 +79,16 @@ end
   path     = "#{home_dir()}/#{plugin['path']}"
   branch   = plugin['branch'] || 'master'
 
+  # TODO: blow away directory if
+  # not git repo or if remote doesn't match
+  #directory path do
+    #action :delete
+
+    #only_if {
+      #`pushd #{path} && git remote -v && popd`
+    #}
+  #end
+
   git path do
     repository repo_url
     user username
