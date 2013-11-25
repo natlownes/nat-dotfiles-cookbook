@@ -34,6 +34,26 @@ default[:nat][:metal][:packages] = %w(
   zim
 )
 
+default[:nat][:weechat][:src_url] = "http://www.weechat.org/files/src/weechat-0.4.2.tar.bz2"
+default[:nat][:weechat][:build_dependencies] = %w(
+  build-essential
+  cmake
+  libncursesw5-dev
+  libcurl4-gnutls-dev
+  zlib1g-dev
+  libgcrypt11-dev
+  libgnutls-dev
+  gettext
+  ca-certificates
+  libaspell-dev
+  python-dev
+  libperl-dev
+  ruby1.9.1-dev
+  liblua5.1-0-dev
+  tcl-dev
+)
+
+
 default[:nat][:xterm][:font_packages] = %w(
   fonts-inconsolata
   xfonts-terminus
