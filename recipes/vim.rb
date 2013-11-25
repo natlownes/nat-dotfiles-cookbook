@@ -1,6 +1,9 @@
 extend Nat::UserHelpers
 username = user_name()
 
+# since we need git to pull down these plugins
+include_recipe 'nat::git'
+
 vim_dir          = "#{home_dir()}/.vim"
 vim_bundle_dir   = "#{home_dir()}/.vim/bundle"
 vim_colors_dir   = "#{home_dir()}/.vim/colors"
