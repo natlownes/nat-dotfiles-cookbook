@@ -2,6 +2,8 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
+package 'git'
+
 template "#{home_dir}/.gitconfig" do
   source "git/gitconfig"
   owner username
