@@ -2,6 +2,8 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
+include_recipe 'nat::git'
+
 package 'zsh' do
   action :upgrade
 end
