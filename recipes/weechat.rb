@@ -18,12 +18,19 @@ if node.platform_family == 'debian'
     package pkg_name
   end
 
+  remote_file "#{home_dir}/src/weechat-source.tar.bz" do
+    source weechat_source_url
+    owner username
+    notifies :run, "execute[extract-weechat]", :immediately
+  end
+
   execute "extract-weechat" do
     user username
     cwd "#{home_dir}/src"
 
     command "tar -xvjf weechat-source.tar.bz"
 
+    action :nothing
     notifies :run, "execute[build-weechat]", :immediately
   end
 
@@ -33,19 +40,15 @@ if node.platform_family == 'debian'
 
     command "mkdir -p build && cd build && cmake .. && make"
 
+    action :nothing
     notifies :run, "execute[install-weechat]", :immediately
   end
 
   execute "install-weechat" do
     cwd "#{home_dir}/src/#{current_version_dirname}/build"
 
+    action :nothing
     command "make install"
-  end
-
-  remote_file "#{home_dir}/src/weechat-source.tar.bz" do
-    source weechat_source_url
-    owner username
-    notifies :run, "execute[extract-weechat]", :immediately
   end
 
 end
