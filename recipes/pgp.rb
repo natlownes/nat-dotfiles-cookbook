@@ -14,6 +14,3 @@ template "#{home_dir}/.gnupg/gpg.config" do
   source "pgp/gpg.conf.erb"
   owner username
 end
-
-
-
