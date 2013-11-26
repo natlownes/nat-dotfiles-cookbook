@@ -12,6 +12,7 @@ end
 script_files = %w(
 mount.tc
 key_mount.bash
+ssh_agent_reset.bash
 )
 
 vistar_script_files = %w(
