@@ -112,8 +112,8 @@ map <leader>rr ^v$p<CR>
 
 "if exists(":Tabularize")
   ",a= align =
-  nmap <leader>a= :Tabularize /=<CR>
-  vmap <leader>a= :Tabularize /=<CR>
+  nmap <leader>a= :Tabularize 1=<CR>
+  vmap <leader>a== :Tabularize 1==<CR>
   ",a: align :
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
