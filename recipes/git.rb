@@ -2,7 +2,17 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
-package 'git'
+package_name = value_for_platform({
+  ['debian', 'ubuntu'] => {
+    'default' => 'git'
+  },
+  'mac_os_x' => {
+    'default' => 'git-core'
+  }
+})
+
+package package_name
+
 
 template "#{home_dir}/.gitconfig" do
   source "git/gitconfig"

@@ -19,6 +19,7 @@ tcplay_package_name = value_for_platform({
   }
 })
 
+package 'encfs'
 package tcplay_package_name if tcplay_package_name
 
 if node.os == 'linux'

@@ -25,12 +25,11 @@ gem_packages.each do |gem|
   end
 end
 
-include_recipe 'nat::xterm'
-include_recipe 'nat::xscreensaver'
 include_recipe 'nat::dropbox'
-include_recipe 'nat::pwsafe'
-include_recipe 'nat::weechat'
+include_recipe 'nat::fs_crypt_tools'
 include_recipe 'nat::i3wm'
+include_recipe 'nat::pwsafe'
 include_recipe 'nat::spotify'
-include_recipe 'nat::truecrypt'
-
+include_recipe 'nat::weechat'
+include_recipe 'nat::xscreensaver'
+include_recipe 'nat::xterm'
