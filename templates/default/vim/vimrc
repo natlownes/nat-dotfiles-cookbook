@@ -115,8 +115,8 @@ map <leader>rr ^v$p<CR>
   nmap <leader>a= :Tabularize 1=<CR>
   vmap <leader>a= :Tabularize 1=<CR>
   ",a2= align ==
-  nmap <leader>a= :Tabularize 1==<CR>
-  vmap <leader>a= :Tabularize 1==<CR>
+  nmap <leader>a2= :Tabularize 1==<CR>
+  vmap <leader>a2= :Tabularize 1==<CR>
   ",a: align :
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
