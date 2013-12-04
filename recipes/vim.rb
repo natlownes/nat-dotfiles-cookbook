@@ -4,10 +4,11 @@ username = user_name()
 # since we need git to pull down these plugins
 include_recipe 'nat::git'
 
-vim_dir          = "#{home_dir()}/.vim"
-vim_bundle_dir   = "#{home_dir()}/.vim/bundle"
-vim_colors_dir   = "#{home_dir()}/.vim/colors"
-vim_autoload_dir = "#{home_dir()}/.vim/autoload"
+vim_dir             = "#{home_dir()}/.vim"
+vim_bundle_dir      = "#{vim_dir}/bundle"
+vim_colors_dir      = "#{vim_dir}/colors"
+vim_autoload_dir    = "#{vim_dir}/autoload"
+vim_after_hooks_dir = "#{vim_dir}/after/plugin"
 
 vim_powerline_segments     = "#{vim_autoload_dir}/Powerline/Segments"
 vim_powerline_colorschemes = "#{vim_autoload_dir}/Powerline/Colorschemes"
@@ -30,8 +31,13 @@ vim_directories = [
   vim_autoload_dir,
   vim_powerline_segments,
   vim_powerline_colorschemes,
+  vim_after_hooks_dir,
   "#{vim_dir}/vimrcs"
 ]
+
+plugin_hooks = %w(
+  TabularMaps.vim
+)
 
 vim_directories.each do |dirname|
   directory dirname do
@@ -75,6 +81,13 @@ end
 remote_directory "#{vim_dir}/colors" do
   source "vim/colors"
   owner username
+end
+
+(plugin_hooks || []).each do |hook_name|
+  template "#{vim_after_hooks_dir}/#{hook_name}" do
+    owner username
+    source "vim/after/plugin/#{hook_name}"
+  end
 end
 
 (node[:nat][:vim][:plugins] || []).each do |plugin|
