@@ -63,4 +63,5 @@ include_recipe 'nat::tools'
 include_recipe 'nat::nodejs'
 include_recipe 'nat::aws_tools'
 include_recipe 'nat::weechat'
+include_recipe 'nat::various'
 
