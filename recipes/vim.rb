@@ -91,21 +91,21 @@ end
 end
 
 (node[:nat][:vim][:plugins] || []).each do |plugin|
-  repo_url = plugin['url']
-  path     = "#{home_dir()}/#{plugin['path']}"
-  branch   = plugin['branch'] || 'master'
+  repo_url    = plugin['url']
+  plugin_path = "#{home_dir()}/#{plugin['path']}"
+  branch      = plugin['branch'] || 'master'
 
   # TODO: blow away directory if
   # not git repo or if remote doesn't match
-  #directory path do
+  #directory plugin_path do
     #action :delete
 
     #only_if {
-      #`pushd #{path} && git remote -v && popd`
+      #`pushd #{plugin_path} && git remote -v && popd`
     #}
   #end
 
-  git path do
+  git plugin_path do
     repository repo_url
     user username
 
