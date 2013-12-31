@@ -17,3 +17,5 @@ Host gerrit.vistarmedia.com
 Host *.kd.io
   User natlownes
   ProxyCommand ssh %r@ssh.koding.com nc %h %p
+Host irc.phl.looting.biz
+  ProxyCommand ssh slab.phl.looting.biz -W ice.phl.looting.biz:22
