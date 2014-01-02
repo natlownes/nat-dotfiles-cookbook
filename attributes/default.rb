@@ -53,6 +53,22 @@ default[:nat][:weechat][:build_dependencies] = %w(
   tcl-dev
 )
 
+# ssh
+#
+# client hostnames are the clients that should
+# autossh to the host
+# portmap is host => client
+#
+default[:nat][:ssh] = {
+  :auto_ssh_key_path => 'Dropbox-sec/keys/doublev.int.vistarmedia.com',
+  :client_hostnames => %w(
+    doublev
+  ),
+  :server_hostname => 'slab.phl.looting.biz',
+  :port_map => {
+    22222 => 22
+  }
+}
 
 default[:nat][:xterm][:font_packages] = %w(
   fonts-inconsolata

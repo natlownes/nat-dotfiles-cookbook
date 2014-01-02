@@ -21,12 +21,22 @@ package_name = value_for_platform({
   }
 })
 
+ssh_attributes = node[:nat][:ssh]
+
 package package_name
 package 'keychain'
+package 'autossh'
 
-directory ssh_dir do
-  recursive true
-  owner username
+directories = [
+  ssh_dir,
+  "#{ssh_dir}/scripts"
+]
+
+directories.each do |dir|
+  directory dir do
+    recursive true
+    owner username
+  end
 end
 
 template "#{ssh_dir}/authorized_keys" do
@@ -45,15 +55,31 @@ template "#{ssh_dir}/rc" do
   source "ssh/rc"
 end
 
-link "#{home_dir}/.ssh/identities" do
+link "#{ssh_dir}/identities" do
   to identities_dir
   owner username
 end
 
-link "#{home_dir}/.ssh/id_dsa" do
-  to "#{home_dir}/.ssh/identities/id_dsa"
+link "#{ssh_dir}/id_dsa" do
+  to "#{ssh_dir}/identities/id_dsa"
   owner username
   only_if {
-    !File.exists?("#{home_dir}/.ssh/id_dsa")
+    !File.exists?("#{ssh_dir}/id_dsa")
+  }
+end
+
+# autossh
+#
+template "#{home_dir}/.ssh/scripts/autossh_start" do
+  mode '0771'
+  source 'ssh/autossh_start'
+  variables(
+    :private_key_path => ssh_attributes[:auto_ssh_key_path],
+    :port_map => ssh_attributes[:port_map],
+    :host => ssh_attributes[:server_hostname]
+  )
+
+  only_if {
+    ssh_attributes[:client_hostnames].include?(node.hostname)
   }
 end
