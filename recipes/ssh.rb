@@ -72,7 +72,7 @@ end
 #
 template "#{home_dir}/.ssh/scripts/autossh_start" do
   mode '0771'
-  source 'ssh/autossh_start'
+  source 'ssh/autossh_start.erb'
   variables(
     :private_key_path => ssh_attributes[:auto_ssh_key_path],
     :port_map => ssh_attributes[:port_map],
