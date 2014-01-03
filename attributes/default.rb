@@ -53,6 +53,22 @@ default[:nat][:weechat][:build_dependencies] = %w(
   tcl-dev
 )
 
+# ssh
+#
+# client hostnames are the clients that should
+# autossh to the host
+# portmap is host => client
+#
+default[:nat][:ssh] = {
+  :auto_ssh_key_path => 'Dropbox-sec/keys/doublev.int.vistarmedia.com',
+  :client_hostnames => %w(
+    doublev
+  ),
+  :server_hostname => 'slab.phl.looting.biz',
+  :port_map => {
+    22222 => 22
+  }
+}
 
 default[:nat][:xterm][:font_packages] = %w(
   fonts-inconsolata
@@ -87,14 +103,17 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/nerdtree", "url"=>"git://github.com/scrooloose/nerdtree.git"},
   {"path"=>".vim/bundle/supertab", "url"=>"git://github.com/ervandew/supertab.git"},
   {"path"=>".vim/bundle/syntastic", "url"=>"https://github.com/scrooloose/syntastic.git"},
+
   {"path"=>".vim/bundle/vim-ack", "url"=>"git://github.com/mileszs/ack.vim.git"},
   {"path"=>".vim/bundle/vim-async-command", "url"=>"git://github.com/pydave/AsyncCommand.git"},
+  {"path"=>".vim/bundle/vim-clojure-static", "url"=>"git://github.com/guns/vim-clojure-static.git"},
   {"path"=>".vim/bundle/vim-coffee-script", "url"=>"git://github.com/kchmck/vim-coffee-script.git"},
   {"path"=>".vim/bundle/vim-colors-solarized", "url"=>"git://github.com/altercation/vim-colors-solarized.git"},
   {"path"=>".vim/bundle/vim-cucumber", "url"=>"git://github.com/tpope/vim-cucumber.git"},
   {"path"=>".vim/bundle/vim-easygrep", "url"=>"git://github.com/vim-scripts/EasyGrep.git"},
   {"path"=>".vim/bundle/vim-fakeclip", "url"=>"git://github.com/kana/vim-fakeclip.git"},
   {"path"=>".vim/bundle/vim-flake8", "url"=>"https://github.com/nvie/vim-flake8.git"},
+  {"path"=>".vim/bundle/vim-foreplay", "url"=>"git://github.com/tpope/vim-foreplay.git"},
   {"path"=>".vim/bundle/vim-git", "url"=>"https://github.com/tpope/vim-git.git"},
   {"path"=>".vim/bundle/vim-gitsessions", "url"=>"https://github.com/wting/gitsessions.vim.git"},
   {"path"=>".vim/bundle/vim-gocode", "url"=>"https://github.com/Blackrush/vim-gocode.git"},
@@ -111,12 +130,14 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-powerline-1", "url"=>"git://github.com/Lokaltog/vim-powerline.git"},
   {"path"=>".vim/bundle/vim-ragtag", "url"=>"git://github.com/tpope/vim-ragtag.git"},
   {"path"=>".vim/bundle/vim-rails", "url"=>"git://github.com/tpope/vim-rails.git"},
+  {"path"=>".vim/bundle/vim-rainbow-parenthesis", "url"=>"git://github.com/kien/rainbow_parentheses.vim.git"},
   {"path"=>".vim/bundle/vim-rspec", "url"=>"https://github.com/thoughtbot/vim-rspec.git"},
   {"path"=>".vim/bundle/vim-scala", "url"=>"https://github.com/derekwyatt/vim-scala.git"},
   {"path"=>".vim/bundle/vim-stylus", "url"=>"https://github.com/wavded/vim-stylus.git"},
   {"path"=>".vim/bundle/vim-surround", "url"=>"git://github.com/tpope/vim-surround.git"},
   {"path"=>".vim/bundle/vim-tabular", "url"=>"git://github.com/godlygeek/tabular.git"},
   {"path"=>".vim/bundle/vim-tagbar", "url"=>"git://github.com/majutsushi/tagbar.git"},
+
   {"path"=>".vim/bundle/vim-vividchalk", "url"=>"git://github.com/tpope/vim-vividchalk.git"},
   {"path"=>".vim/colors/vim-luna", "url"=>"git://github.com/Pychimp/vim-luna.git"}
 ]
