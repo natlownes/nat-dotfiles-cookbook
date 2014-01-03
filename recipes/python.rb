@@ -3,7 +3,7 @@ package_name = value_for_platform({
     'default' => 'python2.7'
   },
   'mac_os_x' => {
-    'default' => 'python27'
+    'default' => 'python2.7'
   }
 })
 
