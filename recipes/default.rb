@@ -8,26 +8,9 @@ extend Nat::UserHelpers
 username = user_name()
 user_dir = home_dir()
 
-package_manager_update_command = value_for_platform({
-  ['debian', 'ubuntu'] => {
-    'default' => 'apt-get update --fix-missing'
-  },
-  'mac_os_x' => {
-    'default' => 'port -d selfupdate'
-  }
-})
-
-execute "ready-package-manager" do
-  command package_manager_update_command
-  action :nothing
-end.run_action(:run)
-
+include_recipe 'nat::preflight'
+include_recipe 'nat::user'
 include_recipe 'nat::zsh'
-
-user username do
-  shell "/bin/zsh"
-  action :create
-end
 
 packages = node[:nat][:packages] || []
 os_packages = node[:nat][node.os][:packages] || []

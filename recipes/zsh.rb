@@ -1,3 +1,5 @@
+include_recipe 'nat::user'
+
 extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
@@ -45,6 +47,17 @@ template "#{home_dir}/.zsh/prompt.zsh" do
   owner username
   source "zsh/prompt.zsh"
 end
+
+user username do
+  shell '/bin/zsh'
+  action :modify
+end
+
+
+
+include_recipe 'nat::git'
+
+
 
 git "#{home_dir}/.zsh/functions/Completion/git-flow" do
   repository "https://github.com/bobthecow/git-flow-completion.git"

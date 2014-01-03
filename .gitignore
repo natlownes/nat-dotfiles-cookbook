@@ -5,3 +5,5 @@ cookbooks
 tags
 .DS_Store
 .vagrant
+.kitchen/
+.kitchen.local.yml

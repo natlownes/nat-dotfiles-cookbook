@@ -1,3 +1,6 @@
+require_recipe 'nat::default'
+
+
 extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
@@ -24,7 +27,6 @@ package_name = value_for_platform({
 
 package package_name
 
-
 template "#{home_dir}/.gitconfig" do
   source "git/gitconfig"
   owner username
@@ -43,5 +45,3 @@ end
 execute "install-gitflow" do
   command "wget --no-check-certificate -q -O - https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh | bash"
 end
-
-
