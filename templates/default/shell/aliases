@@ -25,6 +25,11 @@ alias be='bundle exec'
 alias xr='xvfb-run -a'
 alias xrbe='xvfb-run -a bundle exec'
 
+alias http_cwd="ruby -rubygems -e \"['thin', 'rack'].each {|file|
+require file };"\
+" Thin::Server.start('0.0.0.0', 7777) {"\
+" use Rack::CommonLogger; run Rack::Directory.new(Dir.pwd) }\""
+
 # Helpful tmux aliases for interacting with the system clipboard.
 <% if node.os == 'darwin' %>
 alias tmux-buffer-to-clipboard='tmux save-buffer -|pbcopy'
