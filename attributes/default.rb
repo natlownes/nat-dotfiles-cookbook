@@ -137,6 +137,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-surround", "url"=>"git://github.com/tpope/vim-surround.git"},
   {"path"=>".vim/bundle/vim-tabular", "url"=>"git://github.com/godlygeek/tabular.git"},
   {"path"=>".vim/bundle/vim-tagbar", "url"=>"git://github.com/majutsushi/tagbar.git"},
+  {"path"=>".vim/bundle/vim-tbone", "url"=>"git://github.com/tpope/vim-tbone.git"},
   {"path"=>".vim/bundle/vim-tslime", "url"=>"git://github.com/jgdavey/tslime.vim.git"},
 
   # colors i.e. http://www.youtube.com/watch?v=KP0OaUOQGCg
