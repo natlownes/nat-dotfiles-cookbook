@@ -128,6 +128,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-matchit", "url"=>"git://github.com/tsaleh/vim-matchit.git"},
   {"path"=>".vim/bundle/vim-nerdcommenter", "url"=>"git://github.com/scrooloose/nerdcommenter.git"},
   {"path"=>".vim/bundle/vim-powerline-1", "url"=>"git://github.com/Lokaltog/vim-powerline.git"},
+  {"path"=>".vim/bundle/vim-protobuf-syntax", "url"=>"git://github.com/jdevera/vim-protobuf-syntax.git"},
   {"path"=>".vim/bundle/vim-ragtag", "url"=>"git://github.com/tpope/vim-ragtag.git"},
   {"path"=>".vim/bundle/vim-rails", "url"=>"git://github.com/tpope/vim-rails.git"},
   {"path"=>".vim/bundle/vim-rainbow-parenthesis", "url"=>"git://github.com/kien/rainbow_parentheses.vim.git"},
