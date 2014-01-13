@@ -19,3 +19,5 @@ Host *.kd.io
   ProxyCommand ssh %r@ssh.koding.com nc %h %p
 Host irc.phl.looting.biz
   ProxyCommand ssh slab.phl.looting.biz -W ice.phl.looting.biz:22
+Host doublev.vistar
+  ProxyCommand ssh slab.phl.looting.biz -W localhost:22222
