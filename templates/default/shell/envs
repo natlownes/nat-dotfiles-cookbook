@@ -3,4 +3,3 @@
 vistar_rest_server_env="$HOME/environments/vistar/bin/activate"
 
 [[ -s $vistar_rest_server_env ]] && source $vistar_rest_server_env
-

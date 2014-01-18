@@ -257,5 +257,10 @@ zle-keymap-select () {
 source $HOME/.zsh/vi_mode_indicator.zsh
 
 export LSCOLORS=DxGxcxdxCxegedabagacad
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+local_rvm="$HOME/.rvm/scripts/rvm"
+system_rvm="/usr/local/rvm/scripts/rvm"
+[[ -s $system_rvm ]] && source $system_rvm  # This loads RVM into a shell session.
+[[ -s $local_rvm ]] && source $local_rvm  # This loads RVM into a shell session.
+
 # source /Users/nat/.profile
