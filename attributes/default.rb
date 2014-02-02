@@ -53,6 +53,14 @@ default[:nat][:weechat][:build_dependencies] = %w(
   tcl-dev
 )
 
+default[:nat][:weechat][:plugins] = [
+  {"path" => ".weechat/python/growl.py", "url" => "http://weechat.org/files/scripts/growl.py"},
+  {"path" => ".weechat/python/jabber.py", "url" => "http://weechat.org/files/scripts/jabber.py"},
+  {"path" => ".weechat/python/shell.py", "url" => "http://weechat.org/files/scripts/shell.py"},
+  {"path" => ".weechat/python/tinyurl.py", "url" => "http://weechat.org/files/scripts/tinyurl.py"},
+  {"path" => ".weechat/python/urlbar.py", "url" => "http://weechat.org/files/scripts/urlbar.py"},
+]
+
 # ssh
 #
 # client hostnames are the clients that should
@@ -145,4 +153,3 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-vividchalk", "url"=>"git://github.com/tpope/vim-vividchalk.git"},
   {"path"=>".vim/colors/vim-luna", "url"=>"git://github.com/Pychimp/vim-luna.git"}
 ]
-

@@ -1,6 +1,16 @@
+include_recipe 'nat::aws_tools'
+
+
 extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
+
+weechat_dir = "#{home_dir}/.weechat"
+
+
+#
+### install ###
+#
 
 directory "#{home_dir}/src" do
   recursive true
@@ -50,5 +60,91 @@ if node.platform_family == 'debian'
     action :nothing
     command "make install"
   end
+end
 
+if node.platform_family == 'darwin'
+  package 'weechat'
+end
+
+
+#
+### setup ###
+#
+
+directory weechat_dir do
+  owner username
+  recursive true
+end
+
+directories = %w(
+  python
+  ruby
+  logs
+  sslcerts
+  xfer
+)
+
+directories.each do |dir_name|
+  directory "#{weechat_dir}/#{dir_name}" do
+    owner username
+    recursive true
+  end
+end
+
+
+plugins = node[:nat][:weechat][:plugins] || []
+
+plugins.each do |plugin|
+  path = "#{home_dir}/#{plugin['path']}"
+  url  = plugin['url']
+
+  filename      = path.split('/').last
+  plugin_dir    = File.join(path.split('/')[0..-2])
+  autoload_dir  = File.join(plugin_dir, 'autoload')
+  autoload_path = File.join(autoload_dir, filename)
+
+  directory autoload_dir do
+    owner username
+    recursive true
+  end
+
+  remote_file path do
+    source url
+    owner username
+
+    use_conditional_get true
+    use_etag true
+
+    action :create
+  end
+
+  # autoload everything
+  link autoload_path do
+    to path
+    owner username
+  end
+end
+
+templates = %w(
+  alias.conf
+  aspell.conf
+  sec.conf
+  charset.conf
+  irc.conf
+  logger.conf
+  plugins.conf
+  relay.conf
+  script.conf
+  weechat.conf
+  xfer.conf
+)
+
+templates.each do |template|
+  template "#{weechat_dir}/#{template}" do
+    owner username
+    source "weechat/#{template}.erb"
+    variables(
+      :weechat => node[:nat][:weechat]
+    )
+  end
 end

@@ -1,0 +1,302 @@
+#
+# irc.conf -- weechat v0.4.0
+#
+
+[look]
+buffer_switch_autojoin = on
+buffer_switch_join = on
+color_nicks_in_names = off
+color_nicks_in_nicklist = off
+color_nicks_in_server_messages = on
+color_pv_nick_like_channel = on
+ctcp_time_format = "%a, %d %b %Y %T %z"
+display_away = local
+display_ctcp_blocked = on
+display_ctcp_reply = on
+display_ctcp_unknown = on
+display_host_join = on
+display_host_join_local = on
+display_host_quit = on
+display_old_topic = on
+display_pv_away_once = on
+display_pv_back = on
+hide_nickserv_pwd = on
+highlight_channel = "$nick"
+highlight_pv = "$nick"
+highlight_server = "$nick"
+highlight_tags = "irc_privmsg,irc_notice"
+item_away_message = on
+item_channel_modes_hide_key = off
+item_display_server = buffer_plugin
+item_nick_modes = on
+item_nick_prefix = on
+msgbuffer_fallback = current
+new_channel_position = none
+new_pv_position = none
+nick_color_force = ""
+nick_color_stop_chars = "_|["
+nick_completion_smart = speakers
+nick_mode = prefix
+nick_mode_empty = off
+nick_prefix = ""
+nick_suffix = ""
+notice_as_pv = auto
+notify_tags_ison = "notify_message"
+notify_tags_whois = "notify_message"
+part_closes_buffer = off
+raw_messages = 256
+server_buffer = merge_with_core
+smart_filter = on
+smart_filter_delay = 5
+smart_filter_join = on
+smart_filter_nick = on
+smart_filter_quit = on
+topic_strip_colors = off
+
+[color]
+input_nick = lightcyan
+item_away = yellow
+item_channel_modes = default
+item_lag_counting = default
+item_lag_finished = yellow
+message_join = green
+message_quit = red
+mirc_remap = "1,-1:darkgray"
+nick_prefix = green
+nick_prefixes = "q:lightred;a:lightcyan;o:lightgreen;h:lightmagenta;v:yellow;*:lightblue"
+nick_suffix = green
+notice = green
+reason_quit = default
+topic_new = white
+topic_old = darkgray
+
+[network]
+alternate_nick = on
+autoreconnect_delay_growing = 2
+autoreconnect_delay_max = 1800
+colors_receive = on
+colors_send = on
+lag_check = 60
+lag_disconnect = 0
+lag_min_show = 500
+lag_refresh_interval = 1
+notify_check_ison = 1
+notify_check_whois = 5
+send_unknown_commands = off
+whois_double_nick = on
+
+[msgbuffer]
+
+[ctcp]
+
+[ignore]
+
+[server_default]
+addresses = ""
+anti_flood_prio_high = 2
+anti_flood_prio_low = 2
+autoconnect = off
+autojoin = ""
+autoreconnect = on
+autoreconnect_delay = 10
+autorejoin = off
+autorejoin_delay = 30
+away_check = 0
+away_check_max_nicks = 25
+capabilities = ""
+command = ""
+command_delay = 0
+connection_timeout = 60
+default_msg_part = ""
+default_msg_quit = ""
+ipv6 = off
+local_hostname = ""
+nicks = "nat,narf,narsk,natd,nattyd,nathanield"
+notify = ""
+password = ""
+proxy = ""
+realname = ""
+sasl_mechanism = plain
+sasl_password = ""
+sasl_timeout = 15
+sasl_username = ""
+ssl = off
+ssl_cert = ""
+ssl_dhkey_size = 2048
+ssl_priorities = "NORMAL"
+ssl_verify = on
+username = "nat"
+
+[server]
+freenode.addresses = "chat.freenode.net/6667"
+freenode.proxy
+freenode.ipv6
+freenode.ssl = off
+freenode.ssl_cert = "~/.weechat/sslcerts/UTN-USERFirst-Hardware.crt"
+freenode.ssl_priorities = "NORMAL:-VERS-TLS-ALL:+VERS-TLS1.0:+VERS-SSL3.0:%COMPAT"
+freenode.ssl_dhkey_size = 1024
+freenode.ssl_verify = off
+freenode.password
+freenode.capabilities
+freenode.sasl_mechanism
+freenode.sasl_username
+freenode.sasl_password
+freenode.sasl_timeout
+freenode.autoconnect = on
+freenode.autoreconnect
+freenode.autoreconnect_delay
+freenode.nicks = "narsk,nattyd,nathanield,natd,natnatnat"
+freenode.username = "narsk"
+freenode.realname = "Nat"
+freenode.local_hostname
+freenode.command = "/msg nickserv identify ${sec.data.freenode_password}"
+freenode.sasl_username = "nathanield"
+freenode.sasl_password = "${sec.data.freenode_password}"
+freenode.command_delay
+freenode.autojoin = "#chef,#chef-hacking,#ruby-fog,#coffeescript,#promises,#docker,#vistarmedia"
+freenode.autorejoin
+freenode.autorejoin_delay
+freenode.connection_timeout
+freenode.anti_flood_prio_high
+freenode.anti_flood_prio_low
+freenode.away_check
+freenode.away_check_max_nicks
+freenode.default_msg_part
+freenode.default_msg_quit = ""
+freenode.notify
+bitlbee.addresses = "irc.net"
+bitlbee.proxy
+bitlbee.ipv6
+bitlbee.ssl
+bitlbee.ssl_cert
+bitlbee.ssl_priorities
+bitlbee.ssl_dhkey_size
+bitlbee.ssl_verify
+bitlbee.password
+bitlbee.capabilities
+bitlbee.sasl_mechanism
+bitlbee.sasl_username
+bitlbee.sasl_password
+bitlbee.sasl_timeout
+bitlbee.autoconnect = off
+bitlbee.autoreconnect
+bitlbee.autoreconnect_delay
+bitlbee.nicks = "nat"
+bitlbee.username = "nat"
+bitlbee.realname = "Nat"
+bitlbee.local_hostname
+bitlbee.command = "/msg &bitlbee identify ${sec.data.bitlbee_password}"
+bitlbee.command_delay = 1
+bitlbee.autojoin
+bitlbee.autorejoin
+bitlbee.autorejoin_delay
+bitlbee.connection_timeout
+bitlbee.anti_flood_prio_high
+bitlbee.anti_flood_prio_low
+bitlbee.away_check
+bitlbee.away_check_max_nicks
+bitlbee.default_msg_part
+bitlbee.default_msg_quit
+bitlbee.notify
+bitlbee_testing.addresses = "testing.bitlbee.org/6668"
+bitlbee_testing.proxy
+bitlbee_testing.ipv6
+bitlbee_testing.ssl = on
+bitlbee_testing.ssl_cert
+bitlbee_testing.ssl_priorities
+bitlbee_testing.ssl_dhkey_size
+bitlbee_testing.ssl_verify = off
+bitlbee_testing.password
+bitlbee_testing.capabilities
+bitlbee_testing.sasl_mechanism
+bitlbee_testing.sasl_username
+bitlbee_testing.sasl_password
+bitlbee_testing.sasl_timeout
+bitlbee_testing.autoconnect = on
+bitlbee_testing.autoreconnect
+bitlbee_testing.autoreconnect_delay
+bitlbee_testing.nicks = "nat"
+bitlbee_testing.username = "nat"
+bitlbee_testing.realname = "Nat"
+bitlbee_testing.local_hostname
+bitlbee_testing.command = "/msg &bitlbee identify ${sec.data.bitlbee_testing_password}"
+bitlbee_testing.command_delay = 1
+bitlbee_testing.autojoin
+bitlbee_testing.autorejoin
+bitlbee_testing.autorejoin_delay
+bitlbee_testing.connection_timeout
+bitlbee_testing.anti_flood_prio_high
+bitlbee_testing.anti_flood_prio_low
+bitlbee_testing.away_check
+bitlbee_testing.away_check_max_nicks
+bitlbee_testing.default_msg_part
+bitlbee_testing.default_msg_quit
+bitlbee_testing.notify
+irchighway.addresses = "irc.irchighway.net"
+irchighway.proxy
+irchighway.ipv6
+irchighway.ssl
+irchighway.ssl_cert
+irchighway.ssl_priorities
+irchighway.ssl_dhkey_size
+irchighway.ssl_verify
+irchighway.password
+irchighway.capabilities
+irchighway.sasl_mechanism
+irchighway.sasl_username
+irchighway.sasl_password
+irchighway.sasl_timeout
+irchighway.autoconnect
+irchighway.autoreconnect
+irchighway.autoreconnect_delay
+irchighway.nicks = "nat"
+irchighway.username = "nat"
+irchighway.realname
+irchighway.local_hostname
+irchighway.command = "/msg nickserv identify ${sec.data.irchighway_password}"
+irchighway.command_delay
+irchighway.autojoin
+irchighway.autorejoin
+irchighway.autorejoin_delay
+irchighway.connection_timeout
+irchighway.anti_flood_prio_high
+irchighway.anti_flood_prio_low
+irchighway.away_check
+irchighway.away_check_max_nicks
+irchighway.default_msg_part
+irchighway.default_msg_quit
+irchighway.notify
+irc.snoonet.org.addresses = "irc.snoonet.org"
+irc.snoonet.org.proxy
+irc.snoonet.org.ipv6
+irc.snoonet.org.ssl
+irc.snoonet.org.ssl_cert
+irc.snoonet.org.ssl_priorities
+irc.snoonet.org.ssl_dhkey_size
+irc.snoonet.org.ssl_verify
+irc.snoonet.org.password
+irc.snoonet.org.capabilities
+irc.snoonet.org.sasl_mechanism
+irc.snoonet.org.sasl_username
+irc.snoonet.org.sasl_password
+irc.snoonet.org.sasl_timeout
+irc.snoonet.org.autoconnect
+irc.snoonet.org.autoreconnect
+irc.snoonet.org.autoreconnect_delay
+irc.snoonet.org.nicks = "narf"
+irc.snoonet.org.username = "narf"
+irc.snoonet.org.realname = "Nat"
+irc.snoonet.org.local_hostname
+irc.snoonet.org.command = "/msg nickserv identify ${sec.data.snoonet_password}"
+irc.snoonet.org.command_delay
+irc.snoonet.org.autojoin = "#dogs"
+irc.snoonet.org.autorejoin
+irc.snoonet.org.autorejoin_delay
+irc.snoonet.org.connection_timeout
+irc.snoonet.org.anti_flood_prio_high
+irc.snoonet.org.anti_flood_prio_low
+irc.snoonet.org.away_check
+irc.snoonet.org.away_check_max_nicks
+irc.snoonet.org.default_msg_part
+irc.snoonet.org.default_msg_quit
+irc.snoonet.org.notify
