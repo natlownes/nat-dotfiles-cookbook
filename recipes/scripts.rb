@@ -13,6 +13,7 @@ script_files = %w(
 mount.tc
 key_mount.bash
 ssh_agent_reset.bash
+ssh_agent_copy_env.bash
 )
 
 vistar_script_files = %w(
