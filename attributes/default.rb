@@ -58,7 +58,6 @@ default[:nat][:weechat][:plugins] = [
   {"path" => ".weechat/python/jabber.py", "url" => "http://weechat.org/files/scripts/jabber.py"},
   {"path" => ".weechat/python/shell.py", "url" => "http://weechat.org/files/scripts/shell.py"},
   {"path" => ".weechat/python/tinyurl.py", "url" => "http://weechat.org/files/scripts/tinyurl.py"},
-  {"path" => ".weechat/python/urlbar.py", "url" => "http://weechat.org/files/scripts/urlbar.py"},
 ]
 
 # ssh
