@@ -9,8 +9,12 @@ directory i3_config_dir do
 end
 
 template "#{i3_config_dir}/config" do
-  source "i3/config"
+  source "i3/config.erb"
   owner username
+  variables(
+    :terminal => 'urxvt',
+    :browser  => 'google-chrome'
+  )
 end
 
 execute "apt-get-update" do
