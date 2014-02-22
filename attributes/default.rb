@@ -15,6 +15,7 @@ default[:nat]['linux'][:packages] = %w(
   hfsutils
   ruby
   ruby-dev
+  htop
 )
 
 default[:nat]['darwin'][:packages] = %w(
