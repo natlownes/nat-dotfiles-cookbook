@@ -16,7 +16,7 @@ execute "install-vagrant" do
   command "dpkg -i  #{Chef::Config[:file_cache_path]}/vagrant.deb"
 
   action :nothing
-  notifies :run, "execte[vagrant-install-lxc-provider]", :immediately
+  notifies :run, "execute[vagrant-install-lxc-provider]", :immediately
 end
 
 execute "vagrant-install-lxc-provider" do
