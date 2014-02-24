@@ -2,7 +2,9 @@
 
 env=$1
 
-cd ~/src/vistar/cookbooks
+pushd ~/src/vistar/ops-cookbooks
 git submodule foreach git pull origin master
 
-cd ~/src/vistar/cookbooks/environments/$env && vagrant provision
+popd
+
+cd ~/src/vistar/ops-cookbooks && vagrant provision $env && popd
