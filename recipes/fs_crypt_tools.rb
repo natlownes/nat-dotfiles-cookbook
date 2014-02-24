@@ -11,6 +11,7 @@ tcplay_package_name = value_for_platform({
     'default' => nil
   },
   'ubuntu' => {
+    '13.04' => 'tcplay',
     '13.10' => 'tcplay',
     'default' => nil
   },
@@ -125,6 +126,3 @@ remote_file "#{home_dir}/src/truecrypt-source.tar.gz" do
   action :create_if_missing
   notifies :run, "execute[extract-tc]", :immediately
 end
-
-
-

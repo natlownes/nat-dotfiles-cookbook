@@ -24,6 +24,8 @@ execute "apt-get-update" do
 end
 
 if node.platform == 'ubuntu'
+  package 'ubuntu-desktop'
+
   file "/etc/apt/sources.list.d/i3wm.list" do
     content "deb http://debian.sur5r.net/i3/ #{node['lsb']['codename']} universe"
 
@@ -56,6 +58,4 @@ if node.platform == 'ubuntu'
     }
   end
 
-
 end
-
