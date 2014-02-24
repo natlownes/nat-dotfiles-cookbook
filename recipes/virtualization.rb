@@ -1,3 +1,7 @@
+extend Nat::UserHelpers
+username = user_name()
+home_dir = home_dir()
+
 include_recipe "nat::docker"
 
 
@@ -16,11 +20,10 @@ execute "install-vagrant" do
   command "dpkg -i  #{Chef::Config[:file_cache_path]}/vagrant.deb"
 
   action :nothing
-  notifies :run, "execute[vagrant-install-lxc-provider]", :immediately
 end
 
 execute "vagrant-install-lxc-provider" do
   command "vagrant plugin install vagrant-lxc"
-
-  action :nothing
+  user username
+  not_if %{vagrant plugin list |grep -q vagrant-lxc}
 end
