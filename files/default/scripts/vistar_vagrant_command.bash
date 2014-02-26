@@ -15,5 +15,5 @@ fi
 
 path="$HOME/src/vistar/ops-cookbooks"
 
-pushd $path && vagrant $vm_name $vagrant_command && popd
+pushd $path && vagrant $vagrant_command $vm_name  && popd
 

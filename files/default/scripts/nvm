@@ -1,0 +1,8 @@
+#!/bin/sh
+
+nvm_path=$HOME/.nvm/nvm.sh 
+
+if [ -r $nvm_path ]; then
+    source $nvm_path
+    nvm "$@"
+fi
