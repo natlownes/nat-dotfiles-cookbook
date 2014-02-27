@@ -45,4 +45,7 @@ execute "install-flake8-globally" do
   only_if "type #{package_name} > /dev/null && type pip > /dev/null"
 end
 
-
+execute "install-ipdb-globally" do
+  command "pip install --upgrade ipdb"
+  only_if "type #{package_name} > /dev/null && type pip > /dev/null"
+end
