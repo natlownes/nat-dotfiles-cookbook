@@ -24,6 +24,7 @@ alias gba='git branch -a'
 alias be='bundle exec'
 alias xr='xvfb-run -a'
 alias xrbe='xvfb-run -a bundle exec'
+alias nfo='iconv -f cp437 -t utf-8'
 
 alias http_cwd="ruby -rubygems -e \"['thin', 'rack'].each {|file|
 require file };"\
