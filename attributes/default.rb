@@ -99,7 +99,7 @@ default[:nat][:wmii][:build_dependencies] = [
 default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.tbz"
 
 default[:nat][:gem_packages] = [
-  {"name" => "jist"}
+  {"name" => "gist"}
 ]
 
 default[:nat][:vim][:plugins] = [
