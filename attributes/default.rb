@@ -15,6 +15,7 @@ default[:nat]['linux'][:packages] = %w(
   hfsutils
   ruby
   ruby-dev
+  htop
 )
 
 default[:nat]['darwin'][:packages] = %w(
@@ -58,7 +59,6 @@ default[:nat][:weechat][:plugins] = [
   {"path" => ".weechat/python/jabber.py", "url" => "http://weechat.org/files/scripts/jabber.py"},
   {"path" => ".weechat/python/shell.py", "url" => "http://weechat.org/files/scripts/shell.py"},
   {"path" => ".weechat/python/tinyurl.py", "url" => "http://weechat.org/files/scripts/tinyurl.py"},
-  {"path" => ".weechat/python/urlbar.py", "url" => "http://weechat.org/files/scripts/urlbar.py"},
 ]
 
 # ssh
@@ -99,7 +99,7 @@ default[:nat][:wmii][:build_dependencies] = [
 default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.tbz"
 
 default[:nat][:gem_packages] = [
-  {"name" => "jist"}
+  {"name" => "gist"}
 ]
 
 default[:nat][:vim][:plugins] = [

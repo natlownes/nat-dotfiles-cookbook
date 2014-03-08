@@ -52,7 +52,7 @@ urxvt.colorUL:           #999999
 urxvt.underlineColor:    #999999
 
 URxvt.perl-ext:             default,matcher
-URxvt.url-launcher:         chromium-browser
+URxvt.url-launcher:         google-chrome
 URxvt.keysym.C-Delete:      perl:matcher:last
 URxvt.keysym.M-Delete:      perl:matcher:list
 !URxvt.perl-ext:            default,url-select

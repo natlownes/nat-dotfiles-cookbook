@@ -13,7 +13,7 @@ if [ -z "$vagrant_command" ]; then
   exit 1
 fi
 
-path="$HOME/src/vistar/cookbooks/environments/$vm_name"
+path="$HOME/src/vistar/ops-cookbooks"
 
-pushd $path && vagrant $vagrant_command && popd
+pushd $path && vagrant $vagrant_command $vm_name  && popd
 

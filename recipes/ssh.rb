@@ -5,7 +5,7 @@ ssh_dir  = "#{home_dir()}/.ssh"
 
 identities_dir = value_for_platform({
   ['debian', 'ubuntu'] => {
-    'default' => "#{home_dir()}/opt/local/mnt/keys.tc/.ssh/identities"
+    'default' => "#{home_dir()}/opt/local/mnt/home/home/.ssh/identities"
   },
   'mac_os_x' => {
     'default' => "/Volumes/keys/.ssh/identities"

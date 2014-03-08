@@ -9,8 +9,12 @@ directory i3_config_dir do
 end
 
 template "#{i3_config_dir}/config" do
-  source "i3/config"
+  source "i3/config.erb"
   owner username
+  variables(
+    :terminal => 'urxvt',
+    :browser  => 'google-chrome'
+  )
 end
 
 execute "apt-get-update" do
@@ -20,6 +24,9 @@ execute "apt-get-update" do
 end
 
 if node.platform == 'ubuntu'
+  package 'ubuntu-desktop'
+  package 'xscreensaver'
+
   file "/etc/apt/sources.list.d/i3wm.list" do
     content "deb http://debian.sur5r.net/i3/ #{node['lsb']['codename']} universe"
 
@@ -52,6 +59,4 @@ if node.platform == 'ubuntu'
     }
   end
 
-
 end
-
