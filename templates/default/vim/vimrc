@@ -285,12 +285,12 @@ au BufNewFile,BufRead Procfile set filetype=ruby
 autocmd BufWritePre * call StripTrailingWhitespace()
 "autocmd BufWritePost *.py call Flake8()
 
-augroup RebuildCaches
-  autocmd!
-  autocmd BufWritePost * call RebuildTags()
-  autocmd FocusGained * CtrlPClearCache
-  autocmd BufWritePost * CtrlPClearCache
-augroup END
+"augroup RebuildCaches
+  "autocmd!
+  "autocmd BufWritePost * call RebuildTags()
+  "autocmd FocusGained * CtrlPClearCache
+  "autocmd BufWritePost * CtrlPClearCache
+"augroup END
 
 function! RebuildTags()
   let cmd = 'ctags -R'
