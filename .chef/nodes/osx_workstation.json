@@ -1,0 +1,6 @@
+{
+  "run_list": [
+    "recipe[nat-dotfiles-cookbook::default]"
+  ]
+}
+
