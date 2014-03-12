@@ -111,8 +111,8 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/nerdtree", "url"=>"git://github.com/scrooloose/nerdtree.git"},
   {"path"=>".vim/bundle/supertab", "url"=>"git://github.com/ervandew/supertab.git"},
   {"path"=>".vim/bundle/syntastic", "url"=>"https://github.com/scrooloose/syntastic.git"},
-
   {"path"=>".vim/bundle/vim-ack", "url"=>"git://github.com/mileszs/ack.vim.git"},
+  {"path"=>".vim/bundle/vim-addon-mw-utils", "url"=>"git://github.com/MarcWeber/vim-addon-mw-utils.git"},
   {"path"=>".vim/bundle/vim-async-command", "url"=>"git://github.com/pydave/AsyncCommand.git"},
   {"path"=>".vim/bundle/vim-clojure-static", "url"=>"git://github.com/guns/vim-clojure-static.git"},
   {"path"=>".vim/bundle/vim-coffee-script", "url"=>"git://github.com/kchmck/vim-coffee-script.git"},
@@ -141,11 +141,13 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-rainbow-parenthesis", "url"=>"git://github.com/kien/rainbow_parentheses.vim.git"},
   {"path"=>".vim/bundle/vim-rspec", "url"=>"https://github.com/thoughtbot/vim-rspec.git"},
   {"path"=>".vim/bundle/vim-scala", "url"=>"https://github.com/derekwyatt/vim-scala.git"},
+  {"path"=>".vim/bundle/vim-snippets", "url"=>"git://github.com/garbas/vim-snipmate.git"},
   {"path"=>".vim/bundle/vim-stylus", "url"=>"https://github.com/wavded/vim-stylus.git"},
   {"path"=>".vim/bundle/vim-surround", "url"=>"git://github.com/tpope/vim-surround.git"},
   {"path"=>".vim/bundle/vim-tabular", "url"=>"git://github.com/godlygeek/tabular.git"},
   {"path"=>".vim/bundle/vim-tagbar", "url"=>"git://github.com/majutsushi/tagbar.git"},
   {"path"=>".vim/bundle/vim-tbone", "url"=>"git://github.com/tpope/vim-tbone.git"},
+  {"path"=>".vim/bundle/vim-tlib", "url"=>"git://github.com//tomtom/tlib_vim.git"},
   {"path"=>".vim/bundle/vim-tslime", "url"=>"git://github.com/jgdavey/tslime.vim.git"},
 
   # colors i.e. http://www.youtube.com/watch?v=KP0OaUOQGCg
