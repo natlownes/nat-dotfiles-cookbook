@@ -65,4 +65,3 @@ include_recipe 'nat::aws_tools'
 include_recipe 'nat::weechat'
 include_recipe 'nat::various'
 include_recipe 'nat::the_silver_searcher'
-

@@ -122,6 +122,7 @@ default[:nat][:gem_packages] = [
 default[:nat][:vim][:plugins] = [
   {"path"=>".vim/autoload/vim-pathogen", "url"=>"git://github.com/tpope/vim-pathogen.git"},
 
+  {"path"=>".vim/bundle/ag.vim", "url"=>"git://github.com/rking/ag.vim.git"},
   {"path"=>".vim/bundle/ctrl-p.vim", "url"=>"git://github.com/kien/ctrlp.vim.git"},
   {"path"=>".vim/bundle/fugitive", "url"=>"git://github.com/tpope/vim-fugitive.git"},
   {"path"=>".vim/bundle/neocomplcache", "url"=>"https://github.com/Shougo/neocomplcache.vim.git"},
