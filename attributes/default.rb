@@ -129,7 +129,6 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/nerdtree", "url"=>"git://github.com/scrooloose/nerdtree.git"},
   {"path"=>".vim/bundle/supertab", "url"=>"git://github.com/ervandew/supertab.git"},
   {"path"=>".vim/bundle/syntastic", "url"=>"https://github.com/scrooloose/syntastic.git"},
-  {"path"=>".vim/bundle/vim-ack", "url"=>"git://github.com/mileszs/ack.vim.git"},
   {"path"=>".vim/bundle/vim-addon-mw-utils", "url"=>"git://github.com/MarcWeber/vim-addon-mw-utils.git"},
   {"path"=>".vim/bundle/vim-async-command", "url"=>"git://github.com/pydave/AsyncCommand.git"},
   {"path"=>".vim/bundle/vim-clojure-static", "url"=>"git://github.com/guns/vim-clojure-static.git"},
