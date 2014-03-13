@@ -23,6 +23,23 @@ default[:nat]['darwin'][:packages] = %w(
   ruby19
 )
 
+default[:nat][:the_silver_searcher]['darwin'][:build_dependencies] = %w(
+  automake
+  pkgconfig
+  pcre
+)
+
+default[:nat][:the_silver_searcher]['linux'][:build_dependencies] = %w(
+  automake
+  pkg-config
+  libpcre3-dev
+  zlib1g-dev
+  liblzma-dev
+)
+
+default[:nat][:the_silver_searcher][:scm_url] =
+  'https://github.com/ggreer/the_silver_searcher.git'
+
 default[:nat][:metal][:packages] = %w(
   ario
   chromium-browser
@@ -147,7 +164,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-tabular", "url"=>"git://github.com/godlygeek/tabular.git"},
   {"path"=>".vim/bundle/vim-tagbar", "url"=>"git://github.com/majutsushi/tagbar.git"},
   {"path"=>".vim/bundle/vim-tbone", "url"=>"git://github.com/tpope/vim-tbone.git"},
-  {"path"=>".vim/bundle/vim-tlib", "url"=>"git://github.com//tomtom/tlib_vim.git"},
+  {"path"=>".vim/bundle/vim-tlib", "url"=>"git://github.com/tomtom/tlib_vim.git"},
   {"path"=>".vim/bundle/vim-tslime", "url"=>"git://github.com/jgdavey/tslime.vim.git"},
 
   # colors i.e. http://www.youtube.com/watch?v=KP0OaUOQGCg
