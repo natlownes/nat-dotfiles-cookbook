@@ -90,6 +90,16 @@ end
   end
 end
 
+(node[:nat][:vim][:plugins][:remove] || []).each do |plugin|
+  plugin_path = "#{home_dir()}/#{plugin['path']}"
+
+  directory plugin_path do
+    recursive true
+    action :delete
+    only_if { File.directory?(plugin_path) }
+  end
+end
+
 (node[:nat][:vim][:plugins] || []).each do |plugin|
   repo_url    = plugin['url']
   plugin_path = "#{home_dir()}/#{plugin['path']}"

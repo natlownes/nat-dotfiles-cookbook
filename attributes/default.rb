@@ -119,6 +119,7 @@ default[:nat][:gem_packages] = [
   {"name" => "gist"}
 ]
 
+
 default[:nat][:vim][:plugins] = [
   {"path"=>".vim/autoload/vim-pathogen", "url"=>"git://github.com/tpope/vim-pathogen.git"},
 
@@ -170,4 +171,10 @@ default[:nat][:vim][:plugins] = [
   # colors i.e. http://www.youtube.com/watch?v=KP0OaUOQGCg
   {"path"=>".vim/bundle/vim-vividchalk", "url"=>"git://github.com/tpope/vim-vividchalk.git"},
   {"path"=>".vim/colors/vim-luna", "url"=>"git://github.com/Pychimp/vim-luna.git"}
+]
+
+
+default[:nat][:vim][:plugins][:remove] = [
+   {"path"=>".vim/bundle/vim-ack", "url"=>"git://github.com/mileszs/ack.vim.git"},
+   {"path"=>".vim/bundle/vim-matchit", "url"=>"git://github.com/tsaleh/vim-matchit.git"}
 ]
