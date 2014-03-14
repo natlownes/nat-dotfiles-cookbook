@@ -408,12 +408,16 @@ nnoremap <leader>R :CtrlPClearCache<CR>
   "0 or <empty> - disable this feature.
 let g:ctrlp_switch_buffer = 'eEtT'
 
-" ctrl-p ingnores for compiled coffee script and jhw jawns
+" ctrl-p ignores for compiled coffee script and jhw jawns
 "
 set wildignore+=*/.jhw-cache/*
 set wildignore+=*/*.js.coffee.js
 set wildignore+=*/*.js.js
 set wildignore+=*/public/javascripts/compiled/*
+
+" ctrl-p ignores python bytecode jawns
+
+set wildignore+=*/*.pyc
 
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
