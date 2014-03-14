@@ -90,7 +90,7 @@ end
   end
 end
 
-(node[:nat][:vim][:plugins][:remove] || []).each do |plugin|
+(node[:nat][:vim][:plugins_to_remove] || []).each do |plugin|
   plugin_path = "#{home_dir()}/#{plugin['path']}"
 
   directory plugin_path do

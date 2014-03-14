@@ -174,7 +174,7 @@ default[:nat][:vim][:plugins] = [
 ]
 
 
-default[:nat][:vim][:plugins][:remove] = [
+default[:nat][:vim][:plugins_to_remove] = [
    {"path"=>".vim/bundle/vim-ack", "url"=>"git://github.com/mileszs/ack.vim.git"},
    {"path"=>".vim/bundle/vim-matchit", "url"=>"git://github.com/tsaleh/vim-matchit.git"}
 ]
