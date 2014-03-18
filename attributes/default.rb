@@ -166,6 +166,7 @@ default[:nat][:vim][:plugins] = [
   {"path"=>".vim/bundle/vim-tagbar", "url"=>"git://github.com/majutsushi/tagbar.git"},
   {"path"=>".vim/bundle/vim-tbone", "url"=>"git://github.com/tpope/vim-tbone.git"},
   {"path"=>".vim/bundle/vim-tlib", "url"=>"git://github.com/tomtom/tlib_vim.git"},
+  {"path"=>".vim/bundle/vim-tmux-navigator", "url"=>"git://github.com/christoomey/vim-tmux-navigator.git"},
   {"path"=>".vim/bundle/vim-tslime", "url"=>"git://github.com/jgdavey/tslime.vim.git"},
 
   # colors i.e. http://www.youtube.com/watch?v=KP0OaUOQGCg

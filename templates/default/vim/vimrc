@@ -86,6 +86,12 @@ set autoread                            " automatically reload the file when mod
 set autowrite                           " write the modified file when switching to another file
 set hidden                              " allow Vim to switch to another buffer while the current is not saved
 
+"
+" split management
+"
+set splitbelow
+set splitright
+
 "if exists('+autochdir')
   "set autochdir                       " automatically change to the current directory when loading a file
 "endif
