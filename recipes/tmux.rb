@@ -33,7 +33,7 @@ execute "build-tmux" do
   cwd "#{home_dir}/src/#{current_version_dirname}"
   user username
 
-  command "./configure && "
+  command "./configure && make"
 
   action :nothing
   notifies :run, "execute[install-tmux]", :immediately
