@@ -40,7 +40,7 @@ execute "build-tmux" do
 end
 
 execute "install-tmux" do
-  cwd "#{home_dir}/src/#{current_version_dirname}/build"
+  cwd "#{home_dir}/src/#{current_version_dirname}"
 
   action :nothing
   command "make install"
