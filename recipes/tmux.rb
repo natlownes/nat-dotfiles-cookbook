@@ -1,9 +1,51 @@
 extend Nat::UserHelpers
 username = user_name()
+home_dir = home_dir()
 tmux_dir = "#{home_dir()}/.tmux"
 
+source_url = node[:nat][:tmux][:source_url]
+current_version_dirname = source_url.split('/').
+  last.gsub('.tar.gz', '')
 
-package 'tmux'
+dependencies = node[:nat][:weechat][:build_dependencies] || []
+
+dependencies.each do |pkg_name|
+  package pkg_name
+end
+
+remote_file "#{home_dir}/src/tmux-source.tar.bz" do
+  source source_url
+  owner username
+  notifies :run, "execute[extract-tmux]", :immediately
+end
+
+execute "extract-tmux" do
+  user username
+  cwd "#{home_dir}/src"
+
+  command "tar -xvzf tmux-source.tar.bz"
+
+  action :nothing
+  notifies :run, "execute[build-tmux]", :immediately
+end
+
+execute "build-tmux" do
+  cwd "#{home_dir}/src/#{current_version_dirname}"
+  user username
+
+  command "./configure && "
+
+  action :nothing
+  notifies :run, "execute[install-tmux]", :immediately
+end
+
+execute "install-tmux" do
+  cwd "#{home_dir}/src/#{current_version_dirname}/build"
+
+  action :nothing
+  command "make install"
+end
+
 
 directory tmux_dir do
   recursive true
