@@ -52,6 +52,8 @@ default[:nat][:metal][:packages] = %w(
   zim
 )
 
+# force_install == blow away src dir
+default[:nat][:tmux][:force_install] = true
 default[:nat][:tmux][:source_url] = 'http://downloads.sourceforge.net/tmux/tmux-1.9a.tar.gz'
 default[:nat][:tmux][:build_dependencies] = %w(
   libevent-dev

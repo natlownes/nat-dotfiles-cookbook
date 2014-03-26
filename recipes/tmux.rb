@@ -3,14 +3,22 @@ username = user_name()
 home_dir = home_dir()
 tmux_dir = "#{home_dir()}/.tmux"
 
-source_url = node[:nat][:tmux][:source_url]
+source_url    = node[:nat][:tmux][:source_url]
+force_install = node[:nat][:tmux][:force_install]
 current_version_dirname = source_url.split('/').
   last.gsub('.tar.gz', '')
 
-dependencies = node[:nat][:weechat][:build_dependencies] || []
+dependencies = node[:nat][:tmux][:build_dependencies] || []
 
 dependencies.each do |pkg_name|
   package pkg_name
+end
+
+if force_install
+  directory "#{home_dir}/src/tmux-source.tar.bz" do
+    recursive true
+    action    :delete
+  end
 end
 
 remote_file "#{home_dir}/src/tmux-source.tar.bz" do
@@ -33,7 +41,7 @@ execute "build-tmux" do
   cwd "#{home_dir}/src/#{current_version_dirname}"
   user username
 
-  command "./configure && make"
+  command "make clean && ./configure && make"
 
   action :nothing
   notifies :run, "execute[install-tmux]", :immediately
