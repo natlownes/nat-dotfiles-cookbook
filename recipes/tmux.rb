@@ -41,7 +41,7 @@ execute "build-tmux" do
   cwd "#{home_dir}/src/#{current_version_dirname}"
   user username
 
-  command "make clean && ./configure && make"
+  command "./configure && make"
 
   action :nothing
   notifies :run, "execute[install-tmux]", :immediately
