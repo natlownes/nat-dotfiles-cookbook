@@ -15,9 +15,8 @@ dependencies.each do |pkg_name|
 end
 
 if force_install
-  directory "#{home_dir}/src/tmux-source.tar.bz" do
-    recursive true
-    action    :delete
+  bash "force-install-tmux" do
+    code "rm -rf #{home_dir}/src/tmux*"
   end
 end
 
