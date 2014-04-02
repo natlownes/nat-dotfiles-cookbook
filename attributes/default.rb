@@ -53,14 +53,14 @@ default[:nat][:metal][:packages] = %w(
 )
 
 # force_install == blow away src dir
-default[:nat][:tmux][:force_install] = true
-default[:nat][:tmux][:source_url] = 'http://downloads.sourceforge.net/tmux/tmux-1.9a.tar.gz'
+default[:nat][:tmux][:force_install]      = false
+default[:nat][:tmux][:source_url]         = 'http://downloads.sourceforge.net/tmux/tmux-1.9a.tar.gz'
 default[:nat][:tmux][:build_dependencies] = %w(
   libevent-dev
   libncurses5-dev
 )
 
-default[:nat][:weechat][:src_url] = "http://www.weechat.org/files/src/weechat-0.4.2.tar.bz2"
+default[:nat][:weechat][:src_url]            = "http://www.weechat.org/files/src/weechat-0.4.2.tar.bz2"
 default[:nat][:weechat][:build_dependencies] = %w(
   build-essential
   cmake
