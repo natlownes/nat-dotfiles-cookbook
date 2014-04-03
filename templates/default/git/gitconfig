@@ -25,6 +25,8 @@
 	st                  = status
 	co                  = checkout
 	br                  = branch
+  fap                 = fetch --all -p
+  track               = !sh -c 'git branch -t $0 origin/$0'
   ;up                 = !sh -c 'git remote update origin && git pull origin'
   showat              = !sh -c 'git show "$0^:$1"'
   ;restoreat          = !sh -c 'rm "$1" && git showat "$0" "$1" > "$1"'
@@ -33,8 +35,7 @@
   ;commonancestor     = !sh -c 'git merge-base "$0" "$1"'
   ;showcommonancestor = !sh -c 'git log -p `git merge-base "$0" "$1"`'
   watchstaged         = !sh -c 'watch -n2 --color git diff --color --cached'
-  track = !sh -c 'git branch -t $0 origin/$0'
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg                  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
 	excludesfile = ~/.gitignore_global
   filemode = true
