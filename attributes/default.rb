@@ -16,6 +16,7 @@ default[:nat]['linux'][:packages] = %w(
   ruby
   ruby-dev
   htop
+  dnsutils
 )
 
 default[:nat]['darwin'][:packages] = %w(
