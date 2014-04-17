@@ -2,6 +2,7 @@ default[:nat][:packages] = %w(
   autossh
   bash-completion
   sshfs
+  tcpdump
   tig
   tmux
   zsh
