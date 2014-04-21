@@ -15,6 +15,7 @@ key_mount.bash
 ssh_agent_reset.bash
 ssh_agent_copy_env.bash
 nvm
+source_bash.zsh
 )
 
 vistar_script_files = %w(
