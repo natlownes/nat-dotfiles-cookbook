@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env zsh
+
+. $HOME/.bin/source_bash.zsh
 
 nvm_dir=$HOME/.nvm
 nvm_path=$nvm_dir/nvm.sh
 
 if [ -r $nvm_path ]; then
     export NVM_DIR=$nvm_dir
-    source $nvm_path
+    source_bash $nvm_path
     nvm "$@"
 fi
