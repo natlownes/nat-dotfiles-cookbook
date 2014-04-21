@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh 
 export TEXMFHOME="$HOME/.texmf/text"
 export GOPATH="$HOME/src/go"
 export AWS_IAM_HOME="$HOME/opt/local/IAMCli"
