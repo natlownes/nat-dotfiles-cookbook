@@ -1,9 +1,10 @@
 #!/bin/bash
 
-nvm_path=$HOME/.nvm/nvm.sh
+nvm_dir=$HOME/.nvm
+nvm_path=$nvm_dir/nvm.sh
 
 if [ -r $nvm_path ]; then
-    export NVM_DIR=$HOME/.nvm
+    export NVM_DIR=$nvm_dir
     source $nvm_path
     nvm "$@"
 fi
