@@ -10,14 +10,15 @@ default[:nat][:packages] = %w(
 
 default[:nat]['linux'][:packages] = %w(
   build-essential
+  dnsutils
   exuberant-ctags
   hfsplus
   hfsprogs
   hfsutils
+  htop
+  mercurial
   ruby
   ruby-dev
-  htop
-  dnsutils
 )
 
 default[:nat]['darwin'][:packages] = %w(
