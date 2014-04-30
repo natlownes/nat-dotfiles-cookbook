@@ -22,5 +22,5 @@ Host irc.phl.looting.biz
 Host doublev.vistar
   ProxyCommand ssh slab.phl.looting.biz -W localhost:22222
 Host doublev.alt.vistar
-  HostName ssh c-68-81-239-157.hsd1.pa.comcast.net
+  HostName c-68-81-239-157.hsd1.pa.comcast.net
   Port 9902
