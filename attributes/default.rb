@@ -48,6 +48,7 @@ default[:nat][:metal][:packages] = %w(
   chromium-browser
   claws-mail
   liferea
+  parcellite
   pidgin
   rxvt-unicode-256color
   vlc
