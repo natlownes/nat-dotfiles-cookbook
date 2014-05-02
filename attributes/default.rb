@@ -47,6 +47,8 @@ default[:nat][:metal][:packages] = %w(
   ario
   chromium-browser
   claws-mail
+  gimp
+  imagemagick
   liferea
   parcellite
   pidgin
