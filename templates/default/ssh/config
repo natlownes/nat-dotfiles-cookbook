@@ -21,6 +21,14 @@ Host irc.phl.looting.biz
   ProxyCommand ssh slab.phl.looting.biz -W ice.phl.looting.biz:22
 Host doublev.vistar
   ProxyCommand ssh slab.phl.looting.biz -W localhost:22222
+  LocalForward 9295 127:0.0.1:9295
+  LocalForward 9294 127:0.0.1:9294
+  LocalForward 5001 127:0.0.1:5001
+  LocalForward 5000 127:0.0.1:5000
 Host doublev.alt.vistar
   HostName c-68-81-239-157.hsd1.pa.comcast.net
+  LocalForward 9295 127:0.0.1:9295
+  LocalForward 9294 127:0.0.1:9294
+  LocalForward 5001 127:0.0.1:5001
+  LocalForward 5000 127:0.0.1:5000
   Port 9902
