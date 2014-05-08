@@ -8,6 +8,11 @@ directory i3_config_dir do
   owner username
 end
 
+directory "#{i3_config_dir}/scripts" do
+  recursive true
+  owner username
+end
+
 template "#{i3_config_dir}/config" do
   source "i3/config.erb"
   owner username
@@ -15,6 +20,12 @@ template "#{i3_config_dir}/config" do
     :terminal => 'urxvt',
     :browser  => 'google-chrome'
   )
+end
+
+template "#{i3_config_dir}/scripts/exit_dialog.sh" do
+  source "i3/exit_dialog.sh"
+  owner username
+  mode '755'
 end
 
 execute "apt-get-update" do
