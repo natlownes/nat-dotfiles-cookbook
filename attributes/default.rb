@@ -53,6 +53,7 @@ default[:nat][:metal][:packages] = %w(
   parcellite
   pidgin
   rxvt-unicode-256color
+  shutter
   vlc
   weechat-curses
   zim
