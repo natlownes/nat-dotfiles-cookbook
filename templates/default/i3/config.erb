@@ -112,7 +112,8 @@ bindcode Mod1+Shift+24 kill
 # Mod1+v starts dmenu and launches the selected application
 # for now, we don’t have a launcher of our own.
 bindcode Mod1+55 exec /usr/bin/dmenu_run
-bindcode Mod1+32 exec /usr/bin/dmenu_run
+# Mod1+space also starts dmenu and launches the selected application
+bindcode Mod1+65 exec /usr/bin/dmenu_run
 
 # Mod1+Shift+e exits i3
 bindcode Mod1+Shift+26 exec ~/.i3/scripts/exit_dialog.sh
