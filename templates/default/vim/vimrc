@@ -37,6 +37,7 @@ map <leader>d :NERDTree<CR>
 map <leader>f :CtrlPTag<CR>
 " open quickfix window
 map <leader>q :copen<CR>
+" navigation
 " close pane w/leader w
 map <leader>w :close<CR>
 map <leader>r :set noconfirm<CR>:bufdo e!<CR>:set confirm<CR>
@@ -44,6 +45,24 @@ map <leader>h h
 map <leader>l l
 map <leader>j j
 map <leader>k k
+
+" start tmux navigation integration
+" disabling the mappings since I seem to be seeing control characters appear on
+" vim buffers
+let g:tmux_navigator_no_mappings = 1
+
+
+" nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+"
+" Note Each instance of {Left-Mapping} or {Down-Mapping} must be replaced in the
+" above code with the desired mapping. Ie, the mapping for <ctrl-h> => Left
+" would be created with nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>.
+"
+" END tmux navigation integration
 
 
 " jj to exit insert mode
@@ -71,9 +90,6 @@ function! EqualSizeWindows()
   exec ":normal! " . tn . "gt\n"
   exec ":normal! " . wn . "\<c-w>w"
 endfunction
-
-
-
 
 "set textwidth=80
 "execute "set colorcolumn=" . join(range(81,335), ',')
@@ -248,11 +264,6 @@ let @e='^f:i^M^[ll'
 
 " convert ruby symbols to strings
 let @p="^f:r'ea'^[^["
-"# remember the milk
-let rtm_api_key='1d4dcd3ee3e0b1bd3ce263a34fd10f4d'
-let rtm_shared_secret='cd4ed92b786ce333'
-let rtm_use_smartadd=0
-let rtm_token='3b4bd1e2d9e63c219b1d9d9172530e08aa03eb01'
 
 " colorscheme zenburn
 syntax enable
