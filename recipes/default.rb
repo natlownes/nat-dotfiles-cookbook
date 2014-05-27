@@ -7,6 +7,7 @@
 extend Nat::UserHelpers
 username = user_name()
 user_dir = home_dir()
+src_dir  = ::File.join(user_dir, 'src')
 
 package_manager_update_command = value_for_platform({
   ['debian', 'ubuntu'] => {
@@ -25,8 +26,13 @@ end.run_action(:run)
 include_recipe 'nat::zsh'
 
 user username do
-  shell "/bin/zsh"
+  home   user_dir
+  shell  "/bin/zsh"
   action :create
+end
+
+directory src_dir do
+  owner     username
 end
 
 packages = node[:nat][:packages] || []
