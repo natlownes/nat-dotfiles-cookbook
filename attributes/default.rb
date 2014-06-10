@@ -17,6 +17,7 @@ default[:nat]['linux'][:packages] = %w(
   hfsutils
   htop
   mercurial
+  protobuf-compiler
   ruby
   ruby-dev
 )
