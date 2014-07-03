@@ -20,12 +20,14 @@
   untracked = cyan
 [alias]
 	ci                  = commit
+	ca                  = commit --amend
 	status              = st
 	checkout            = co
 	st                  = status
 	co                  = checkout
 	br                  = branch
   fap                 = fetch --all -p
+  re                  = rebase
   track               = !sh -c 'git branch -t $0 origin/$0'
   ;up                 = !sh -c 'git remote update origin && git pull origin'
   showat              = !sh -c 'git show "$0^:$1"'
