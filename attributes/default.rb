@@ -1,3 +1,5 @@
+default[:srcinstall][:builddir] = "/tmp/build"
+
 default[:nat][:packages] = %w(
   autossh
   bash-completion
