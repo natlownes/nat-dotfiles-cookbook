@@ -1,4 +1,5 @@
 include_recipe 'nat::aws_tools'
+include_recipe 'nat::source_directory'
 
 
 extend Nat::UserHelpers
@@ -11,11 +12,6 @@ weechat_dir = "#{home_dir}/.weechat"
 #
 ### install ###
 #
-
-directory "#{home_dir}/src" do
-  recursive true
-  owner username
-end
 
 if node.platform_family == 'debian'
   weechat_source_url      = node[:nat][:weechat][:src_url]
