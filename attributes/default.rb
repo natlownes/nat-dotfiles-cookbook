@@ -1,4 +1,4 @@
-default[:srcinstall][:builddir] = "/tmp/build"
+override[:srcinstall][:builddir] = "/tmp/build"
 
 default[:nat][:packages] = %w(
   autossh
