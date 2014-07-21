@@ -55,11 +55,6 @@ if node.os == 'linux'
       version gem[:version]
     end
   end
-
-  package 'ibus-setup' do
-    action :remove
-    only_if "which ibus-setup"
-  end
 end
 
 include_recipe 'nat::ssh'

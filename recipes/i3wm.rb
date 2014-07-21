@@ -38,6 +38,12 @@ if node.platform == 'ubuntu'
   package 'ubuntu-desktop'
   package 'xscreensaver'
 
+  # this fucking thing intercepts control spacebar globally
+  package 'ibus-setup' do
+    action :remove
+    only_if "which ibus-setup"
+  end
+
   file "/etc/apt/sources.list.d/i3wm.list" do
     content "deb http://debian.sur5r.net/i3/ #{node['lsb']['codename']} universe"
 
