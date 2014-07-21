@@ -4,10 +4,7 @@ home_dir = home_dir()
 
 include_recipe 'nat::source_directory'
 
-remote_file "#{home_dir}/src/weechat-source.tar.bz" do
-  source weechat_source_url
-  owner username
-  notifies :run, "execute[extract-weechat]", :immediately
+source_install 'jq' do
+  version '1.4'
+  source 'http://stedolan.github.io/jq/download/source/'
 end
-
-
