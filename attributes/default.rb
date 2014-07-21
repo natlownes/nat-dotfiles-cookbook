@@ -14,6 +14,7 @@ default[:nat]['linux'][:packages] = %w(
   build-essential
   dnsutils
   exuberant-ctags
+  feh
   hfsplus
   hfsprogs
   hfsutils
@@ -22,6 +23,8 @@ default[:nat]['linux'][:packages] = %w(
   protobuf-compiler
   ruby
   ruby-dev
+  xautomation
+  xbindkeys
 )
 
 default[:nat]['darwin'][:packages] = %w(
