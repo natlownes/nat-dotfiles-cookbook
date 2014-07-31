@@ -55,9 +55,13 @@ default[:nat][:metal][:packages] = %w(
   claws-mail
   gimp
   imagemagick
+  libqt4-sql-psql
   liferea
   parcellite
   pidgin
+  python-qt4
+  python-qt4-sql
+  qgis
   rxvt-unicode-256color
   shutter
   vlc
