@@ -11,6 +11,7 @@ default[:nat][:packages] = %w(
 )
 
 default[:nat]['linux'][:packages] = %w(
+  apache2-utils
   build-essential
   dnsutils
   exuberant-ctags
