@@ -56,10 +56,12 @@ default[:nat][:metal][:packages] = %w(
   claws-mail
   gimp
   imagemagick
+  libpq-dev
   libqt4-sql-psql
   liferea
   parcellite
   pidgin
+  postgresql-client
   python-qt4
   python-qt4-sql
   qgis
