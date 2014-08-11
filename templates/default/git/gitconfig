@@ -31,7 +31,7 @@
   ; gerrit_ref pull down the ref given in gerrit to your local machine:
   ; example:  git gerrit_ref refs/changes/19/5319/3
   ; pulls down that change set, sits you down on top of it
-  gerrit_ref          = !sh -c 'git fetch origin $0 && git checkout FETCH_HEAD'
+  gerritref          = !sh -c 'git fetch origin $0 && git checkout FETCH_HEAD'
   track               = !sh -c 'git branch -t $0 origin/$0'
   ;up                 = !sh -c 'git remote update origin && git pull origin'
   showat              = !sh -c 'git show "$0^:$1"'
