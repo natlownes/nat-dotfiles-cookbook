@@ -7,6 +7,7 @@ home_dir = home_dir()
 bin_dir  = ::File.join(home_dir, '.bin')
 
 template "#{bin_dir}/mpc_start.sh" do
+  source 'music_player_client/mpc_start.sh.erb'
   variables(
     :cache_size => node[:nat][:music_player_client][:cache_size],
     :gateway    => node[:nat][:music_player_client][:gateway],
