@@ -13,6 +13,7 @@ default[:nat][:packages] = %w(
 default[:nat]['linux'][:packages] = %w(
   apache2-utils
   build-essential
+  curl
   dnsutils
   exuberant-ctags
   feh
@@ -24,6 +25,7 @@ default[:nat]['linux'][:packages] = %w(
   protobuf-compiler
   ruby
   ruby-dev
+  wget
   xautomation
   xbindkeys
 )
@@ -55,10 +57,13 @@ default[:nat][:metal][:packages] = %w(
   chromium-browser
   claws-mail
   gimp
+  gmpc
   imagemagick
   libpq-dev
   libqt4-sql-psql
   liferea
+  mplayer
+  ncmpc
   parcellite
   pidgin
   postgresql-client
@@ -146,6 +151,14 @@ default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.
 default[:nat][:gem_packages] = [
   {"name" => "gist"}
 ]
+
+default[:nat][:music_player_client][:gateway][:host] = 'slab.phl.looting.biz'
+default[:nat][:music_player_client][:server][:host]           = '10.30.1.134'
+default[:nat][:music_player_client][:server][:port]           = 6600
+default[:nat][:music_player_client][:server][:port_streaming] = 8000
+default[:nat][:music_player_client][:local][:port]            = 6600
+default[:nat][:music_player_client][:local][:port_streaming]  = 8991
+default[:nat][:music_player_client][:cache_size]              = 512
 
 
 default[:nat][:vim][:plugins] = [
