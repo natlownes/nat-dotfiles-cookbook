@@ -64,6 +64,7 @@ default[:nat][:metal][:packages] = %w(
   liferea
   mplayer
   ncmpc
+  ncmpcpp
   parcellite
   pidgin
   postgresql-client
