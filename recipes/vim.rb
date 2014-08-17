@@ -37,6 +37,7 @@ vim_directories = [
 
 plugin_hooks = %w(
   TabularMaps.vim
+  tabstop.vim
 )
 
 vim_directories.each do |dirname|
