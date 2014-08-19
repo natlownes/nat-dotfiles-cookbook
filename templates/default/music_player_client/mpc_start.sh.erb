@@ -2,6 +2,7 @@
 #
 #
 #
+expose_stream=$1
 
 (while sleep 1;
   do mplayer -cache <%= @cache_size %> \
@@ -16,6 +17,12 @@ ssh -CN \
   <%= @gateway[:host] %> 2>&1>/dev/null &
 
 pids="$pids $!"
+
+if [ -n "$expose_stream" ]; then
+  ssh -CN -R0.0.0.0:49881:127.0.0.1:<%= @local[:port] %> localhost
+  pids="$pids $!"
+fi
+
 
 trap 'kill $pids; exit' SIGHUP SIGINT SIGQUIT SIGTERM
 
