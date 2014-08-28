@@ -13,6 +13,11 @@ directory "#{i3_config_dir}/scripts" do
   owner username
 end
 
+directory "#{i3_config_dir}/workspaces" do
+  recursive true
+  owner username
+end
+
 template "#{i3_config_dir}/config" do
   source "i3/config.erb"
   owner username
@@ -24,6 +29,12 @@ end
 
 template "#{i3_config_dir}/scripts/exit_dialog.sh" do
   source "i3/exit_dialog.sh"
+  owner username
+  mode '755'
+end
+
+template "#{i3_config_dir}/scripts/workspaces.sh" do
+  source "i3/workspaces.sh.erb"
   owner username
   mode '755'
 end

@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+#
+action=$1
+
+if [ -z "$action" ]; then
+  echo "requires an action: (save/load)"
+  exit 1
+fi
+
+if [ "$action" = "save" ]; then
+  for i in 1 2 3 4 5 6 7 8 9 10
+    do  i3-save-tree --workspace $i > $HOME/.i3/workspaces/$i.json
+  done
+fi
+
+if [ "$action" = "load" ]; then
+  for i in 1 2 3 4 5 6 7 8 9 10
+    do i3-msg "workspace $i; append_layout $HOME/.i3/$i.json"
+  done
+fi
