@@ -43,5 +43,3 @@ template "#{shell_config_dir}/envs" do
   source "shell/envs"
   owner username
 end
-
-

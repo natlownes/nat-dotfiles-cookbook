@@ -28,10 +28,8 @@ alias nfo='iconv -f cp437 -t utf-8'
 # alias tmux='tmux -2'
 alias tmux="TERM=screen-256color-bce tmux"
 
-alias http_cwd="ruby -rubygems -e \"['thin', 'rack'].each {|file|
-require file };"\
-" Thin::Server.start('0.0.0.0', 7777) {"\
-" use Rack::CommonLogger; run Rack::Directory.new(Dir.pwd) }\""
+alias http_cwd="python -m SimpleHTTPServer"
+
 
 # Helpful tmux aliases for interacting with the system clipboard.
 <% if node.os == 'darwin' %>

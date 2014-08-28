@@ -3,6 +3,7 @@ override[:srcinstall][:builddir] = "/tmp/build"
 default[:nat][:packages] = %w(
   autossh
   bash-completion
+  keychain
   sshfs
   tcpdump
   tig
@@ -37,16 +38,16 @@ default[:nat]['darwin'][:packages] = %w(
 
 default[:nat][:the_silver_searcher]['darwin'][:build_dependencies] = %w(
   automake
-  pkgconfig
   pcre
+  pkgconfig
 )
 
 default[:nat][:the_silver_searcher]['linux'][:build_dependencies] = %w(
   automake
-  pkg-config
-  libpcre3-dev
-  zlib1g-dev
   liblzma-dev
+  libpcre3-dev
+  pkg-config
+  zlib1g-dev
 )
 
 default[:nat][:the_silver_searcher][:scm_url] =
@@ -89,20 +90,20 @@ default[:nat][:tmux][:build_dependencies] = %w(
 default[:nat][:weechat][:src_url]            = "http://www.weechat.org/files/src/weechat-0.4.2.tar.bz2"
 default[:nat][:weechat][:build_dependencies] = %w(
   build-essential
+  ca-certificates
   cmake
-  libncursesw5-dev
+  gettext
+  libaspell-dev
   libcurl4-gnutls-dev
-  zlib1g-dev
   libgcrypt11-dev
   libgnutls-dev
-  gettext
-  ca-certificates
-  libaspell-dev
-  python-dev
-  libperl-dev
-  ruby1.9.1-dev
   liblua5.1-0-dev
+  libncursesw5-dev
+  libperl-dev
+  python-dev
+  ruby1.9.1-dev
   tcl-dev
+  zlib1g-dev
 )
 
 default[:nat][:weechat][:plugins] = [
