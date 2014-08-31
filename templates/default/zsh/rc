@@ -240,8 +240,6 @@ zle-keymap-select () {
 }
 
 # nvm installer
-# leave this commented out so the installer won't attempt a re-install
-#[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh
 [[ -s ~/.nvm/nvm.sh ]] && source ~/.bin/nvm_env.sh
 
 # Path to your oh-my-zsh configuration.
@@ -262,7 +260,7 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 
 local_rvm="$HOME/.rvm/scripts/rvm"
 system_rvm="/usr/local/rvm/scripts/rvm"
-[[ -s $system_rvm ]] && source $system_rvm  # This loads RVM into a shell session.
-[[ -s $local_rvm ]] && source $local_rvm  # This loads RVM into a shell session.
-
-# source /Users/nat/.profile
+rbenv="$HOME/.rbenv/bin/rbenv"
+[[ -s $system_rvm ]] && source $system_rvm
+[[ -s $local_rvm ]] && source $local_rvm
+[[ -s $rbenv ]] && eval "$(rbenv init -)"

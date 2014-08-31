@@ -154,6 +154,11 @@ default[:nat][:wmii][:build_dependencies] = [
 
 default[:nat][:wmii][:source_url] = "http://dl.suckless.org/wmii/wmii+ixp-3.9b1.tbz"
 
+default[:nat][:ruby][:rbenv][:scm_url]           = "https://github.com/sstephenson/rbenv.git"
+default[:nat][:ruby][:rbenv][:install_path]      = ".rbenv"
+default[:nat][:ruby][:ruby_build][:scm_url]      = "https://github.com/sstephenson/ruby-build.git"
+default[:nat][:ruby][:ruby_build][:install_path] = ".rbenv/plugins/ruby-build"
+
 default[:nat][:gem_packages] = [
   {"name" => "gist"}
 ]

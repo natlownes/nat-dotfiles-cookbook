@@ -41,5 +41,3 @@ end
 link "#{bin_dir}/continually" do
   to "#{src_dir}/continually/continually"
 end
-
-
