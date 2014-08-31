@@ -8,7 +8,7 @@ force_install = node[:nat][:tmux][:force_install]
 current_version_dirname = source_url.split('/').
   last.gsub('.tar.gz', '')
 
-dependencies = node[:nat][:tmux][:build_dependencies] || []
+dependencies = node[:nat][:tmux][node.os][:build_dependencies] || []
 
 dependencies.each do |pkg_name|
   package pkg_name
