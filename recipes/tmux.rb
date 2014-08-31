@@ -17,6 +17,7 @@ build_command = if node.os == 'darwin'
                    ./configure && make)
                 else
                   %(./configure && make)
+                end
 
 dependencies.each do |pkg_name|
   package pkg_name
