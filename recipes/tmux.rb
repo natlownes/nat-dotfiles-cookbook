@@ -10,6 +10,14 @@ current_version_dirname = source_url.split('/').
 
 dependencies = node[:nat][:tmux][node.os][:build_dependencies] || []
 
+build_command = if node.os == 'darwin'
+                  %(LDFLAGS="-L/opt/local/lib" \
+                   CPPFLAGS="-I/opt/local/include" \
+                   LIBS="-lresolv" \
+                   ./configure && make)
+                else
+                  %(./configure && make)
+
 dependencies.each do |pkg_name|
   package pkg_name
 end
@@ -40,7 +48,7 @@ execute "build-tmux" do
   cwd "#{home_dir}/src/#{current_version_dirname}"
   user username
 
-  command "./configure && make"
+  command build_command
 
   action :nothing
   notifies :run, "execute[install-tmux]", :immediately
