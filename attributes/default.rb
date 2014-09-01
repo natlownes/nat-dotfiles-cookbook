@@ -165,7 +165,7 @@ default[:nat][:gem_packages] = [
 
 default[:nat][:golang][:scm_url]       = 'https://code.google.com/p/go'
 default[:nat][:golang][:install_path]  = 'src/golang'
-default[:nat][:golang][:force_install] = true
+default[:nat][:golang][:force_install] = false
 
 default[:nat][:music_player_client][:gateway][:host] = 'slab.phl.looting.biz'
 default[:nat][:music_player_client][:server][:host]           = '10.30.1.134'
