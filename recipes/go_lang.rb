@@ -39,7 +39,7 @@ end
 
 execute 'build-and-install-go' do
   cwd     "#{install_dir}/go/src"
-  command './all.bash'
+  command './make.bash'
   user    username
 
   action :nothing
