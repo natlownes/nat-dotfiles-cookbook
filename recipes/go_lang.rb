@@ -41,7 +41,7 @@ execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
   cwd     install_dir
   user    username
 
-  only_if { !::File.directory?("#{home_dir}/src/golang") }
+  only_if { !::File.directory?("#{home_dir}/src/golang/go") }
   notifies :run, "bash[build-and-install-go]", :immediately
 end
 
