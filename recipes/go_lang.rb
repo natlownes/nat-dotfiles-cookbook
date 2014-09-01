@@ -32,7 +32,7 @@ execute 'hg clone -u release https://code.google.com/p/go' do
   cwd     "#{home_dir}/src/golang"
   only_if { !::File.directory?("#{home_dir}/src/golang") }
 
-  notifies :run, "execute[build-go]", :immediately
+  notifies :run, "bash[build-go]", :immediately
 end
 
 bash 'build-go' do
