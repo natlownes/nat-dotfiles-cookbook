@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 export TEXMFHOME="$HOME/.texmf/text"
-export GOPATH="$HOME/src/golang/go"
+export GOROOT="$HOME/src/golang/go"
+export GOROOT="$HOME/src/go"
 export AWS_IAM_HOME="$HOME/opt/local/IAMCli"
 export PYTHONSTARTUP="$HOME/.pystartup"
 export PYTHONPATH="/Library/Python/2.6/site-packages:/opt/local/lib/python2.6"
@@ -11,5 +12,5 @@ export PATH="/usr/local/bin:$sbt_path:$AWS_IAM_HOME/bin:$HOME/node_modules/.bin:
 PATH="/usr/local/heroku/bin:$PATH"
 PATH="$HOME/opt/local/bin:$PATH"
 PATH="$EBPATH:$PATH"
-PATH="$GOPATH/bin:$PATH"
+PATH="$GOROOT/bin:$PATH"
 PATH="$HOME/.rbenv/bin:$PATH"
