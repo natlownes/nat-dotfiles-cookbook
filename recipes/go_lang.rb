@@ -9,6 +9,13 @@ directories = [
   install_dir
 ]
 
+if node[:nat][:golang][:force_install]
+  directory install_dir do
+    action    :delete
+    recursive true
+  end
+end
+
 directories.each do |dir|
   directory dir do
     owner     username
@@ -18,13 +25,6 @@ end
 
 package 'mercurial' do
   action :install
-end
-
-if node[:nat][:golang][:force_install]
-  directory install_dir do
-    action    :delete
-    recursive true
-  end
 end
 
 if node.os == 'linux'
