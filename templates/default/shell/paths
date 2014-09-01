@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 export TEXMFHOME="$HOME/.texmf/text"
 export GOROOT="$HOME/src/golang/go"
-export GOROOT="$HOME/src/go"
+export GOPATH="$HOME/src/go"
 export AWS_IAM_HOME="$HOME/opt/local/IAMCli"
 export PYTHONSTARTUP="$HOME/.pystartup"
 export PYTHONPATH="/Library/Python/2.6/site-packages:/opt/local/lib/python2.6"
