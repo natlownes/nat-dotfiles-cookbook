@@ -2,9 +2,11 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
+install_dir = "#{home_dir}/#{node[:nat][:golang][:install_path]}"
+
 directories = [
   "#{home_dir}/src/go",
-  "#{home_dir}/src/golang",
+  install_dir
 ]
 
 directories.each do |dir|
@@ -19,9 +21,10 @@ package 'mercurial' do
 end
 
 if node[:nat][:golang][:force_install]
-  directory "#{home_dir}/src/go"
-  action    :delete
-  recursive true
+  directory install_dir do
+    action    :delete
+    recursive true
+  end
 end
 
 if node.os == 'linux'
@@ -35,7 +38,7 @@ if node.os == 'linux'
 end
 
 execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
-  cwd     "#{home_dir}/src/golang"
+  cwd     install_dir
   user    username
 
   only_if { !::File.directory?("#{home_dir}/src/golang") }
@@ -43,7 +46,7 @@ execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
 end
 
 bash 'build-and-install-go' do
-  cwd     "#{home_dir}/src/golang/go/src"
+  cwd     "#{install_dir}/go/src"
   command './all.bash'
   user    username
 
