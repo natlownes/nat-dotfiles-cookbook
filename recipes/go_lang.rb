@@ -18,6 +18,12 @@ package 'mercurial' do
   action :install
 end
 
+if node[:nat][:golang][:force_install]
+  directory "#{home_dir}/src/go"
+  action    :delete
+  recursive true
+end
+
 if node.os == 'linux'
   build_dependencies = %w(gcc libc6-dev)
 
@@ -28,14 +34,15 @@ if node.os == 'linux'
   end
 end
 
-execute 'hg clone -u release https://code.google.com/p/go' do
+execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
   cwd     "#{home_dir}/src/golang"
-  only_if { !::File.directory?("#{home_dir}/src/golang") }
+  user    username
 
-  notifies :run, "bash[build-go]", :immediately
+  only_if { !::File.directory?("#{home_dir}/src/golang") }
+  notifies :run, "bash[build-and-install-go]", :immediately
 end
 
-bash 'build-go' do
+bash 'build-and-install-go' do
   cwd     "#{home_dir}/src/golang/go/src"
   command './all.bash'
   user    username
