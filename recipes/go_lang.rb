@@ -37,18 +37,18 @@ if node.os == 'linux'
   end
 end
 
-execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
-  cwd     install_dir
-  user    username
-
-  only_if { !::File.directory?("#{home_dir}/src/golang/go") }
-  notifies :run, "bash[build-and-install-go]", :immediately
-end
-
-bash 'build-and-install-go' do
+execute 'build-and-install-go' do
   cwd     "#{install_dir}/go/src"
   command './all.bash'
   user    username
 
   action :nothing
+end
+
+execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
+  cwd     install_dir
+  user    username
+
+  only_if { !::File.directory?("#{install_dir}/go") }
+  notifies :run, "execute[build-and-install-go]", :immediately
 end
