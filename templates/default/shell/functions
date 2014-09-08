@@ -146,3 +146,7 @@ function irc_cat {
 
   pipe="irc_cat"
 }
+
+function unix_timestamp_to_utc {
+  date -d @$1
+}
