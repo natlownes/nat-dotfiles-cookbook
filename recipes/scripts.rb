@@ -19,8 +19,9 @@ source_bash.zsh
 )
 
 vistar_script_files = %w(
-vistar_provision_vm.bash
 vistar_clone_project.bash
+vistar_provision_vm.bash
+vistar_release_summary.bash
 vistar_vagrant_command.bash
 )
 
