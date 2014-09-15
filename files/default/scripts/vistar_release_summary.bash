@@ -2,8 +2,7 @@
 
 src_root="$HOME/src/vistar"
 
-projects="pub-ad-server platform geo-ui geo-rest vistar vistar-ui \
-platform-scripts locus"
+projects="pub-ad-server platform geo-ui geo-rest vistar vistar-ui locus"
 
 for p in $projects;
 do
