@@ -60,6 +60,8 @@ default[:nat][:metal][:packages] = %w(
   gimp
   gmpc
   imagemagick
+  keepassx
+  kpcli
   libpq-dev
   libqt4-sql-psql
   liferea
