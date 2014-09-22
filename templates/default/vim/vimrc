@@ -485,7 +485,7 @@ let g:pymode = 1
 let g:pymode_indent = 0
 let g:pymode_lint_write = 0
 let g:pymode_lint_on_write = 1
-let g:pymode_lint_ignore = 'E111,W0311'
+let g:pymode_lint_ignore = 'E111,W0311,E221,E121'
 let g:pymode_run_bind = '<leader>P'
 let g:pymode_lint_cwindow = 0
 "let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
@@ -493,7 +493,7 @@ let g:pymode_breakpoint_bind = '<leader>PB'
 let g:pymode_breakpoint_cmd = ''
 let g:pymode_rope = 1
 let g:pymode_rope_completion = 1
-let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_complete_on_dot = 0
 let g:pymode_syntax = 1
 " end python settings
 
