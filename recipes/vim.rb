@@ -148,8 +148,6 @@ end
 
 offending_nonsense = %w(
 /usr/share/vim/vim74/indent/python.vim
-/usr/share/vim/vim74/ftplugin/python.vim
-/usr/share/vim/vim74/syntax/python.vim
 )
 
 offending_nonsense.each do |path|
