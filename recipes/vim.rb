@@ -133,4 +133,15 @@ execute "ensure-ownership" do
   command "chown -R #{username} #{vim_dir}"
 end
 
+offending_nonsense = %w(
+/usr/share/vim/vim74/indent/python.vim
+/usr/share/vim/vim74/ftplugin/python.vim
+/usr/share/vim/vim74/syntax/python.vim
+)
 
+offending_nonsense.each do |path|
+  execute "stop #{path} from goddamned fucking around with my shit" do
+    command "rm #{path}"
+    only_if { ::File.exist?(path) }
+  end
+end
