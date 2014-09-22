@@ -186,6 +186,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/fugitive', 'url'=>'git://github.com/tpope/vim-fugitive.git'},
   {'path'=>'.vim/bundle/neocomplcache', 'url'=>'https://github.com/Shougo/neocomplcache.vim.git'},
   {'path'=>'.vim/bundle/nerdtree', 'url'=>'git://github.com/scrooloose/nerdtree.git'},
+  {'path'=>'.vim/bundle/python-mode', 'url'=>'git://github.com/klen/python-mode.git'},
   {'path'=>'.vim/bundle/supertab', 'url'=>'git://github.com/ervandew/supertab.git'},
   {'path'=>'.vim/bundle/syntastic', 'url'=>'https://github.com/scrooloose/syntastic.git'},
   {'path'=>'.vim/bundle/vim-addon-mw-utils', 'url'=>'git://github.com/MarcWeber/vim-addon-mw-utils.git'},
