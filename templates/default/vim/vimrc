@@ -480,6 +480,11 @@ au Syntax * RainbowParenthesesLoadRound
 
 " end rainbow parenthesis
 
+" python settings
+let g:pymode_indent = 0
+let g:pymode_lint_write = 0
+" end python settings
+
 " Enable syntax highlighting when buffers were loaded through :bufdo, which
 " disables the Syntax autocmd event to speed up processing.
 augroup EnableSyntaxHighlighting
