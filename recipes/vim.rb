@@ -9,6 +9,7 @@ vim_bundle_dir      = "#{vim_dir}/bundle"
 vim_colors_dir      = "#{vim_dir}/colors"
 vim_autoload_dir    = "#{vim_dir}/autoload"
 vim_after_hooks_dir = "#{vim_dir}/after/plugin"
+vim_ftplugin_dir    = "#{vim_dir}/ftplugin"
 
 vim_powerline_segments     = "#{vim_autoload_dir}/Powerline/Segments"
 vim_powerline_colorschemes = "#{vim_autoload_dir}/Powerline/Colorschemes"
@@ -32,7 +33,9 @@ vim_directories = [
   vim_powerline_segments,
   vim_powerline_colorschemes,
   vim_after_hooks_dir,
-  "#{vim_dir}/vimrcs"
+  vim_ftplugin_dir,
+  "#{vim_dir}/vimrcs",
+  "#{vim_dir}/after/ftplugin",
 ]
 
 plugin_hooks = %w(
@@ -77,6 +80,16 @@ end
 template "#{vim_dir}/vimrcs/coffee_tagbar" do
   source "vim/vimrcs/coffee_tagbar"
   owner username
+end
+
+template "#{vim_ftplugin_dir}/python.vim" do
+  source "vim/ftplugin/python.vim.erb"
+  owner username
+end
+
+link "#{vim_dir}/after/ftplugin/python.vim" do
+ to "#{vim_ftplugin_dir}/python.vim"
+ owner username
 end
 
 remote_directory "#{vim_dir}/colors" do
