@@ -481,7 +481,7 @@ au Syntax * RainbowParenthesesLoadRound
 " end rainbow parenthesis
 
 " python settings
-let g:pymode_indent = 0
+let g:pymode_indent = 1
 let g:pymode_lint_write = 0
 " end python settings
 
