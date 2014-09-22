@@ -481,8 +481,9 @@ au Syntax * RainbowParenthesesLoadRound
 " end rainbow parenthesis
 
 " python settings
-let g:pymode_indent = 1
+let g:pymode_indent = 0
 let g:pymode_lint_write = 0
+let g:pymode_lint_ignore = 'E111,W0311'
 " end python settings
 
 " Enable syntax highlighting when buffers were loaded through :bufdo, which
