@@ -15,5 +15,12 @@ fi
 
 path="$HOME/src/vistar/ops-cookbooks"
 
-pushd $path && vagrant $vagrant_command $vm_name  && popd
+pushd $path
+
+git submodule init
+git submodule update
+git submodule foreach git pull origin master
+
+vagrant $vagrant_command $vm_name
+popd
 
