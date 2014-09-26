@@ -41,7 +41,12 @@
   ;commonancestor     = !sh -c 'git merge-base "$0" "$1"'
   ;showcommonancestor = !sh -c 'git log -p `git merge-base "$0" "$1"`'
   watchstaged         = !sh -c 'watch -n2 --color git diff --color --cached'
-	lg                  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	; lg                  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lg                  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  tree                = log --graph
+  shorttree = log --graph --pretty=oneline --abbrev-commit
+  lc                  = log ORIG_HEAD.. --stat --no-merges
+  shortdiff           = !sh -c 'git diff "$@" | grep "^[+-]" | sort --key=1.2 | uniq -u -s1'
 [core]
 	excludesfile = ~/.gitignore_global
   filemode = true
