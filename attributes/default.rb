@@ -59,7 +59,7 @@ default[:nat][:metal][:packages] = %w(
   claws-mail
   gimp
   gmpc
-  gpg-agent
+  gnupg-agent
   imagemagick
   keepassx
   kpcli
