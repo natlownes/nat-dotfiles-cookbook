@@ -12,6 +12,7 @@ do
   pushd "$src_root/$p"
   git fetch --all -p
   git diff --color origin/master origin/develop >> $tempfile
+  popd
 done
 
 less -R $tempfile && rm $tempfile
