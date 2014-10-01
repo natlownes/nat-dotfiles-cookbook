@@ -3,16 +3,15 @@
 src_root="$HOME/src/vistar"
 
 projects="pub-ad-server platform geo-ui geo-rest vistar vistar-ui locus"
-tempfile=/tmp/vistar-release-summary-$(date +%Y-%m-%d).diff
 
-: > $tempfile
+summary=""
 
 for p in $projects;
 do
   pushd "$src_root/$p"
   git fetch --all -p
-  git diff --color origin/master origin/develop >> $tempfile
+  summary+=$(git diff --color origin/master origin/develop)
   popd
 done
 
-less -R $tempfile && rm $tempfile
+echo "$summary" | less -R
