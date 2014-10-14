@@ -52,3 +52,8 @@ execute "install-the-silver-searcher" do
   action :nothing
   command "make install"
 end
+
+template "#{home_dir}/.agignore" do
+  source "the_silver_searcher/agignore"
+  user   username
+end
