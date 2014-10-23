@@ -1,1 +1,9 @@
 tags
+*.swo
+*.swp
+Session*.vim
+.vagrant
+npm-debug.log
+*.pyc
+.history
+.ropeproject
