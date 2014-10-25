@@ -74,7 +74,6 @@ default[:nat][:metal][:packages] = %w(
   postgresql-client
   python-qt4
   python-qt4-sql
-  qgis
   rxvt-unicode-256color
   shutter
   vlc

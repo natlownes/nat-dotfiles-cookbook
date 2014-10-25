@@ -1,8 +1,11 @@
 #
 # recipes for bare metal machine
 #
+extend Nat::MachineHelpers
+
 
 include_recipe 'nat::default'
+
 
 execute 'apt-get update' do
   command "apt-get update --fix-missing"
@@ -34,7 +37,11 @@ include_recipe 'nat::spotify'
 include_recipe 'nat::weechat'
 include_recipe 'nat::xscreensaver'
 include_recipe 'nat::xterm'
-include_recipe 'nat::docker'
-include_recipe 'nat::browser'
-include_recipe 'nat::virtualization'
 include_recipe 'nat::music_player_client'
+include_recipe 'nat::browser'
+if is_desktop?
+  include_recipe 'nat::docker'
+  include_recipe 'nat::virtualization'
+  include_recipe 'nat::qgis'
+  include_recipe 'nat::wine'
+end
