@@ -15,5 +15,5 @@ nat_partial '/etc/modules' do
 end
 
 template '/etc/modprobe.d/blacklist-chromeos-laptop.conf' do
-  source 'chromebook/blacklist-chromeos-laptop.conf'
+  source 'chromebook/blacklist-chromeos-laptop.conf.erb'
 end
