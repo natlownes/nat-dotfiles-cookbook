@@ -11,6 +11,7 @@ action :commit do
 
   temp_path             = ::Dir.mktmpdir
   delimiter             = new_resource.delimiter or default_delimiter()
+  comment_prefix        = new_resource.comment_prefix
   temp_file_destination = "#{::File.join(temp_path, new_resource.source)}"
   start_delim           = "#{comment_prefix}#{delimiter}-START"
   end_delim             = "#{comment_prefix}#{delimiter}-END"
