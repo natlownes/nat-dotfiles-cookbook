@@ -16,6 +16,11 @@ action :commit do
   start_delim           = "#{comment_prefix}#{delimiter}-START"
   end_delim             = "#{comment_prefix}#{delimiter}-END"
 
+  directory temp_path do
+    recursive true
+    action    :create
+  end
+
   execute "clean up from previous partial run on #{new_resource.target_file}" do
     command "sed '#{start_delim}/,/#{end_delim}/d' > #{new_resource.target_file}"
   end
