@@ -9,14 +9,12 @@ action :commit do
     string.gsub(/\.|\\|\/|\?\#/, '-')
   end
 
-
-
   temp_path             = ::Dir.mktmpdir
   delimiter             = new_resource.delimiter or sanitize(new_resource.source)
   comment_prefix        = new_resource.comment_prefix
   temp_file_destination = "#{::File.join(temp_path, sanitize(new_resource.source))}"
-  start_delim           = "#{comment_prefix}#{delimiter}-START"
-  end_delim             = "#{comment_prefix}#{delimiter}-END"
+  start_delim           = "#{comment_prefix} #{delimiter}-START"
+  end_delim             = "#{comment_prefix} #{delimiter}-END"
 
   directory temp_path do
     recursive true
@@ -35,10 +33,5 @@ action :commit do
     command "echo #{start_delim} >> #{new_resource.target_file}"
     command "cat #{temp_file_destination} >> #{new_resource.target_file}"
     command "echo #{end_delim} >> #{new_resource.target_file}"
-  end
-
-  directory temp_path do
-    recursive true
-    action    :delete
   end
 end
