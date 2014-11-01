@@ -9,5 +9,5 @@ default_action :commit
 
 attribute :target_file,    :name_attribute => true
 attribute :source,         :kind_of => String, :required => true
-attribute :delimiter,      :kind_of => String, :default => nil
+attribute :delimiter,      :kind_of => [String, NilClass], :default => nil
 attribute :comment_prefix, :kind_of => String, :default => '#'
