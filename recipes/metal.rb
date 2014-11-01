@@ -39,9 +39,14 @@ include_recipe 'nat::xscreensaver'
 include_recipe 'nat::xterm'
 include_recipe 'nat::music_player_client'
 include_recipe 'nat::browser'
+
 if is_desktop?
   include_recipe 'nat::docker'
   include_recipe 'nat::virtualization'
   include_recipe 'nat::qgis'
   include_recipe 'nat::wine'
+end
+
+if is_chromebook?
+  include_recipe 'nat::chromebook'
 end

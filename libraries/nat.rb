@@ -20,6 +20,10 @@ module Nat
 
       cores >= required_cores && memory >= required_memory
     end
+
+    def is_chromebook?
+      system "lsmod | grep chromeos"
+    end
   end
 end
 
