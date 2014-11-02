@@ -10,7 +10,7 @@ action :commit do
   end
 
   temp_path             = ::Dir.mktmpdir
-  delimiter             = new_resource.delimiter or sanitize(new_resource.source)
+  delimiter             = new_resource.delimiter || sanitize(new_resource.source)
   comment_prefix        = new_resource.comment_prefix
   temp_file_destination = "#{::File.join(temp_path, sanitize(new_resource.source))}"
   start_delim           = "#{comment_prefix} #{delimiter}-START"
@@ -30,8 +30,10 @@ action :commit do
   end
 
   execute "wedge in changes to #{new_resource.target_file} from #{new_resource.source}" do
-    command "echo #{start_delim} >> #{new_resource.target_file}"
-    command "cat #{temp_file_destination} >> #{new_resource.target_file}"
-    command "echo #{end_delim} >> #{new_resource.target_file}"
+    command %{
+      echo '#{start_delim}' >> #{new_resource.target_file}
+      cat #{temp_file_destination} >> #{new_resource.target_file}
+      echo '#{end_delim}' >> #{new_resource.target_file}
+    }
   end
 end
