@@ -23,6 +23,7 @@ Host doublev.alt.vistar
   HostName c-68-81-239-157.hsd1.pa.comcast.net
   LocalForward 4001 192.168.11.14:4001
   LocalForward 4010 192.168.11.14:4010
+  LocalForward 4011 192.168.11.14:4011
   LocalForward 5000 192.168.11.14:5000
   LocalForward 5001 192.168.11.14:5001
   LocalForward 9294 192.168.11.14:9294
