@@ -1,5 +1,7 @@
 <% if @is_chromebook %>
 
+<%#      https://github.com/hugegreenbug/xf86-input-cmt %>
+
 ID="<%= @input_id %>"
 
 xinput --set-int-prop $ID "Tap Drag Enable" 8 1
@@ -9,5 +11,6 @@ xinput --set-float-prop $ID "Two Finger Scroll Distance Thresh" 40.0
 xinput --set-float-prop $ID "Two Finger Horizontal Close Distance Thresh" 100.0
 xinput --set-float-prop $ID "Two Finger Vertical Close Distance Thresh" 85.0
 xinput --set-float-prop $ID "Two Finger Pressure Diff Thresh" 80.0
+xinput --set-int-prop $ID "T5R2 Three Finger Click Enable" 8 1
 
 <% end %>
