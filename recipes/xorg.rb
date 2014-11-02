@@ -3,6 +3,9 @@ username = user_name()
 home_dir = home_dir()
 
 
+package 'xbindkeys'
+package 'xvkbd'
+
 template "#{home_dir}/.xbindkeysrc.scm" do
   owner username
   source "xorg/xbindkeysrc.scm.erb"
