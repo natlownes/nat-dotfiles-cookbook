@@ -39,6 +39,11 @@ template "#{i3_config_dir}/scripts/workspaces.sh" do
   mode '755'
 end
 
+template "#{home_dir}/.i3status.conf" do
+  source "i3/i3status.conf.erb"
+  owner username
+end
+
 execute "apt-get-update" do
   command "apt-get update --fix-missing"
 
@@ -82,8 +87,8 @@ if node.platform == 'ubuntu'
   file "#{home_dir}/.dmrc" do
     owner username
     content %{
-  [Desktop]
-  Session=i3
+[Desktop]
+Session=i3
     }
   end
 
