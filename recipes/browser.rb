@@ -6,6 +6,12 @@ browser_package_path = ::File.join(
   user_dir, (node[:nat][:browser][:package_path] || "Downloads")
 )
 
+directory browser_package_path do
+  owner     username
+  recursive true
+  action    :create
+end
+
 remote_file "#{browser_package_path}/google-chrome-stable_current_amd64.deb" do
   source "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
   use_etag true
