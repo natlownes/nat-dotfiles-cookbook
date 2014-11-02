@@ -10,20 +10,20 @@ module Nat
 
     def user_name ; 'nat' ; end
   end
-
-  module MachineHelpers
-    def is_desktop?
-      required_memory = 8000000
-      required_cores  = 8
-      memory          = Integer(node.memory.total[0..-3])
-      cores           = node.cpu.count
-
-      cores >= required_cores && memory >= required_memory
-    end
-
-    def is_chromebook?
-      system "lsmod | grep chromeos"
-    end
-  end
 end
 
+
+class ::Chef::Node
+  def is_desktop?
+    required_memory = 8000000
+    required_cores  = 8
+    memory          = Integer(node.memory.total[0..-3])
+    cores           = node.cpu.count
+
+    cores >= required_cores && memory >= required_memory
+  end
+
+  def is_chromebook?
+    system "lsmod | grep chromeos"
+  end
+end

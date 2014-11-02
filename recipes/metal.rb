@@ -1,8 +1,6 @@
 #
 # recipes for bare metal machine
 #
-extend Nat::MachineHelpers
-
 
 include_recipe 'nat::default'
 
@@ -41,13 +39,13 @@ include_recipe 'nat::music_player_client'
 include_recipe 'nat::browser'
 include_recipe 'nat::xorg'
 
-if is_desktop?
+if node.is_desktop?
   include_recipe 'nat::docker'
   include_recipe 'nat::virtualization'
   include_recipe 'nat::qgis'
   include_recipe 'nat::wine'
 end
 
-if is_chromebook?
+if node.is_chromebook?
   include_recipe 'nat::chromebook'
 end
