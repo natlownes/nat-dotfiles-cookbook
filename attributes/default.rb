@@ -1,6 +1,7 @@
 override[:srcinstall][:builddir] = '/tmp/build'
 
 default[:nat][:packages] = %w(
+  autofs
   autossh
   bash-completion
   keychain
@@ -57,6 +58,7 @@ default[:nat][:metal][:packages] = %w(
   ario
   chromium-browser
   claws-mail
+  conky
   gimp
   gmpc
   gnupg-agent
