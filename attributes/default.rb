@@ -200,6 +200,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-colors-solarized', 'url'=>'git://github.com/altercation/vim-colors-solarized.git'},
   {'path'=>'.vim/bundle/vim-cucumber', 'url'=>'git://github.com/tpope/vim-cucumber.git'},
   {'path'=>'.vim/bundle/vim-easygrep', 'url'=>'git://github.com/vim-scripts/EasyGrep.git'},
+  {'path'=>'.vim/bundle/vim-elixir', 'url'=>'git://github.com/elixir-lang/vim-elixir.git'},
   {'path'=>'.vim/bundle/vim-fakeclip', 'url'=>'git://github.com/kana/vim-fakeclip.git'},
   {'path'=>'.vim/bundle/vim-flake8', 'url'=>'https://github.com/nvie/vim-flake8.git'},
   {'path'=>'.vim/bundle/vim-foreplay', 'url'=>'git://github.com/tpope/vim-foreplay.git'},
