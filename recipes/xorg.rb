@@ -13,6 +13,6 @@ template "#{home_dir}/.xsessionrc" do
   source "xorg/xsessionrc"
   variables({
     :is_chromebook => node.is_chromebook?,
-    :input_id => `xinput | grep cyapa | cut -f 2 | sed -e 's/id=//'`
+    :input_id => `xinput | grep cyapa | cut -f 2 | sed -e 's/id=//'`.strip()
   })
 end
