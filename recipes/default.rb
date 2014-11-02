@@ -57,6 +57,11 @@ if node.os == 'linux'
   end
 end
 
+directory "#{::File.join(home_dir, '.local')}" do
+  owner username
+end
+
+
 include_recipe 'nat::ssh'
 include_recipe 'nat::tmux'
 include_recipe 'nat::vim'
