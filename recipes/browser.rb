@@ -3,7 +3,7 @@ username = user_name()
 user_dir = home_dir()
 
 browser_package_path = ::File.join(
-  user_dir, (node[:browser][:package_path] || "Downloads")
+  user_dir, (node[:nat][:browser][:package_path] || "Downloads")
 )
 
 remote_file "#{browser_package_path}/google-chrome-stable_current_amd64.deb" do
