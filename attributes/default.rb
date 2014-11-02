@@ -177,6 +177,8 @@ default[:nat][:music_player_client][:local][:port]            = 6600
 default[:nat][:music_player_client][:local][:port_streaming]  = 8991
 default[:nat][:music_player_client][:cache_size]              = 512
 
+default[:nat][:browser][:package_path] = "Downloads"
+
 
 default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/autoload/vim-pathogen', 'url'=>'git://github.com/tpope/vim-pathogen.git'},
