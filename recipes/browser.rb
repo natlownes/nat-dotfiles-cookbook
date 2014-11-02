@@ -20,7 +20,7 @@ remote_file "#{browser_package_path}/google-chrome-stable_current_amd64.deb" do
 end
 
 execute "install-googs-chrome" do
-  command "dpkg -i  #{Chef::Config[:file_cache_path]}/google-chrome-stable_current_amd64.deb"
+  command "dpkg -i  #{browser_package_path}/google-chrome-stable_current_amd64.deb"
 
   action :nothing
 end
