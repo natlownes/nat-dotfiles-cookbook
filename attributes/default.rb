@@ -9,6 +9,7 @@ default[:nat][:packages] = %w(
   tcpdump
   tig
   tmux
+  whois
   zsh
 )
 
