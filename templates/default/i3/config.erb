@@ -134,11 +134,12 @@ ipc-socket ~/.i3/ipc.sock
 exec gtk-theme-switch2 /usr/share/themes/Ambiance/
 exec /usr/bin/xscreensaver -no-splash
 exec --no-startup-id xsetroot -solid "#000"
+# exec --no-startup-id ~./dropbox-dist/dropboxd
 exec xbindkeys
 exec i3status | dzen2 -ta r -xs 2 -h 16 -w 800 -x 1200 -y 1062
 exec xrdb -merge ~/.Xresources
 exec gnome-settings-daemon
-exec ~./dropbox-dist/dropboxd
+exec <%= @home_directory %>./dropbox-dist/dropboxd
 exec parcellite
 
 bindcode Mod1+31 exec /usr/bin/i3-input -l 1
