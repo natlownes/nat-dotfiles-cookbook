@@ -26,4 +26,16 @@ class ::Chef::Node
   def is_chromebook?
     system "lsmod | grep chromeos"
   end
+
+  def xrandr_outputs
+    xrandr_output = `xrandr -q`.split()
+    displays      = []
+
+    xrandr_output.each_with_index do |word, i|
+      if word == 'connected'
+        displays << xrandr_output[i - 1]
+      end
+    end
+    displays
+  end
 end
