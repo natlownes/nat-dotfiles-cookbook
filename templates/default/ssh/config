@@ -20,7 +20,7 @@ Host *.kd.io
 Host irc.phl.looting.biz
   ProxyCommand ssh slab.phl.looting.biz -W ice.phl.looting.biz:22
 Host doublev.alt.vistar
-  HostName c-68-81-239-157.hsd1.pa.comcast.net
+  HostName c-69-249-29-6.hsd1.nj.comcast.net
   LocalForward 4001 192.168.11.14:4001
   LocalForward 4010 192.168.11.14:4010
   LocalForward 4011 192.168.11.14:4011
