@@ -60,6 +60,7 @@ default[:nat][:metal][:packages] = %w(
   claws-mail
   conky
   feh
+  flashplugin-downloader
   gimp
   gmpc
   gnupg-agent
