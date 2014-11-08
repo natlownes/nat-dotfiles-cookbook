@@ -19,7 +19,6 @@ default[:nat]['linux'][:packages] = %w(
   curl
   dnsutils
   exuberant-ctags
-  feh
   hfsplus
   hfsprogs
   hfsutils
@@ -60,6 +59,7 @@ default[:nat][:metal][:packages] = %w(
   chromium-browser
   claws-mail
   conky
+  feh
   gimp
   gmpc
   gnupg-agent
