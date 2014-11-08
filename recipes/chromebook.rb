@@ -30,3 +30,5 @@ end
 bash 'apply-chromebook-keybindings' do
   code "#{xkbscript_path}"
 end
+
+# setxkbmap -model chromebook

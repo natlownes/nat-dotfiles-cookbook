@@ -33,7 +33,7 @@ DESCRIPTION='Adds support for Chromebook keyboard special keys.'
 
 XKBROOT='/usr/share/X11/xkb'
 XKBROOTTMP="`mktemp -d crouton-xkb.XXXXXX --tmpdir=/tmp`"
-addtrap "rm -rf --one-file-system '$XKBROOTTMP'"
+#addtrap "rm -rf --one-file-system '$XKBROOTTMP'"
 mkdir -p "$XKBROOTTMP/compat" "$XKBROOTTMP/symbols" "$XKBROOTTMP/rules"
 
 cat > "$XKBROOTTMP/compat/chromebook" <<END
