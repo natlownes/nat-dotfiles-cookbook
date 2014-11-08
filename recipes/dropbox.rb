@@ -27,7 +27,7 @@ if node.os == 'linux'
     action :run
 
     only_if {
-      force_install || !installed
+      (force_install || !installed) and node.is_desktop?
     }
   end
 end
