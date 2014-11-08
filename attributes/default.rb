@@ -183,6 +183,8 @@ default[:nat][:music_player_client][:cache_size]              = 512
 default[:nat][:browser][:package_path] = 'Downloads'
 default[:nat][:browser][:default]      = 'google-chrome'
 
+default[:nat][:dropbox][:force_install] = false
+
 
 default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/autoload/vim-pathogen', 'url'=>'git://github.com/tpope/vim-pathogen.git'},

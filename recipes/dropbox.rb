@@ -4,10 +4,11 @@ home_dir = home_dir()
 
 package 'wget'
 
-# https://www.dropbox.com/install?os=lnx
+# adapted from:  https://www.dropbox.com/install?os=lnx
 
 if node.os == 'linux'
   arch = node['kernel']['machine'] =~ /x86_64/ ? "x86_64" : "x86"
+  installed = File.directory?("#{home_dir}/.dropbox-dist")
 
   url = "https://www.dropbox.com/download?plat=lnx.#{arch}"
 
@@ -17,11 +18,7 @@ if node.os == 'linux'
 
     action :run
     only_if {
-      !File.directory?("#{home_dir}/.dropbox-dist")
+      node[:nat][:dropbox][:force_install] || !installed
     }
   end
 end
-
-
-
-
