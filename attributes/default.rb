@@ -25,11 +25,13 @@ default[:nat]['linux'][:packages] = %w(
   hfsutils
   htop
   mercurial
+  powernap
   protobuf-compiler
   ruby
   ruby-dev
   wget
   xautomation
+  xbacklight
   xbindkeys
 )
 
