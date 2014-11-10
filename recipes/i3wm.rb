@@ -22,8 +22,10 @@ template "#{i3_config_dir}/config" do
   source "i3/config.erb"
   owner username
   variables(
-    :terminal => 'urxvt',
-    :browser  => 'google-chrome'
+    :browser         => 'google-chrome',
+    :home_directory  => home_dir,
+    :terminal        => 'urxvt',
+    :xrandr_displays => node.xrandr_outputs
   )
 end
 

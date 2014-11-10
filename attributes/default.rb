@@ -19,7 +19,6 @@ default[:nat]['linux'][:packages] = %w(
   curl
   dnsutils
   exuberant-ctags
-  feh
   hfsplus
   hfsprogs
   hfsutils
@@ -62,6 +61,8 @@ default[:nat][:metal][:packages] = %w(
   chromium-browser
   claws-mail
   conky
+  feh
+  flashplugin-downloader
   gimp
   gmpc
   gnupg-agent
@@ -184,6 +185,8 @@ default[:nat][:music_player_client][:cache_size]              = 512
 
 default[:nat][:browser][:package_path] = 'Downloads'
 default[:nat][:browser][:default]      = 'google-chrome'
+
+default[:nat][:dropbox][:force_install] = false
 
 
 default[:nat][:vim][:plugins] = [

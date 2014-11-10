@@ -138,7 +138,7 @@ exec xbindkeys
 exec i3status | dzen2 -ta r -xs 2 -h 16 -w 800 -x 1200 -y 1062
 exec xrdb -merge ~/.Xresources
 exec gnome-settings-daemon
-exec ~./dropbox-dist/dropboxd
+exec <%= @home_directory %>/.dropbox-dist/dropboxd
 exec parcellite
 
 bindcode Mod1+31 exec /usr/bin/i3-input -l 1
@@ -190,14 +190,14 @@ bindsym Mod1+r mode "resize"
 
 # TODO:  conditionally apply this based on machine, since there are probably
 # different names here.  command to list is:  xrandr --current
-workspace 1 output DFP3
-workspace 2 output DFP3
-workspace 3 output DFP3
-workspace 4 output DFP3
-workspace 5 output DFP3
+workspace 1 output <%= @xrandr_displays[0] %>
+workspace 2 output <%= @xrandr_displays[0] %>
+workspace 3 output <%= @xrandr_displays[0] %>
+workspace 4 output <%= @xrandr_displays[0] %>
+workspace 5 output <%= @xrandr_displays[0] %>
 
-workspace 6 output  DFP4
-workspace 7 output  DFP4
-workspace 8 output  DFP4
-workspace 9 output  DFP4
-workspace 10 output DFP4
+workspace 6 output  <%= @xrandr_displays[1] %>
+workspace 7 output  <%= @xrandr_displays[1] %>
+workspace 8 output  <%= @xrandr_displays[1] %>
+workspace 9 output  <%= @xrandr_displays[1] %>
+workspace 10 output <%= @xrandr_displays[1] %>
