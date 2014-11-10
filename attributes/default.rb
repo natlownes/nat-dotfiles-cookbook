@@ -1,7 +1,6 @@
 override[:srcinstall][:builddir] = '/tmp/build'
 
 default[:nat][:packages] = %w(
-  autofs
   autossh
   bash-completion
   keychain
@@ -24,14 +23,10 @@ default[:nat]['linux'][:packages] = %w(
   hfsutils
   htop
   mercurial
-  powernap
   protobuf-compiler
   ruby
   ruby-dev
   wget
-  xautomation
-  xbacklight
-  xbindkeys
 )
 
 default[:nat]['darwin'][:packages] = %w(
@@ -58,6 +53,7 @@ default[:nat][:the_silver_searcher][:scm_url] =
 
 default[:nat][:metal][:packages] = %w(
   ario
+  autofs
   chromium-browser
   claws-mail
   conky
@@ -78,12 +74,16 @@ default[:nat][:metal][:packages] = %w(
   parcellite
   pidgin
   postgresql-client
+  powernap
   python-qt4
   python-qt4-sql
   rxvt-unicode-256color
   shutter
   vlc
   weechat-curses
+  xautomation
+  xbacklight
+  xbindkeys
   zim
 )
 
