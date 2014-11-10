@@ -25,7 +25,8 @@ template "#{i3_config_dir}/config" do
     :browser         => 'google-chrome',
     :home_directory  => home_dir,
     :terminal        => 'urxvt',
-    :xrandr_displays => node.xrandr_outputs
+    :xrandr_displays => node.xrandr_outputs,
+    :node            => node
   )
 end
 
