@@ -176,7 +176,7 @@ default[:nat][:golang][:install_path]  = 'src/golang'
 default[:nat][:golang][:force_install] = false
 
 default[:nat][:music_player_client][:gateway][:host] = 'slab.phl.looting.biz'
-default[:nat][:music_player_client][:server][:host]           = '10.30.1.134'
+default[:nat][:music_player_client][:server][:host]           = '10.30.5.101'
 default[:nat][:music_player_client][:server][:port]           = 6600
 default[:nat][:music_player_client][:server][:port_streaming] = 8000
 default[:nat][:music_player_client][:local][:port]            = 6600

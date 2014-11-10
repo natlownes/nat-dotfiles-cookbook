@@ -12,8 +12,8 @@ done) &
 pids="$!"
 
 ssh -CN \
-  -L<%= @local[:port_streaming] %>:10.30.1.134:<%= @server[:port_streaming] %> \
-  -L<%= @local[:port] %>:10.30.1.134:<%= @server[:port] %> \
+  -L<%= @local[:port_streaming] %>:<%= @server[:host] %>:<%= @server[:port_streaming] %> \
+  -L<%= @local[:port] %>:<%= @server[:host] %>:<%= @server[:port] %> \
   <%= @gateway[:host] %> 2>&1>/dev/null &
 
 pids="$pids $!"
