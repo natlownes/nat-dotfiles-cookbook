@@ -38,6 +38,7 @@ include_recipe 'nat::xterm'
 include_recipe 'nat::music_player_client'
 include_recipe 'nat::browser'
 include_recipe 'nat::xorg'
+include_recipe 'nat::mpdscribble'
 
 if node.is_desktop?
   include_recipe 'nat::docker'

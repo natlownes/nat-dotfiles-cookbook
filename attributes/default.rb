@@ -183,6 +183,12 @@ default[:nat][:music_player_client][:local][:port]            = 6600
 default[:nat][:music_player_client][:local][:port_streaming]  = 8991
 default[:nat][:music_player_client][:cache_size]              = 512
 
+default[:nat][:mpdscribble][:username]   = 'crabwhittaker'
+default[:nat][:mpdscribble][:password]   = 'd2ddc99cdef1151d13b717b2ec7faad2'
+default[:nat][:mpdscribble][:mpd][:host] = 'localhost'
+default[:nat][:mpdscribble][:mpd][:port] = '6600'
+
+
 default[:nat][:browser][:package_path] = 'Downloads'
 default[:nat][:browser][:default]      = 'google-chrome'
 
