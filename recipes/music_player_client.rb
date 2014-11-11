@@ -19,3 +19,12 @@ template "#{bin_dir}/mpc_start.sh" do
   mode   "770"
   action :create
 end
+
+directory ::File.join(home_dir, '.ncmpcpp') do
+  owner username
+end
+
+template ::File.join(home_dir, '.ncmpcpp', 'config') do
+  source 'music_player_client/ncmpcpp/config.erb'
+  owner username
+end
