@@ -23,10 +23,12 @@ template "#{bin_dir}/mpc_start.sh" do
 end
 
 directory ::File.join(home_dir, '.ncmpcpp') do
+  recursive true
   owner username
 end
 
 directory mpd_music_dir do
+  recursive true
   owner username
 end
 
