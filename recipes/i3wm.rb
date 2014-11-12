@@ -26,7 +26,8 @@ template "#{i3_config_dir}/config" do
     :home_directory  => home_dir,
     :terminal        => 'urxvt',
     :xrandr_displays => node.xrandr_outputs,
-    :node            => node
+    :node            => node,
+    :start_dropbox   => !node.is_chromebook?
   )
 end
 

@@ -141,7 +141,9 @@ exec xbindkeys
 exec i3status | dzen2 -ta r -xs 2 -h 16 -w 800 -x 1200 -y 1062
 exec xrdb -merge ~/.Xresources
 exec gnome-settings-daemon
+<% if @start_dropbox %>
 exec <%= @home_directory %>/.dropbox-dist/dropboxd
+<% end %>
 exec parcellite
 
 bindcode Mod1+31 exec /usr/bin/i3-input -l 1
