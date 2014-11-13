@@ -69,6 +69,7 @@ default[:nat][:metal][:packages] = %w(
   libqt4-sql-psql
   liferea
   mplayer
+  mtpfs
   ncmpc
   ncmpcpp
   parcellite
