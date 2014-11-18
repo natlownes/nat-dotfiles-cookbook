@@ -17,11 +17,6 @@ directory plugin_dir do
   action :create
 end
 
-remote_file "#{plugin_dir}/KeePassHttp.plgx" do
-  source 'https://raw.github.com/pfn/keepasshttp/master/KeePassHttp.plgx'
-  mode   '777'
-end
-
 remote_file "#{plugin_dir}/KeePassHttp.dll" do
   source 'https://github.com/pfn/keepasshttp/raw/master/mono/KeePassHttp.dll'
   mode   '777'
