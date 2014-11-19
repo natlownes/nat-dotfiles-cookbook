@@ -40,6 +40,7 @@ include_recipe 'nat::browser'
 include_recipe 'nat::xorg'
 include_recipe 'nat::mpdscribble'
 include_recipe 'nat::keepass'
+include_recipe 'nat::elixir'
 
 if node.is_desktop?
   include_recipe 'nat::docker'
