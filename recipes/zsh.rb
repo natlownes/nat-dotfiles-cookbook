@@ -46,6 +46,14 @@ template "#{home_dir}/.zsh/prompt.zsh" do
   source "zsh/prompt.zsh"
 end
 
+template "#{home_dir}/.zshenv" do
+  owner username
+  source "zsh/zshenv.erb"
+  variables({
+    :home => home_dir
+  })
+end
+
 git "#{home_dir}/.zsh/functions/Completion/git-flow" do
   repository "https://github.com/bobthecow/git-flow-completion.git"
 
