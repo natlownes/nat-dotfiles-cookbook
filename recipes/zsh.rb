@@ -50,7 +50,7 @@ template "#{home_dir}/.zshenv" do
   owner username
   source "zsh/zshenv.erb"
   variables({
-    :home => home_dir
+    :home_dir => home_dir
   })
 end
 
