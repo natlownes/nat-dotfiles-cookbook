@@ -80,6 +80,7 @@ default[:nat][:metal][:packages] = %w(
   python-qt4-sql
   rxvt-unicode-256color
   shutter
+  stterm
   vlc
   weechat-curses
   xautomation
