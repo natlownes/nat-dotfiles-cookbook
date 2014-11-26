@@ -121,9 +121,10 @@ default[:nat][:weechat][:build_dependencies] = %w(
 )
 
 default[:nat][:weechat][:plugins] = [
-  {'path' => '.weechat/python/growl.py', 'url' => 'http://weechat.org/files/scripts/growl.py'},
-  {'path' => '.weechat/python/jabber.py', 'url' => 'http://weechat.org/files/scripts/jabber.py'},
-  {'path' => '.weechat/python/shell.py', 'url' => 'http://weechat.org/files/scripts/shell.py'},
+  {'path' => '.weechat/python/growl.py',   'url' => 'http://weechat.org/files/scripts/growl.py'},
+  {'path' => '.weechat/python/jabber.py',  'url' => 'http://weechat.org/files/scripts/jabber.py'},
+  {'path' => '.weechat/python/shell.py',   'url' => 'http://weechat.org/files/scripts/shell.py'},
+  {'path' => '.weechat/python/themes.py',  'url' => 'http://weechat.org/files/scripts/tinyurl.py'},
   {'path' => '.weechat/python/tinyurl.py', 'url' => 'http://weechat.org/files/scripts/tinyurl.py'},
 ]
 

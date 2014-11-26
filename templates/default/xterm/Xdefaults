@@ -51,6 +51,10 @@ urxvt.colorIT:           #bbbbbb
 urxvt.colorUL:           #999999
 urxvt.underlineColor:    #999999
 
+URxvt.perl-ext-common:   font-size,vtwheel
+URxvt.keysym.C-Up:       perl:font-size:increase
+URxvt.keysym.C-Down:     perl:font-size:decrease
+
 URxvt.perl-ext:             default,matcher,url-select
 URxvt.url-launcher:         /usr/bin/xdg-open
 URxvt.keysym.C-Delete:      perl:matcher:last
