@@ -51,13 +51,13 @@ urxvt.colorIT:           #bbbbbb
 urxvt.colorUL:           #999999
 urxvt.underlineColor:    #999999
 
-URxvt.perl-ext:             default,matcher
-URxvt.url-launcher:         google-chrome
+URxvt.perl-ext:             default,matcher,url-select
+URxvt.url-launcher:         /usr/bin/xdg-open
 URxvt.keysym.C-Delete:      perl:matcher:last
 URxvt.keysym.M-Delete:      perl:matcher:list
-!URxvt.perl-ext:            default,url-select
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.url-select.underline: true
+URxvt.url-select.launcher:  /usr/bin/xdg-open
 
 !black
 *color0:  #222222
