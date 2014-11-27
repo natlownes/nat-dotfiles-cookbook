@@ -1,14 +1,16 @@
 module Nat
   module UserHelpers
-    def home_dir(username='nat')
+    def user_name
+      node[:username] || 'nat'
+    end
+
+    def home_dir(username=user_name())
       dirs = {
         'darwin' => "/Users/#{username}",
         'linux' =>  "/home/#{username}"
       }
       dirs[node.os] || dirs['linux']
     end
-
-    def user_name ; 'nat' ; end
   end
 end
 
