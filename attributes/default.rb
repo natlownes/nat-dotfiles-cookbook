@@ -17,11 +17,13 @@ default[:nat]['linux'][:packages] = %w(
   build-essential
   curl
   dnsutils
+  encfs
   exuberant-ctags
   hfsplus
   hfsprogs
   hfsutils
   htop
+  libpam-encfs
   mercurial
   protobuf-compiler
   ruby
