@@ -117,7 +117,7 @@ end
 (node[:nat][:vim][:plugins] || []).each do |plugin|
   repo_url    = plugin['url']
   plugin_path = "#{home_dir()}/#{plugin['path']}"
-  branch      = plugin['branch'] || 'master'
+  branch_name = plugin['branch'] || 'master'
 
   # TODO: blow away directory if
   # not git repo or if remote doesn't match
@@ -131,7 +131,8 @@ end
 
   git plugin_path do
     repository repo_url
-    user username
+    user       username
+    branch     branch_name
 
     action :sync
   end
