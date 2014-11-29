@@ -22,8 +22,13 @@ execute "install-vagrant" do
   action :nothing
 end
 
-execute "vagrant-install-lxc-provider" do
-  command "su #{username} -c 'vagrant plugin install vagrant-lxc'"
+script "vagrant-install-lxc-provider" do
   user username
-  not_if %{su #{username} -c 'vagrant plugin list |grep -q vagrant-lxc'}
+  environment({
+    'HOME' => home_dir
+  })
+  interpreter "/bin/bash -i"
+  code %{
+    `vagrant plugin list | grep -q vagrant-lxc` || vagrant plugin install --plugin-version 0.8.0 vagrant-lxc
+  }
 end
