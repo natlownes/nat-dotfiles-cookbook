@@ -23,7 +23,7 @@ execute "install-vagrant" do
 end
 
 execute "vagrant-install-lxc-provider" do
-  command "vagrant plugin install vagrant-lxc"
+  command "su #{username} -c 'vagrant plugin install vagrant-lxc'"
   user username
-  not_if %{vagrant plugin list |grep -q vagrant-lxc}
+  not_if %{su #{username} -c 'vagrant plugin list |grep -q vagrant-lxc'}
 end
