@@ -27,7 +27,7 @@ script "vagrant-install-lxc-provider" do
   environment({
     'HOME' => home_dir
   })
-  interpreter "/bin/bash -i"
+  interpreter "/bin/bash"
   code %{
     `vagrant plugin list | grep -q vagrant-lxc` || vagrant plugin install --plugin-version 0.8.0 vagrant-lxc
   }
