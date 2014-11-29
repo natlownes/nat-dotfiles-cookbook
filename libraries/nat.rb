@@ -33,7 +33,7 @@ class ::Chef::Node
   def xrandr_outputs
     x11_user = self[:nat][:username] || 'nat'
 
-    xrandr_output = `su #{x11_user} -c "xrandr -q`.split()
+    xrandr_output = `su #{x11_user} -c "xrandr -q"`.split()
     displays      = []
 
     xrandr_output.each_with_index do |word, i|
