@@ -234,7 +234,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-literate-coffeescript', 'url'=>'https://github.com/mintplant/vim-literate-coffeescript.git'},
   {'path'=>'.vim/bundle/vim-markdown', 'url'=>'git://github.com/tpope/vim-markdown.git'},
   {'path'=>'.vim/bundle/vim-nerdcommenter', 'url'=>'git://github.com/scrooloose/nerdcommenter.git'},
-  {'path'=>'.vim/bundle/vim-powerline-1', 'url'=>'git://github.com/Lokaltog/vim-powerline.git'},
+  {'path'=>'.vim/bundle/vim-powerline-1', 'url'=>'git://github.com/Lokaltog/vim-powerline.git', 'branch' => 'develop'},
   {'path'=>'.vim/bundle/vim-protobuf-syntax', 'url'=>'git://github.com/jdevera/vim-protobuf-syntax.git'},
   {'path'=>'.vim/bundle/vim-ragtag', 'url'=>'git://github.com/tpope/vim-ragtag.git'},
   {'path'=>'.vim/bundle/vim-rails', 'url'=>'git://github.com/tpope/vim-rails.git'},
