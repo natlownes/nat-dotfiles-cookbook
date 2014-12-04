@@ -26,6 +26,10 @@ gem_packages.each do |gem|
   end
 end
 
+nat_partial '/etc/security/limits.conf' do
+  source "system/limits.conf.erb"
+end
+
 include_recipe 'nat::dropbox'
 include_recipe 'nat::fs_crypt_tools'
 include_recipe 'nat::gnome'
