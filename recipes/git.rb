@@ -43,5 +43,3 @@ end
 execute "install-gitflow" do
   command "wget --no-check-certificate -q -O - https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh | bash"
 end
-
-

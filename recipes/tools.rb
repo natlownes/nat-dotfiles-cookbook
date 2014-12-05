@@ -42,14 +42,3 @@ end
 link "#{bin_dir}/continually" do
   to "#{src_dir}/continually/continually"
 end
-
-
-apt_repository "peru" do
-  uri 'http://ppa.launchpad.net/buildinspace/peru/ubuntu'
-  distribution node['lsb']['codename']
-  components ['main']
-  keyserver 'keyserver.ubuntu.com'
-  key '8C3DE616'
-end
-
-package 'peru'
