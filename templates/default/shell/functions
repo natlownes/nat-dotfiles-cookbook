@@ -150,3 +150,15 @@ function irc_cat {
 function unix_timestamp_to_utc {
   TZ=UTC date -d @$1
 }
+
+function get_ip {
+  dig myip.opendns.com @Resolver1.opendns.com +short
+}
+
+function get_current_zip {
+  curl http://ipinfo.io/json | grep postal | sed 's/[^0-9]//g'
+}
+
+function weather_current {
+  weather --no-cache "`get_current_zip`" |grep Temp | sed -e 's/^.*Temperature\:/Weather:/
+}
