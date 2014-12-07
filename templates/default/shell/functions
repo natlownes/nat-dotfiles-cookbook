@@ -160,5 +160,5 @@ function get_current_zip {
 }
 
 function weather_current {
-  weather --no-cache "`get_current_zip`" |grep Temp | sed -e 's/^.*Temperature\:/Weather:/
+  weather --no-cache "`get_current_zip`" |grep Temp | sed -e 's/^.*Temperature\:/Weather:/'
 }
