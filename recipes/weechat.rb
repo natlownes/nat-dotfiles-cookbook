@@ -112,7 +112,7 @@ plugins.each do |plugin|
       use_conditional_get true
     end
 
-    if self.respond_to(:use_etag)
+    if self.respond_to?(:use_etag)
       use_etag true
     end
 
