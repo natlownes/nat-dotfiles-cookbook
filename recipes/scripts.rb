@@ -10,12 +10,13 @@ directory "#{user_dir}/.bin" do
 end
 
 script_files = %w(
-mount.tc
 key_mount.bash
-ssh_agent_reset.bash
-ssh_agent_copy_env.bash
+mount.tc
 nvm_env.sh
 source_bash.zsh
+ssh_agent_copy_env.bash
+ssh_agent_reset.bash
+zipcode_current.bash
 )
 
 vistar_script_files = %w(

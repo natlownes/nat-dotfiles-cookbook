@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+zipcode_file=<%= @zip_code_record %>
+weather "$(cat $zipcode_file)" |grep Temp | sed -e 's/^.*Temperature\:/Weather:/'
