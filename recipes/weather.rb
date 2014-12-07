@@ -29,7 +29,7 @@ template ::File.join(weather_dir, 'current.bash') do
 end
 
 script 'store current zip code' do
-  interpreter :bash
+  interpreter 'bash'
   code %{
     #{bin_dir}/zipcode_current.bash > #{zip_code_record}
   }
