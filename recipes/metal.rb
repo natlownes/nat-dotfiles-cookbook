@@ -26,6 +26,10 @@ gem_packages.each do |gem|
   end
 end
 
+nat_partial '/etc/security/limits.conf' do
+  source "system/limits.conf.erb"
+end
+
 include_recipe 'nat::dropbox'
 include_recipe 'nat::fs_crypt_tools'
 include_recipe 'nat::gnome'
@@ -52,3 +56,13 @@ end
 if node.is_chromebook?
   include_recipe 'nat::chromebook'
 end
+
+apt_repository "peru" do
+  uri 'http://ppa.launchpad.net/buildinspace/peru/ubuntu'
+  distribution node['lsb']['codename']
+  components ['main']
+  keyserver 'keyserver.ubuntu.com'
+  key '8C3DE616'
+end
+
+package 'peru'

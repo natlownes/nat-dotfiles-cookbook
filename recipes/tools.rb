@@ -1,6 +1,7 @@
 extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
+
 src_dir = "#{home_dir}/src"
 bin_dir = "#{home_dir}/.bin"
 
@@ -14,7 +15,7 @@ directory bin_dir do
   owner username
 end
 
-package_name = value_for_platform({
+inotify_package = value_for_platform({
   ['debian', 'ubuntu'] => {
     'default' => 'inotify-tools'
   },
@@ -23,7 +24,7 @@ package_name = value_for_platform({
   }
 })
 
-package package_name if package_name
+package inotify_package if inotify_package
 
 git "#{src_dir}/continually" do
   repository 'https://github.com/markchadwick/continually.git'
