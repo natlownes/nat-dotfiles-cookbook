@@ -41,3 +41,21 @@ end
 link "#{bin_dir}/continually" do
   to "#{src_dir}/continually/continually"
 end
+
+remote_file "#{bin_dir}/git-icdiff" do
+  source 'https://raw.githubusercontent.com/jeffkaufman/icdiff/master/git-icdiff'
+  owner username
+  mode "755"
+  if self.respond_to?(:use_conditional_get)
+    use_conditional_get true
+  end
+end
+
+remote_file "#{bin_dir}/icdiff" do
+  source 'https://raw.githubusercontent.com/jeffkaufman/icdiff/master/icdiff'
+  owner username
+  mode "755"
+  if self.respond_to?(:use_conditional_get)
+    use_conditional_get true
+  end
+end
