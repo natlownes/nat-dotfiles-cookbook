@@ -22,12 +22,13 @@ template "#{i3_config_dir}/config" do
   source "i3/config.erb"
   owner username
   variables(
-    :browser         => node[:nat][:browser][:default],
-    :home_directory  => home_dir,
-    :terminal        => 'urxvt',
-    :xrandr_displays => node.xrandr_outputs,
-    :node            => node,
-    :start_dropbox   => !node.is_chromebook?
+    :i3status_command => "bash #{i3_config_dir}/scripts/i3status.bash",
+    :browser          => node[:nat][:browser][:default],
+    :home_directory   => home_dir,
+    :terminal         => 'urxvt',
+    :xrandr_displays  => node.xrandr_outputs,
+    :node             => node,
+    :start_dropbox    => !node.is_chromebook?
   )
 end
 
@@ -35,6 +36,15 @@ template "#{i3_config_dir}/scripts/exit_dialog.sh" do
   source "i3/exit_dialog.sh"
   owner username
   mode '755'
+end
+
+template "#{i3_config_dir}/scripts/i3status.bash" do
+  source "i3/i3status.bash"
+  owner username
+  mode '755'
+  variables(
+    :home_dir => home_dir
+  )
 end
 
 template "#{i3_config_dir}/scripts/workspaces.sh" do

@@ -138,7 +138,7 @@ exec --no-startup-id xsetroot -solid "#000"
 exec setxkbmap -model chromebook
 <% end %>
 exec xbindkeys
-exec i3status | dzen2 -ta r -xs 2 -h 16 -w 800 -x 1200 -y 1062
+exec <%= @i3status_command %> | dzen2 -ta r -xs 2 -h 16 -w 800 -x 1200 -y 1062
 exec xrdb -merge ~/.Xresources
 exec gnome-settings-daemon
 <% if @start_dropbox %>
