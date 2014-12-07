@@ -108,8 +108,13 @@ plugins.each do |plugin|
     source url
     owner username
 
-    use_conditional_get true
-    use_etag true
+    if self.respond_to?(:use_conditional_get)
+      use_conditional_get true
+    end
+
+    if self.respond_to(:use_etag)
+      use_etag true
+    end
 
     action :create
   end
