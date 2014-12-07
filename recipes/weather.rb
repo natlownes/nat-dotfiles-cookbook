@@ -40,7 +40,5 @@ cron "update zipcode store for weather" do
   minute '5'
   user username
   home home_dir
-  command %{
-    bash #{bin_dir}/zipcode_current.bash > #{zip_code_record}
-  }
+  command %{bash #{bin_dir}/zipcode_current.bash > #{zip_code_record} }
 end
