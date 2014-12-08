@@ -26,7 +26,7 @@ execute "install-py3status-virtualenv" do
   user    username
   # need the not if here since these files will likely be in use by i3 whenever
   # this runs
-  not_if  { ::File.directory?("virtualenv #{virtualenv_dir}/py3status") }
+  not_if  { ::File.directory?("#{virtualenv_dir}/py3status") }
 end
 
 git "#{i3_config_dir}/py3status_modules" do
