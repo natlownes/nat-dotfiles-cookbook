@@ -20,11 +20,6 @@ directory "#{i3_config_dir}/workspaces" do
   owner username
 end
 
-directory "#{i3_config_dir}/scripts/py3status" do
-  recursive true
-  owner username
-end
-
 execute "install-py3status-globally" do
   command "pip install --upgrade py3status"
 end
@@ -34,6 +29,7 @@ template "#{i3_config_dir}/config" do
   owner username
   variables(
     :i3status_command => "bash #{i3_config_dir}/scripts/i3status.bash",
+    #:i3status_command => "py3status",
     :browser          => node[:nat][:browser][:default],
     :home_directory   => home_dir,
     :terminal         => 'urxvt',
