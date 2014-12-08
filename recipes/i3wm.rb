@@ -34,7 +34,7 @@ git "#{i3_config_dir}/py3status_modules" do
   user       username
   branch     'master'
 
-  action :sync
+  action :export
 end
 
 execute "install py3status_modules dependencies" do
