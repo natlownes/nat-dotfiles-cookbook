@@ -45,6 +45,7 @@ include_recipe 'nat::xorg'
 include_recipe 'nat::mpdscribble'
 include_recipe 'nat::keepass'
 include_recipe 'nat::elixir'
+include_recipe 'nat::weather'
 
 if node.is_desktop?
   include_recipe 'nat::docker'
