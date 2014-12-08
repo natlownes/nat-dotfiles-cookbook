@@ -1,9 +1,10 @@
 include_recipe 'nat::python'
 
 extend Nat::UserHelpers
-username      = user_name()
-home_dir      = home_dir()
-i3_config_dir = "#{home_dir}/.i3"
+username       = user_name()
+home_dir       = home_dir()
+i3_config_dir  = "#{home_dir}/.i3"
+virtualenv_dir = "#{home_dir}/.i3/virtualenv"
 
 directory i3_config_dir do
   recursive true
@@ -20,8 +21,27 @@ directory "#{i3_config_dir}/workspaces" do
   owner username
 end
 
-execute "install-py3status-globally" do
-  command "pip install --upgrade py3status"
+execute "install-py3status-virtualenv" do
+  command "virtualenv #{virtualenv_dir}/py3status"
+  user    username
+end
+
+git "#{i3_config_dir}/py3status_modules" do
+  repository 'git@github.com:natlownes/py3status_modules.git'
+  user       username
+  branch     'master'
+
+  action :sync
+end
+
+execute "install py3status_modules dependencies" do
+  command "#{virtualenv_dir}/py3status/bin/pip install -r #{i3_config_dir}/py3status_modules/requirements.txt"
+  user username
+end
+
+link "#{i3_config_dir}/py3status" do
+  to "#{i3_config_dir}/py3status_modules/py3status_modules"
+  owner username
 end
 
 template "#{i3_config_dir}/config" do
