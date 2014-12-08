@@ -27,7 +27,7 @@ execute "install-py3status-virtualenv" do
 end
 
 git "#{i3_config_dir}/py3status_modules" do
-  repository 'git@github.com:natlownes/py3status_modules.git'
+  repository 'https://github.com/natlownes/py3status_modules.git'
   user       username
   branch     'master'
 
