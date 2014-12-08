@@ -48,8 +48,8 @@ template "#{i3_config_dir}/config" do
   source "i3/config.erb"
   owner username
   variables(
-    :i3status_command => "bash #{i3_config_dir}/scripts/i3status.bash",
-    #:i3status_command => "py3status",
+    #:i3status_command => "bash #{i3_config_dir}/scripts/i3status.bash",
+    :i3status_command => "py3status",
     :browser          => node[:nat][:browser][:default],
     :home_directory   => home_dir,
     :terminal         => 'urxvt',
