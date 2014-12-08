@@ -153,7 +153,7 @@ bindcode Mod1+31 exec /usr/bin/i3-input -l 1
 
 # XXX: Automatically added a bar configuration
 bar {
-  status_command <%= @i3status_command %>
+  status_command <%= @i3status_command %> -c <%= @home_directory %>/.i3status.conf
 }
 
 workspace_auto_back_and_forth yes
