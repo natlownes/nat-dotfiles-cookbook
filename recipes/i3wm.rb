@@ -1,3 +1,5 @@
+include_recipe 'nat::python'
+
 extend Nat::UserHelpers
 username      = user_name()
 home_dir      = home_dir()
@@ -16,6 +18,15 @@ end
 directory "#{i3_config_dir}/workspaces" do
   recursive true
   owner username
+end
+
+directory "#{i3_config_dir}/scripts/py3status" do
+  recursive true
+  owner username
+end
+
+execute "install-py3status-globally" do
+  command "pip install --upgrade py3status"
 end
 
 template "#{i3_config_dir}/config" do
