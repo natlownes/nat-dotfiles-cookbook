@@ -2,6 +2,13 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
+bin_dir = ::File.join(home_dir, '.bin')
+
+directory bin_dir do
+  owner     username
+  recursive true
+end
+
 if platform?('ubuntu')
   # fix for https://tickets.opscode.com/browse/CHEF-3940
   apt_repository "git-core" do
@@ -25,9 +32,23 @@ package_name = value_for_platform({
 package package_name
 
 
+template "#{bin_dir}/git_diff_wrapper.bash" do
+  source "git/git_diff_wrapper.bash.erb"
+  owner username
+  mode  "774"
+  variables(
+    :diff => ::File.join(home_dir, '.bin', 'icdiff')
+  )
+end
+
 template "#{home_dir}/.gitconfig" do
   source "git/gitconfig"
   owner username
+  variables(
+    :diff => {
+      :wrapper => ::File.join(home_dir, '.bin', 'git_diff_wrapper.bash')
+    }
+  )
 end
 
 template "#{home_dir}/.gitignore" do

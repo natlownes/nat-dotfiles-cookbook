@@ -51,5 +51,9 @@
 	excludesfile = ~/.gitignore_global
   filemode = true
 	mergeoptions = --no-ff --no-commit
+[diff]
+<% if @diff %>
+  external = <%= @diff[:wrapper] %>
+<% end %>
 [merge]
   tool = vimdiff
