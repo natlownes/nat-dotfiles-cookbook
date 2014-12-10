@@ -55,6 +55,7 @@ default[:nat][:the_silver_searcher][:scm_url] =
 
 default[:nat][:metal][:packages] = %w(
   ario
+  audacity
   autofs
   chromium-browser
   claws-mail
@@ -67,6 +68,7 @@ default[:nat][:metal][:packages] = %w(
   imagemagick
   keepassx
   kpcli
+  lame
   libpq-dev
   libqt4-sql-psql
   liferea
