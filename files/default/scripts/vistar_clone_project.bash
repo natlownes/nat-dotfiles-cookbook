@@ -4,7 +4,7 @@ src_dir="$HOME/src/vistar"
 url_base="ssh://gerrit.vistarmedia.com:29418/"
 project_name=$1
 destination_dir=$src_dir/$project_name
-metal_machine="192.168.11.14"
+metal_machine="192.168.1.168"
 
 user_real_name="nat"
 user_vistar_email="nat@vistarmedia.com"
