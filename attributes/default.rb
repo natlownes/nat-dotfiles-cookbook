@@ -72,6 +72,8 @@ default[:nat][:metal][:packages] = %w(
   libpq-dev
   libqt4-sql-psql
   liferea
+  mediainfo
+  mediainfo-gui
   mplayer
   mtpfs
   ncmpc
