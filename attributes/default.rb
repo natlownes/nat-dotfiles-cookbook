@@ -62,6 +62,7 @@ default[:nat][:metal][:packages] = %w(
   conky
   feh
   flashplugin-downloader
+  flashplugin-installer
   gimp
   gmpc
   gnupg-agent
