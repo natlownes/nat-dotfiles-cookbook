@@ -142,6 +142,7 @@ map <leader>rr ^v$p<CR>
   ",a: align :
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
+
   ",a> align =>
   nmap <leader>a> :Tabularize /=><cr>
   vmap <leader>a> :Tabularize /=><cr>
@@ -150,7 +151,12 @@ map <leader>rr ^v$p<CR>
   vmap <leader>a- :Tabularize /-><cr>
   " example of only one space
   "<leader>a: :Tabularize /:\zs/l0l1<cr>
+  " align only on first equals
+  AddTabularPattern Equals=     /^[^=]*\zs=
+  " align only on first equals, no spaces
+  AddTabularPattern Equals2==   /^[^=]*\zs=/r0c0l0
 "endif
+
 
 "inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
