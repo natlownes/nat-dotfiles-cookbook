@@ -262,7 +262,7 @@ default[:nat][:vim][:plugins] = [
 
 
 default[:nat][:vim][:plugins_to_remove] = [
-   {'path'=>'.vim/bundle/vim-ack', 'url'=>'git://github.com/mileszs/ack.vim.git'},
-   {'path'=>'.vim/bundle/vim-matchit', 'url'=>'git://github.com/tsaleh/vim-matchit.git'}
+  {'path'=>'.vim/bundle/vim-ack', 'url'=>'git://github.com/mileszs/ack.vim.git'},
+  {'path'=>'.vim/bundle/vim-matchit', 'url'=>'git://github.com/tsaleh/vim-matchit.git'},
   {'path'=>'.vim/bundle/vim-snippets', 'url'=>'git://github.com/garbas/vim-snipmate.git'},
 ]
