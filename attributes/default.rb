@@ -246,7 +246,6 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-rainbow-parenthesis', 'url'=>'git://github.com/kien/rainbow_parentheses.vim.git'},
   {'path'=>'.vim/bundle/vim-rspec', 'url'=>'https://github.com/thoughtbot/vim-rspec.git'},
   {'path'=>'.vim/bundle/vim-scala', 'url'=>'https://github.com/derekwyatt/vim-scala.git'},
-  {'path'=>'.vim/bundle/vim-snippets', 'url'=>'git://github.com/garbas/vim-snipmate.git'},
   {'path'=>'.vim/bundle/vim-stylus', 'url'=>'https://github.com/wavded/vim-stylus.git'},
   {'path'=>'.vim/bundle/vim-surround', 'url'=>'git://github.com/tpope/vim-surround.git'},
   {'path'=>'.vim/bundle/vim-tabular', 'url'=>'git://github.com/godlygeek/tabular.git'},
@@ -265,4 +264,5 @@ default[:nat][:vim][:plugins] = [
 default[:nat][:vim][:plugins_to_remove] = [
    {'path'=>'.vim/bundle/vim-ack', 'url'=>'git://github.com/mileszs/ack.vim.git'},
    {'path'=>'.vim/bundle/vim-matchit', 'url'=>'git://github.com/tsaleh/vim-matchit.git'}
+  {'path'=>'.vim/bundle/vim-snippets', 'url'=>'git://github.com/garbas/vim-snipmate.git'},
 ]
