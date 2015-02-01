@@ -24,6 +24,7 @@ Host doublev.alt.vistar
   LocalForward 4011  <%= @tunnels['phl.vistarmedia.com'] %>:4011
   LocalForward 5000  <%= @tunnels['phl.vistarmedia.com'] %>:5000
   LocalForward 5001  <%= @tunnels['phl.vistarmedia.com'] %>:5001
+  LocalForward 5555  <%= @tunnels['phl.vistarmedia.com'] %>:5555
   LocalForward 9294  <%= @tunnels['phl.vistarmedia.com'] %>:9294
   LocalForward 9295  <%= @tunnels['phl.vistarmedia.com'] %>:9295
   LocalForward 8888  <%= @tunnels['phl.vistarmedia.com'] %>:8888
