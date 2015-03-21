@@ -152,6 +152,10 @@ default[:nat][:ssh] = {
   }
 }
 
+default[:nat][:ssh][:tunnels] = {
+  'phl.vistarmedia.com' => '192.168.1.169'
+}
+
 default[:nat][:xterm][:font_packages] = %w(
   fonts-inconsolata
   xfonts-terminus
