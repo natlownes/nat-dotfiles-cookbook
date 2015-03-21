@@ -49,9 +49,7 @@ template "#{ssh_dir}/config" do
   owner username
   source "ssh/config"
   variables(
-    'tunnels' => {
-      'phl.vistarmedia.com' => '192.168.1.168'
-    }
+    'tunnels' => ssh_attributes[:tunnels]
   )
 end
 
