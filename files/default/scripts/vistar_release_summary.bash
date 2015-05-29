@@ -2,7 +2,7 @@
 
 src_root="$HOME/src/vistar"
 
-projects="pub-ad-server platform geo-ui geo-rest vistar vistar-ui locus"
+projects="pub-ad-server platform geo-ui geo-rest vistar vistar-ui locus trafficking"
 
 summary=""
 
