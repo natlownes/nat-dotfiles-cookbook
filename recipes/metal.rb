@@ -57,13 +57,3 @@ end
 if node.is_chromebook?
   include_recipe 'nat::chromebook'
 end
-
-apt_repository "peru" do
-  uri 'http://ppa.launchpad.net/buildinspace/peru/ubuntu'
-  distribution node['lsb']['codename']
-  components ['main']
-  keyserver 'keyserver.ubuntu.com'
-  key '8C3DE616'
-end
-
-package 'peru'
