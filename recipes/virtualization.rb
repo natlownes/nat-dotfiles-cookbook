@@ -12,7 +12,7 @@ package 'cgroup-lite'
 
 
 remote_file "#{Chef::Config[:file_cache_path]}/vagrant.deb" do
-  source "https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb"
+  source "https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb"
   use_etag true
 end
 
