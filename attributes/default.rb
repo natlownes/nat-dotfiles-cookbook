@@ -135,6 +135,10 @@ default[:nat][:weechat][:plugins] = [
   {'path' => '.weechat/python/tinyurl.py', 'url' => 'http://weechat.org/files/scripts/tinyurl.py'},
 ]
 
+# packer
+#
+default[:nat][:packer][:url] = 'https://dl.bintray.com/mitchellh/packer/packer_0.8.5_linux_amd64.zip'
+
 # ssh
 #
 # client hostnames are the clients that should
