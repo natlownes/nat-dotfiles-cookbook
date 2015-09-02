@@ -9,6 +9,7 @@ source $HOME/.shell/ssh_agent
 source $HOME/.shell/paths
 source $HOME/.shell/functions
 source $HOME/.shell/aliases
+source $HOME/.shell/termcap
 [[ -s $HOME/.shell/envs ]] && source $HOME/.shell/envs
 
 fpath=(~/.zsh $fpath)

@@ -43,3 +43,8 @@ template "#{shell_config_dir}/envs" do
   source "shell/envs"
   owner username
 end
+
+template "#{shell_config_dir}/termcap" do
+  source "shell/termcap"
+  owner username
+end
