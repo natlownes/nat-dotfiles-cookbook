@@ -258,10 +258,10 @@ colorscheme molokai
 " sessions
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
-au Bufread,BufNewFile *.md set filetype=markdown
-au Bufread,BufNewFile *.markdown set filetype=markdown
-au Bufread,BufNewFile *.latex set filetype=latex
-au Bufread,BufNewFile *.tex set filetype=latex
+autocmd BufNewFile,BufReadPost *.latex set filetype=latex
+autocmd BufNewFile,BufReadPost *.tex set filetype=latex
+autocmd BufNewFile,BufReadPost *.markdown set filetype=markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 autocmd FileType * let b:stripWhitespace=1
 autocmd FileType markdown let b:stripWhitespace=0

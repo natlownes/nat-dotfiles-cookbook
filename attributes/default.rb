@@ -244,7 +244,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-jade', 'url'=>'git://github.com/digitaltoad/vim-jade.git'},
   {'path'=>'.vim/bundle/vim-latex-live-preview', 'url'=>'git://github.com/xuhdev/vim-latex-live-preview.git'},
   {'path'=>'.vim/bundle/vim-less', 'url'=>'git://github.com/groenewege/vim-less.git'},
-  {'path'=>'.vim/bundle/vim-markdown', 'url'=>'git://github.com/tpope/vim-markdown.git'},
+  {'path'=>'.vim/bundle/markdown', 'url'=>'git://github.com/plasticboy/vim-markdown.git'},
   {'path'=>'.vim/bundle/vim-nerdcommenter', 'url'=>'git://github.com/scrooloose/nerdcommenter.git'},
   {'path'=>'.vim/bundle/vim-powerline-1', 'url'=>'git://github.com/Lokaltog/vim-powerline.git', 'branch' => 'develop'},
   {'path'=>'.vim/bundle/vim-protobuf-syntax', 'url'=>'git://github.com/jdevera/vim-protobuf-syntax.git'},
@@ -272,4 +272,5 @@ default[:nat][:vim][:plugins_to_remove] = [
   {'path'=>'.vim/bundle/vim-ack', 'url'=>'git://github.com/mileszs/ack.vim.git'},
   {'path'=>'.vim/bundle/vim-matchit', 'url'=>'git://github.com/tsaleh/vim-matchit.git'},
   {'path'=>'.vim/bundle/vim-snippets', 'url'=>'git://github.com/garbas/vim-snipmate.git'},
+  {'path'=>'.vim/bundle/vim-markdown', 'url'=>'git://github.com/tpope/vim-markdown.git'},
 ]
