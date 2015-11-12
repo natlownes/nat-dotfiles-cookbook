@@ -343,6 +343,9 @@ source ~/.vim/vimrcs/coffee_tagbar
 set cscopetag
 set cscopetagorder=1
 
+" markdown plugin settings
+let g:vim_markdown_folding_disabled=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
