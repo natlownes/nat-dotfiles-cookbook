@@ -68,6 +68,9 @@ let g:tmux_navigator_no_mappings = 1
 " jj to exit insert mode
 inoremap jj <esc>
 
+" w!! write w/sudo
+cnoremap w!! w !sudo tee > /dev/null %
+
 if v:version > '702'
   set colorcolumn=80
 endif
