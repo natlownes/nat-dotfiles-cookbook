@@ -274,3 +274,5 @@ default[:nat][:vim][:plugins_to_remove] = [
   {'path'=>'.vim/bundle/vim-snippets', 'url'=>'git://github.com/garbas/vim-snipmate.git'},
   {'path'=>'.vim/bundle/vim-markdown', 'url'=>'git://github.com/tpope/vim-markdown.git'},
 ]
+
+default[:nat][:bazel][:install_url] = 'https://github.com/bazelbuild/bazel/releases/download/0.1.2/bazel-0.1.2-installer-linux-x86_64.sh'
