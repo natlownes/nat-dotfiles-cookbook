@@ -4,6 +4,12 @@ home_dir = home_dir()
 
 
 bazel_exec_path = ::File.join(home_dir, 'bin', 'bazel')
+zsh_completion_path = ::File.join(home_dir, '.zsh', 'completion')
+
+directory zsh_completion_path do
+  recursive true
+  owner     username
+end
 
 apt_repository 'ppa:webupd8team/java' do
   uri 'ppa:webupd8team/java'
@@ -29,9 +35,14 @@ packages.each do |pkg|
   end
 end
 
+remote_file "#{::File.join(zsh_completion_path, '_bazel')}" do
+  source node[:nat][:bazel][:zsh_completion_url]
+  owner username
+end
+
 remote_file '/tmp/bazel-installer.sh' do
   source node[:nat][:bazel][:install_url]
-  user username
+  owner username
   checksum '617d34dc76a63f40ba04ad9b394a163302103ea3466c2f13d19500f45b765a38'
   notifies 'bash[install-bazel]', :immediately
   not_if { ::File.exists?(bazel_exec_path) }

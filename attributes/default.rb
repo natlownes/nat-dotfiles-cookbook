@@ -276,3 +276,4 @@ default[:nat][:vim][:plugins_to_remove] = [
 ]
 
 default[:nat][:bazel][:install_url] = 'https://github.com/bazelbuild/bazel/releases/download/0.1.2/bazel-0.1.2-installer-linux-x86_64.sh'
+default[:nat][:bazel][:zsh_completion_url] = 'https://raw.githubusercontent.com/bazelbuild/bazel/master/scripts/zsh_completion/_bazel'
