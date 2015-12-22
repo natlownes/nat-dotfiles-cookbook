@@ -44,7 +44,7 @@ remote_file '/tmp/bazel-installer.sh' do
   source node[:nat][:bazel][:install_url]
   owner username
   checksum '617d34dc76a63f40ba04ad9b394a163302103ea3466c2f13d19500f45b765a38'
-  notifies 'bash[install-bazel]', :immediately
+  notifies :run, 'bash[install-bazel]', :immediately
   not_if { ::File.exists?(bazel_exec_path) }
 end
 
