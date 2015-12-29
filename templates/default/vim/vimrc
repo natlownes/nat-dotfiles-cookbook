@@ -29,6 +29,8 @@ set splitbelow
 set splitright
 "automatically save the file when we change buffers
 "set autowrite
+" read modelines i.e. # vim: set syntax=python:
+set modeline
 
 set statusline=%{fugitive#statusline()}
 let mapleader=","
