@@ -3,7 +3,7 @@ username = user_name()
 home_dir = home_dir()
 
 
-bazel_exec_path = ::File.join(home_dir, 'bin', 'bazel')
+bazel_exec_path     = ::File.join(home_dir, 'bin', 'bazel')
 zsh_completion_path = ::File.join(home_dir, '.zsh', 'completion')
 
 directory zsh_completion_path do
@@ -11,7 +11,7 @@ directory zsh_completion_path do
   owner     username
 end
 
-apt_repository 'ppa:webupd8team/java' do
+apt_repository 'bazel' do
   uri 'ppa:webupd8team/java'
   key 'EEA14886'
   keyserver 'keyserver.ubuntu.com'
