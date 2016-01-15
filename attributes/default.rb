@@ -208,7 +208,7 @@ default[:nat][:mpdscribble][:mpd][:port] = '6600'
 
 
 default[:nat][:browser][:package_path] = 'Downloads'
-default[:nat][:browser][:default]      = 'firefox'
+default[:nat][:browser][:default]      = 'google-chrome'
 
 default[:nat][:dropbox][:force_install] = false
 
