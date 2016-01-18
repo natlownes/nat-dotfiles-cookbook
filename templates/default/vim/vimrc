@@ -266,10 +266,11 @@ colorscheme molokai
 " sessions
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
-autocmd BufNewFile,BufReadPost *.latex set filetype=latex
-autocmd BufNewFile,BufReadPost *.tex set filetype=latex
-autocmd BufNewFile,BufReadPost *.markdown set filetype=markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.latex set filetype=latex
+autocmd BufNewFile,BufRead *.tex set filetype=latex
+autocmd BufNewFile,BufRead *.markdown set filetype=markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.bzl set filetype=python
 
 autocmd FileType * let b:stripWhitespace=1
 autocmd FileType markdown let b:stripWhitespace=0
