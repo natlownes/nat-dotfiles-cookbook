@@ -264,7 +264,9 @@ default[:nat][:vim][:plugins] = [
 
   # colors i.e. http://www.youtube.com/watch?v=KP0OaUOQGCg
   {'path'=>'.vim/bundle/vim-vividchalk', 'url'=>'git://github.com/tpope/vim-vividchalk.git'},
-  {'path'=>'.vim/colors/vim-luna', 'url'=>'git://github.com/Pychimp/vim-luna.git'}
+  {'path'=>'.vim/colors/vim-luna', 'url'=>'git://github.com/Pychimp/vim-luna.git'},
+  {'path'=>'.vim/bundle/vimproc.vim', 'url'=>'https://github.com/Shougo/vimproc.vim.git'},
+  {'path'=> '.vim/bundle/tsuquyomi', 'url'=>'https://github.com/Quramy/tsuquyomi.git'},
 ]
 
 

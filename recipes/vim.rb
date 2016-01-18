@@ -138,6 +138,12 @@ end
   end
 end
 
+execute 'build vimproc' do
+  cwd     "#{vim_bundle_dir}/vimproc.vim"
+  command 'make'
+  user    username
+end
+
 link "#{vim_dir}/autoload/pathogen.vim" do
   to "#{vim_dir}/autoload/vim-pathogen/autoload/pathogen.vim"
   owner username
