@@ -266,7 +266,8 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-vividchalk', 'url'=>'git://github.com/tpope/vim-vividchalk.git'},
   {'path'=>'.vim/colors/vim-luna', 'url'=>'git://github.com/Pychimp/vim-luna.git'},
   {'path'=>'.vim/bundle/vimproc.vim', 'url'=>'https://github.com/Shougo/vimproc.vim.git'},
-  {'path'=> '.vim/bundle/tsuquyomi', 'url'=>'https://github.com/Quramy/tsuquyomi.git'},
+  {'path'=>'.vim/bundle/tsuquyomi', 'url'=>'https://github.com/Quramy/tsuquyomi.git'},
+  {'path'=>'.vim/bundle/typescript-vim', 'url'=>'https://github.com/leafgarland/typescript-vim.git'},
 ]
 
 
