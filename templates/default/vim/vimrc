@@ -70,6 +70,9 @@ let g:tmux_navigator_no_mappings = 1
 " jj to exit insert mode
 inoremap jj <esc>
 
+" ,<Tab> to autocomplete
+inoremap <Leader><Tab> <C-x><C-o>
+
 " w!! write w/sudo
 cnoremap w!! w !sudo tee > /dev/null %
 
