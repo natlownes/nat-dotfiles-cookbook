@@ -28,6 +28,7 @@ default[:nat]['linux'][:packages] = %w(
   protobuf-compiler
   ruby
   ruby-dev
+  sshuttle
   wget
 )
 
