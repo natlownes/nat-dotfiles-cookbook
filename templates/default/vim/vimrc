@@ -211,6 +211,7 @@ set dir=/tmp
 set backupdir=/tmp
 set directory=/tmp
 set backupskip=/tmp/*,/private/tmp/*
+set backupcopy=yes
 
 filetype off
 filetype plugin indent off
