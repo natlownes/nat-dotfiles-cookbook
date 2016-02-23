@@ -1,6 +1,9 @@
+include_recipe 'nat::python'
+
 extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
+
 
 execute 'docker grab kernel extra' do
   command 'apt-get install linux-image-extra-`uname -r`'
@@ -21,6 +24,10 @@ execute 'apt-get update' do
 end
 
 package 'lxc-docker'
+
+execute 'install-docker-compose' do
+  'pip install docker-compose'
+end
 
 execute "docker add user #{username} to group" do
   command "usermod -a -G docker #{username}"
