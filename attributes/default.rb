@@ -220,6 +220,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/ag.vim', 'url'=>'git://github.com/rking/ag.vim.git'},
   {'path'=>'.vim/bundle/ctrl-p.vim', 'url'=>'git://github.com/kien/ctrlp.vim.git'},
   {'path'=>'.vim/bundle/fugitive', 'url'=>'git://github.com/tpope/vim-fugitive.git'},
+  {'path'=>'.vim/bundle/markdown', 'url'=>'git://github.com/plasticboy/vim-markdown.git'},
   {'path'=>'.vim/bundle/neocomplcache', 'url'=>'git://github.com/Shougo/neocomplcache.vim.git'},
   {'path'=>'.vim/bundle/nerdtree', 'url'=>'git://github.com/scrooloose/nerdtree.git'},
   {'path'=>'.vim/bundle/python-mode', 'url'=>'git://github.com/klen/python-mode.git'},
@@ -245,7 +246,6 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-jade', 'url'=>'git://github.com/digitaltoad/vim-jade.git'},
   {'path'=>'.vim/bundle/vim-latex-live-preview', 'url'=>'git://github.com/xuhdev/vim-latex-live-preview.git'},
   {'path'=>'.vim/bundle/vim-less', 'url'=>'git://github.com/groenewege/vim-less.git'},
-  {'path'=>'.vim/bundle/markdown', 'url'=>'git://github.com/plasticboy/vim-markdown.git'},
   {'path'=>'.vim/bundle/vim-nerdcommenter', 'url'=>'git://github.com/scrooloose/nerdcommenter.git'},
   {'path'=>'.vim/bundle/vim-powerline-1', 'url'=>'git://github.com/Lokaltog/vim-powerline.git', 'branch' => 'develop'},
   {'path'=>'.vim/bundle/vim-protobuf-syntax', 'url'=>'git://github.com/jdevera/vim-protobuf-syntax.git'},
@@ -262,6 +262,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-tlib', 'url'=>'git://github.com/tomtom/tlib_vim.git'},
   {'path'=>'.vim/bundle/vim-tmux-navigator', 'url'=>'git://github.com/christoomey/vim-tmux-navigator.git'},
   {'path'=>'.vim/bundle/vim-tslime', 'url'=>'git://github.com/jgdavey/tslime.vim.git'},
+  {'path'=>'.vim/bundle/vim-wakatime', 'url'=>'git://github.com/wakatime/vim-wakatime.git'},
 
   # colors i.e. http://www.youtube.com/watch?v=KP0OaUOQGCg
   {'path'=>'.vim/bundle/vim-vividchalk', 'url'=>'git://github.com/tpope/vim-vividchalk.git'},
