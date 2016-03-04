@@ -25,8 +25,8 @@ end
 
 package 'lxc-docker'
 
-execute 'install-docker-compose' do
-  'pip install docker-compose'
+bash 'install-docker-compose' do
+  code 'pip install docker-compose'
 end
 
 execute "docker add user #{username} to group" do
