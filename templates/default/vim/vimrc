@@ -499,6 +499,12 @@ let g:pymode_syntax = 1
 let g:pymode_options_colorcolumn=0
 " end python settings
 
+" start typescript settings
+let g:syntastic_typescript_tsc_args = '--target ES5 --jsx react --experimentalDecorators'
+let g:tsuquyomi_disable_default_mappings = 1
+let g:typescript_compiler_options = '--sourcemap --jsx react --experimentalDecorators'
+" end typescript settings
+
 " Enable syntax highlighting when buffers were loaded through :bufdo, which
 " disables the Syntax autocmd event to speed up processing.
 augroup EnableSyntaxHighlighting
