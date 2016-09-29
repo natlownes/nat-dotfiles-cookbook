@@ -400,7 +400,8 @@ map <leader>p :cp<cr>
 " vimrc to allow for blasting off reggaeton horns while coding
 " nmap HH :silent execute "!afplay /Users/nat/.vim/audio/succ_horns01.mp3 &>/dev/null"<CR><C-l><CR>
 "nmap HH :silent ! afplay /Users/nat/.vim/audio/succ_horns01.mp3 &>/dev/null &<CR><C-l>
-nmap HH :silent ! afplay /Users/nat/.vim/audio/sadtrombone.mp3 &>/dev/null &<CR><C-l>
+"nmap HH :silent ! afplay /Users/nat/.vim/audio/sadtrombone.mp3 &>/dev/null &<CR><C-l>
+nmap HH :silent ! curl --silent http://s3.amazonaws.com/nat.vistarmedia.com/audio/dixie01.mp3 \| mpg123 - 1>&-2>&-&<CR><C-l>
 
 " crtl-p settings
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,./tmp/*,*/tmp/*,./node_modules/*,*/node_modules/*
