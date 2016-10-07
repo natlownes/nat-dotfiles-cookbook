@@ -104,19 +104,19 @@ if node.platform == 'ubuntu'
     only_if "which ibus-setup"
   end
 
-  #file "/etc/apt/sources.list.d/i3wm.list" do
-    #content "deb http://debian.sur5r.net/i3/ #{node['lsb']['codename']} universe"
+  file "/etc/apt/sources.list.d/i3wm.list" do
+    content "deb http://debian.sur5r.net/i3/ #{node['lsb']['codename']} universe"
 
-    #notifies :run, "execute[apt-get-update]", :immediately
-  #end
+    notifies :run, "execute[apt-get-update]", :immediately
+  end
 
-  #execute "install-i3wm-keyring" do
-    #command "apt-get --allow-unauthenticated install sur5r-keyring"
+  execute "install-i3wm-keyring" do
+    command "apt-get --allow-unauthenticated install sur5r-keyring"
 
-    #notifies :run, "execute[apt-get-update]", :immediately
-  #end
+    notifies :run, "execute[apt-get-update]", :immediately
+  end
 
-  #package 'i3'
+  package 'i3'
 
   template "#{home_dir}/.xinitrc" do
     source "xorg/xinitrc"

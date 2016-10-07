@@ -190,7 +190,7 @@ default[:nat][:gem_packages] = [
   {'name' => 'gist'}
 ]
 
-default[:nat][:golang][:scm_url]       = 'https://code.google.com/p/go'
+default[:nat][:golang][:scm_url]       = 'https://github.com/golang/go.git'
 default[:nat][:golang][:install_path]  = 'src/golang'
 default[:nat][:golang][:force_install] = false
 

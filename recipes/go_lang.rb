@@ -45,7 +45,15 @@ execute 'build-and-install-go' do
   action :nothing
 end
 
-execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
+#execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
+  #cwd     install_dir
+  #user    username
+
+  #only_if { !::File.directory?("#{install_dir}/go") }
+  #notifies :run, "execute[build-and-install-go]", :immediately
+#end
+
+execute "git clone #{node[:nat][:golang][:scm_url]}" do
   cwd     install_dir
   user    username
 

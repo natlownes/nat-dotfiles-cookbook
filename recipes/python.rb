@@ -26,7 +26,7 @@ execute "install-setuptools" do
 end
 
 execute "install-pip" do
-  command "wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py -O - | #{exec_name}"
+  command "wget https://bootstrap.pypa.io/get-pip.py -O - | #{exec_name}"
   not_if "type pip > /dev/null"
 end
 
