@@ -4,11 +4,8 @@ default[:nat][:packages] = %w(
   autossh
   bash-completion
   keychain
-  sshfs
-  tcpdump
   tig
   tmux
-  whois
   zsh
 )
 
@@ -28,13 +25,16 @@ default[:nat]['linux'][:packages] = %w(
   protobuf-compiler
   ruby
   ruby-dev
+  sshfs
   sshuttle
+  tcpdump
   wget
+  whois
 )
 
 default[:nat]['darwin'][:packages] = %w(
+  ag
   ctags
-  ruby19
 )
 
 default[:nat][:the_silver_searcher]['darwin'][:build_dependencies] = %w(
@@ -106,7 +106,6 @@ default[:nat][:tmux]['linux'][:build_dependencies] = %w(
 )
 default[:nat][:tmux]['darwin'][:build_dependencies] = %w(
   libevent
-  ncurses
 )
 
 default[:nat][:weechat][:src_url]            = 'http://www.weechat.org/files/src/weechat-0.4.2.tar.bz2'

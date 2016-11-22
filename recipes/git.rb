@@ -25,7 +25,7 @@ package_name = value_for_platform({
     'default' => 'git'
   },
   'mac_os_x' => {
-    'default' => 'git-core'
+    'default' => 'git'
   }
 })
 

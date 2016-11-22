@@ -14,12 +14,15 @@ package_manager_update_command = value_for_platform({
     'default' => 'apt-get update --fix-missing'
   },
   'mac_os_x' => {
-    'default' => 'port -d selfupdate'
+    'default' => 'brew update'
   }
 })
 
 execute "ready-package-manager" do
   command package_manager_update_command
+  if node.os == 'darwin'
+    user username
+  end
   action :nothing
 end.run_action(:run)
 
@@ -62,9 +65,8 @@ directory "#{::File.join(home_dir, '.local')}" do
 end
 
 
-include_recipe 'nat::ssh'
-include_recipe 'nat::tmux'
 include_recipe 'nat::vim'
+include_recipe 'nat::tmux'
 include_recipe 'nat::ctags'
 include_recipe 'nat::git'
 include_recipe 'nat::shell'
@@ -81,3 +83,7 @@ include_recipe 'nat::various'
 include_recipe 'nat::the_silver_searcher'
 include_recipe 'nat::jq'
 #include_recipe 'nat::packer'
+
+if node.os == 'linux'
+  include_recipe 'nat::ssh'
+end
