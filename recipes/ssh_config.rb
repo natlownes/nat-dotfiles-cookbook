@@ -5,14 +5,14 @@ ssh_dir  = "#{home_dir()}/.ssh"
 
 ssh_attributes = node[:nat][:ssh]
 
-identities_dir = value_for_platform({
-  ['debian', 'ubuntu'] => {
-    'default' => "#{home_dir()}/opt/local/mnt/home/home/.ssh/identities"
-  },
-  'mac_os_x' => {
-    'default' => "/Volumes/keys/.ssh/identities"
-  }
-})
+#identities_dir = value_for_platform({
+  #['debian', 'ubuntu'] => {
+    #'default' => "#{home_dir()}/opt/local/mnt/home/home/.ssh/identities"
+  #},
+  #'mac_os_x' => {
+    #'default' => "/Volumes/keys/.ssh/identities"
+  #}
+#})
 
 
 directories = [
@@ -46,10 +46,10 @@ template "#{ssh_dir}/rc" do
   source "ssh/rc"
 end
 
-link "#{ssh_dir}/identities" do
-  to identities_dir
-  owner username
-end
+#link "#{ssh_dir}/identities" do
+  #to identities_dir
+  #owner username
+#end
 
 link "#{ssh_dir}/id_dsa" do
   to "#{ssh_dir}/identities/id_dsa"

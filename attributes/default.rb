@@ -35,6 +35,8 @@ default[:nat]['linux'][:packages] = %w(
 default[:nat]['darwin'][:packages] = %w(
   ag
   ctags
+  reattach-to-user-namespace
+  sshuttle
 )
 
 default[:nat][:the_silver_searcher]['darwin'][:build_dependencies] = %w(
