@@ -83,7 +83,4 @@ include_recipe 'nat::various'
 include_recipe 'nat::the_silver_searcher'
 include_recipe 'nat::jq'
 #include_recipe 'nat::packer'
-
-if node.os == 'linux'
-  include_recipe 'nat::ssh'
-end
+include_recipe 'nat::ssh'
