@@ -82,6 +82,11 @@ template "#{vim_dir}/vimrcs/coffee_tagbar" do
   owner username
 end
 
+template "#{vim_dir}/vimrcs/go_tagbar" do
+  source "vim/vimrcs/go_tagbar"
+  owner username
+end
+
 template "#{vim_ftplugin_dir}/python.vim" do
   source "vim/ftplugin/python.vim.erb"
   owner username

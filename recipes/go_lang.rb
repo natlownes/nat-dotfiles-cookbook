@@ -60,3 +60,8 @@ execute "git clone #{node[:nat][:golang][:scm_url]}" do
   only_if { !::File.directory?("#{install_dir}/go") }
   notifies :run, "execute[build-and-install-go]", :immediately
 end
+
+execute 'get gotags' do
+  command 'go get -u github.com/jstemmer/gotags'
+  user    username
+end
