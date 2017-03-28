@@ -5,8 +5,7 @@ tmux_dir = "#{home_dir()}/.tmux"
 
 source_url    = node[:nat][:tmux][:source_url]
 force_install = node[:nat][:tmux][:force_install]
-current_version_dirname = source_url.split('/').
-  last.gsub('.tar.gz', '')
+current_version_dirname = 'tmux-1.9a'
 
 dependencies = node[:nat][:tmux][node.os][:build_dependencies] || []
 

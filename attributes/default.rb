@@ -101,7 +101,7 @@ default[:nat][:metal][:packages] = %w(
 
 # force_install == blow away src dir
 default[:nat][:tmux][:force_install]      = false
-default[:nat][:tmux][:source_url]         = 'https://dl.dropboxusercontent.com/u/31982598/tmux-1.9a.tar.gz'
+default[:nat][:tmux][:source_url]         = 'https://github.com/tmux/tmux/archive/1.9a.tar.gz'
 default[:nat][:tmux]['linux'][:build_dependencies] = %w(
   libevent-dev
   libncurses5-dev

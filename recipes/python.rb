@@ -7,6 +7,16 @@ package_name = value_for_platform({
   }
 })
 
+dev_package_name = value_for_platform({
+  ['debian', 'ubuntu'] => {
+    'default' => 'python-dev'
+  },
+  'mac_os_x' => {
+    'default' => 'python-dev'
+  }
+})
+
+
 exec_name = value_for_platform({
   ['debian', 'ubuntu'] => {
     'default' => 'python2.7'
@@ -17,6 +27,10 @@ exec_name = value_for_platform({
 })
 
 package package_name do
+  action :install
+end
+
+package dev_package_name do
   action :install
 end
 

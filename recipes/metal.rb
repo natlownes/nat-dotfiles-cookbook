@@ -42,14 +42,14 @@ include_recipe 'nat::music_player_client'
 include_recipe 'nat::browser'
 include_recipe 'nat::xorg'
 include_recipe 'nat::mpdscribble'
-include_recipe 'nat::keepass'
+#include_recipe 'nat::keepass'
 include_recipe 'nat::elixir'
 include_recipe 'nat::weather'
 #include_recipe 'nat::bazel'
 
 if node.is_desktop?
   include_recipe 'nat::docker'
-  include_recipe 'nat::virtualization'
+  #include_recipe 'nat::virtualization'
   include_recipe 'nat::qgis'
   include_recipe 'nat::wine'
 end
