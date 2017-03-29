@@ -5,7 +5,6 @@ default[:nat][:packages] = %w(
   bash-completion
   keychain
   tig
-  tmux
   zsh
 )
 
