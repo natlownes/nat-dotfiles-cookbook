@@ -58,6 +58,7 @@ default[:nat][:the_silver_searcher][:scm_url] =
 default[:nat][:metal][:packages] = %w(
   ario
   audacity
+  autoconf
   autofs
   chromium-browser
   claws-mail
@@ -102,10 +103,12 @@ default[:nat][:metal][:packages] = %w(
 default[:nat][:tmux][:force_install]      = false
 default[:nat][:tmux][:source_url]         = 'https://github.com/tmux/tmux/archive/1.9a.tar.gz'
 default[:nat][:tmux]['linux'][:build_dependencies] = %w(
+  autoconf
   libevent-dev
   libncurses5-dev
 )
 default[:nat][:tmux]['darwin'][:build_dependencies] = %w(
+  autoconf
   libevent
 )
 

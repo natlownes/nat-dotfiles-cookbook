@@ -13,9 +13,9 @@ build_command = if node.os == 'darwin'
                   %(LDFLAGS="-L/opt/local/lib" \
                    CPPFLAGS="-I/opt/local/include" \
                    LIBS="-lresolv" \
-                   ./configure && make)
+                   sh autogen && ./configure && make)
                 else
-                  %(./configure && make)
+                  %(sh autogen && ./configure && make)
                 end
 
 dependencies.each do |pkg_name|
