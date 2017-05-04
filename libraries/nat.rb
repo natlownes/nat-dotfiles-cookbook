@@ -31,6 +31,7 @@ class ::Chef::Node
     system "lsmod | grep chromeos"
   end
 
+  # this'll only work if run in an xsession
   def xrandr_outputs
     x11_user = self[:nat][:username] || 'nat'
 
