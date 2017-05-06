@@ -21,6 +21,7 @@ default[:nat]['linux'][:packages] = %w(
   htop
   libpam-encfs
   mercurial
+  mosh
   protobuf-compiler
   ruby
   ruby-dev
@@ -36,6 +37,7 @@ default[:nat]['darwin'][:packages] = %w(
   ctags
   reattach-to-user-namespace
   sshuttle
+  mobile-shell
 )
 
 default[:nat][:the_silver_searcher]['darwin'][:build_dependencies] = %w(
