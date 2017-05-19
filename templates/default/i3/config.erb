@@ -126,12 +126,14 @@ bindcode Mod1+Shift+62 reload
 bindcode 123 exec amixer -c 0 set Master 3+ unmute
 bindcode 122 exec amixer -c 0 set Master 3-
 bindcode 121 exec amixer sset Master toggle
-#
-# spotify next/previous
-# mod+shift+"n"
+
+# spotify next/previous, play/pause
+# mod+shift+"n": next
 bindcode Mod1+Shift+57 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-# mod+shift+"p"
+# mod+shift+"p": previous
 bindcode Mod1+Shift+33 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+# mod+shift+",": play/pause
+bindcode Mod1+Shift+59 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
 # The IPC interface allows programs like an external workspace bar
 # (i3-wsbar) or i3-msg (can be used to "remote-control" i3) to work.
