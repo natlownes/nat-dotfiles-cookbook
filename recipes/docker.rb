@@ -4,7 +4,7 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
-apt_url = 'https://apt.dockerproject.org'
+apt_url = 'https://apt.dockerproject.org/repo'
 
 docker_key="-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1
