@@ -98,7 +98,7 @@ execute 'apt-get update' do
 end
 
 package 'docker-engine' do
-  version '1.12'
+  version '1.12.6-0~ubuntu-xenial'
 end
 
 bash 'install-docker-compose' do
