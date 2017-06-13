@@ -4,26 +4,34 @@ extend Nat::UserHelpers
 username = user_name()
 home_dir = home_dir()
 
+package 'apt-transport-https'
+package 'ca-certificates'
+package 'curl'
 
 execute 'docker grab kernel extra' do
   command 'apt-get install linux-image-extra-`uname -r`'
 end
 
 execute 'docker import key' do
-  command 'apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9'
+  command 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -'
 end
 
-file '/etc/apt/sources.list.d/docker.list' do
-  content %{deb http://get.docker.io/ubuntu docker main}
-
-  action :create
+execute 'docker add repository' do
+  command %{
+  add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) \
+      stable"
+  }
 end
 
 execute 'apt-get update' do
-  command 'apt-get update'
+  command 'apt-get update --fix-missing'
 end
 
-package 'lxc-docker'
+package 'docker-ce' do
+  version '1.12'
+end
 
 bash 'install-docker-compose' do
   code 'pip install docker-compose'
