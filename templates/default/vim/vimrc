@@ -497,6 +497,11 @@ let g:pymode_syntax = 1
 " welp.  python-mode looks to be slowly decaying.  this is a fix for this var
 " being undefined by default.
 let g:pymode_options_colorcolumn=0
+" aaaaaaand pymode is completely fucking broken I guess?
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_autoimport = 0
 " end python settings
 
 " start typescript settings
