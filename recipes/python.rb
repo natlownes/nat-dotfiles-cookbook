@@ -32,6 +32,7 @@ end
 
 package dev_package_name do
   action :install
+  not_if { platform_family?("mac_os_x") }
 end
 
 execute "install-setuptools" do
