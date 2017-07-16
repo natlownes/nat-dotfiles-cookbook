@@ -19,6 +19,8 @@ Host irc.phl.looting.biz
   ProxyCommand ssh slab.phl.looting.biz -W ice.phl.looting.biz:22
 Host doublev.alt.vistar
   HostName phl.vistarmedia.com
+  LocalForward 3000  <%= @tunnels['phl.vistarmedia.com'] %>:3000
+  LocalForward 4000  <%= @tunnels['phl.vistarmedia.com'] %>:4000
   LocalForward 4001  <%= @tunnels['phl.vistarmedia.com'] %>:4001
   LocalForward 4010  <%= @tunnels['phl.vistarmedia.com'] %>:4010
   LocalForward 4011  <%= @tunnels['phl.vistarmedia.com'] %>:4011
