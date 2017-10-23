@@ -15,16 +15,17 @@ vim_powerline_segments     = "#{vim_autoload_dir}/Powerline/Segments"
 vim_powerline_colorschemes = "#{vim_autoload_dir}/Powerline/Colorschemes"
 
 
-package_name = value_for_platform({
-  ['debian', 'ubuntu'] => {
-    'default' => 'vim-nox'
-  },
-  'mac_os_x' => {
-    'default' => 'vim'
-  }
-})
+# TODO:  build vim8 from source
+#package_name = value_for_platform({
+  #['debian', 'ubuntu'] => {
+    #'default' => 'vim-nox'
+  #},
+  #'mac_os_x' => {
+    #'default' => 'vim'
+  #}
+#})
 
-package package_name
+#package package_name
 
 vim_directories = [
   vim_bundle_dir,
