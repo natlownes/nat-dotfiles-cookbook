@@ -222,6 +222,7 @@ default[:nat][:dropbox][:force_install] = false
 default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/autoload/vim-pathogen', 'url'=>'git://github.com/tpope/vim-pathogen.git'},
 
+
   {'path'=>'.vim/bundle/ag.vim', 'url'=>'git://github.com/rking/ag.vim.git'},
   {'path'=>'.vim/bundle/ctrl-p.vim', 'url'=>'git://github.com/kien/ctrlp.vim.git'},
   {'path'=>'.vim/bundle/fugitive', 'url'=>'git://github.com/tpope/vim-fugitive.git'},
@@ -252,6 +253,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-jade', 'url'=>'git://github.com/digitaltoad/vim-jade.git'},
   {'path'=>'.vim/bundle/vim-latex-live-preview', 'url'=>'git://github.com/xuhdev/vim-latex-live-preview.git'},
   {'path'=>'.vim/bundle/vim-less', 'url'=>'git://github.com/groenewege/vim-less.git'},
+  {'path'=>'.vim/bundle/vim-maktaba', 'url'=>'git://github.com/google/vim-maktaba.git'},
   {'path'=>'.vim/bundle/vim-nerdcommenter', 'url'=>'git://github.com/scrooloose/nerdcommenter.git'},
   {'path'=>'.vim/bundle/vim-powerline-1', 'url'=>'git://github.com/Lokaltog/vim-powerline.git', 'branch' => 'develop'},
   {'path'=>'.vim/bundle/vim-protobuf-syntax', 'url'=>'git://github.com/jdevera/vim-protobuf-syntax.git'},
