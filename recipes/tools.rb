@@ -60,3 +60,15 @@ remote_file "#{bin_dir}/icdiff" do
     use_conditional_get true
   end
 end
+
+cookbook_file "#{bin_dir}/buildozer" do
+  source 'buildozer'
+  mode '0744'
+  owner username
+end
+
+cookbook_file "#{bin_dir}/buildifier" do
+  source 'buildifier'
+  mode '0744'
+  owner username
+end

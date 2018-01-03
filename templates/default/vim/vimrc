@@ -534,3 +534,7 @@ augroup EnableSyntaxHighlighting
   " is displayed in a window again.
   autocmd! BufRead * if exists('syntax_on') && exists('b:current_syntax') && ! empty(&l:filetype) && index(split(&eventignore, ','), 'Syntax') != -1 | unlet! b:current_syntax | endif
 augroup END
+
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+augroup END

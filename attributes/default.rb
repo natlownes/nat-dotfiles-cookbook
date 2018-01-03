@@ -234,6 +234,7 @@ default[:nat][:vim][:plugins] = [
   {'path'=>'.vim/bundle/vim-addon-mw-utils', 'url'=>'git://github.com/MarcWeber/vim-addon-mw-utils.git'},
   {'path'=>'.vim/bundle/vim-async-command', 'url'=>'git://github.com/pydave/AsyncCommand.git'},
   {'path'=>'.vim/bundle/vim-clojure-static', 'url'=>'git://github.com/guns/vim-clojure-static.git'},
+  {'path'=>'.vim/bundle/vim-codefmt', 'url'=>'git://github.com/google/vim-codefmt.git'},
   {'path'=>'.vim/bundle/vim-coffee-script', 'url'=>'git://github.com/kchmck/vim-coffee-script.git'},
   {'path'=>'.vim/bundle/vim-colors-solarized', 'url'=>'git://github.com/altercation/vim-colors-solarized.git'},
   {'path'=>'.vim/bundle/vim-cucumber', 'url'=>'git://github.com/tpope/vim-cucumber.git'},
