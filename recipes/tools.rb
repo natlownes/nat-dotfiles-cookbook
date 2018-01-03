@@ -62,13 +62,13 @@ remote_file "#{bin_dir}/icdiff" do
 end
 
 cookbook_file "#{bin_dir}/buildozer" do
-  source 'buildozer'
+  source 'bin/buildozer'
   mode '0744'
   owner username
 end
 
 cookbook_file "#{bin_dir}/buildifier" do
-  source 'buildifier'
+  source 'bin/buildifier'
   mode '0744'
   owner username
 end
