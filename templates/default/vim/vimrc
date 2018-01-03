@@ -273,10 +273,10 @@ autocmd BufNewFile,BufRead *.markdown set filetype=markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " bazel filetypes
-autocmd BufNewFile,BufRead BUILD set filetype=python
-autocmd BufNewFile,BufRead *.bzl set filetype=python
-autocmd BufNewFile,BufRead *.BUILD set filetype=python
-autocmd BufNewFile,BufRead *.build set filetype=python
+autocmd BufNewFile,BufRead BUILD set filetype=bzl
+autocmd BufNewFile,BufRead *.bzl set filetype=bzl
+autocmd BufNewFile,BufRead *.BUILD set filetype=bzl
+autocmd BufNewFile,BufRead *.build set filetype=bzl
 
 autocmd FileType * let b:stripWhitespace=1
 autocmd FileType markdown let b:stripWhitespace=0
