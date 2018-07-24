@@ -23,10 +23,6 @@ directories.each do |dir|
   end
 end
 
-package 'mercurial' do
-  action :install
-end
-
 if node.os == 'linux'
   build_dependencies = %w(gcc libc6-dev)
 
@@ -45,19 +41,18 @@ execute 'build-and-install-go' do
   action :nothing
 end
 
-#execute "hg clone -u release #{node[:nat][:golang][:scm_url]}" do
-  #cwd     install_dir
-  #user    username
-
-  #only_if { !::File.directory?("#{install_dir}/go") }
-  #notifies :run, "execute[build-and-install-go]", :immediately
-#end
-
 execute "git clone #{node[:nat][:golang][:scm_url]}" do
   cwd     install_dir
   user    username
 
   only_if { !::File.directory?("#{install_dir}/go") }
+  notifies :run, "execute[golang-choose-version]", :immediately
+end
+
+execute 'golang-choose-version' do
+  cwd "#{install_dir}/go"
+  command "git checkout #{node[:nat][:golang][:tag]}"
+
   notifies :run, "execute[build-and-install-go]", :immediately
 end
 
