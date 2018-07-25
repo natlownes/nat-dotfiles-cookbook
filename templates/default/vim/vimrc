@@ -4,6 +4,7 @@
 "nmap <silent> <Leader>rr <Plug>ReplaceWithRegisterLine
 "vmap <silent> <Leader>r <Plug>ReplaceWithRegisterOperator
 "filetype off
+
 " put this line first in ~/.vimrc
 set nocompatible | filetype indent plugin on | syn on
 
@@ -34,6 +35,11 @@ call SetupVAM()
 " OPTION 1, use VAMActivate
 VAMActivate maktaba
 VAMActivate codefmt
+VAMActivate glaive
+
+call glaive#Install()
+
+Glaive codefmt gofmt_executable='gofmt_simplify.sh'
 
 " OPTION 2: use call vam#ActivateAddons
 "call vam#ActivateAddons([PLUGIN_NAME], {})
@@ -42,6 +48,7 @@ VAMActivate codefmt
 " OPTION 3: Create a file ~/.vim-scripts putting a PLUGIN_NAME into each line
 " See lazy loading plugins section in README.md for details
 "call vam#Scripts('~/.vim-scripts', {'tag_regex': '.*'})
+
 
 runtime pathogen_init
 filetype plugin on
@@ -260,6 +267,7 @@ filetype plugin indent on
 syntax on
 
 " syntastic
+let g:syntastic_mode_map = { 'mode': 'passive' }
 let g:syntastic_coffee_checkers=['coffee', 'coffeelint']
 let g:syntastic_ruby_checkers=['mri']
 let g:syntastic_python_checkers=['pyflakes']
@@ -518,6 +526,8 @@ au Syntax * RainbowParenthesesLoadRound
 
 " end rainbow parenthesis
 
+"codefmt
+
 " python settings
 let g:pymode = 1
 let g:pymode_indent = 0
@@ -575,5 +585,7 @@ augroup EnableSyntaxHighlighting
 augroup END
 
 augroup autoformat_settings
-  autocmd FileType bzl AutoFormatBuffer buildifier
+  "autocmd FileType bzl AutoFormatBuffer buildifier
+  "autocmd preamble BUILD AutoFormatBuffer buildifier
+  autocmd FileType go AutoFormatBuffer gofmt
 augroup END
